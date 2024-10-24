@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './TrackOrder.module.scss';
 
-export default function TrackOrder() {
+const TrackOrder = () => {
   const [orderId, setOrderId] = useState('');
   const [order, setOrder] = useState(null);
   const [error, setError] = useState('');
@@ -74,4 +74,6 @@ export default function TrackOrder() {
       )}
     </div>
   );
-}
+};
+
+export default TrackOrder;

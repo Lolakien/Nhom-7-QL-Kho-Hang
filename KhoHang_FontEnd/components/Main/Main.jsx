@@ -2,7 +2,7 @@ import Home from './Home/Home'
 import About from './About/About'
 import Security from './Security/Security'
 import Services from './Services/Services'
-import InfoApp from './InfoApp/InfoApp'
+// import InfoApp from './InfoApp/InfoApp'
 import ContactUs from './Contact/Contact'
 import TrackOrder from './TrackOrder/TrackOrder'
 import style from './Main.module.scss'
@@ -15,7 +15,7 @@ function Main() {
       <Security />
       <TrackOrder />
       <Services />
-      <InfoApp />
+      {/* <InfoApp /> */}
       <ContactUs />
     </main>
   )
