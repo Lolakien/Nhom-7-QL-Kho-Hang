@@ -1,0 +1,102 @@
+{
+  "header": {
+    "logo": "Kho hàng",
+    "nav": {
+      "home": "Trang Chủ",
+      "about": "Về Chúng Tôi",
+      "services": "Dịch Vụ",
+      "contact": "Liên Hệ"
+    },
+    "login": "Đăng nhập"
+  },
+  "main": {
+    "home": {
+      "title": "Quản lý kho hàng của bạn một cách hiệu quả",
+      "description": "Theo dõi và quản lý hàng hóa trong kho của bạn một cách dễ dàng và nhanh chóng.",
+      "getStarted": "Bắt Đầu"
+    },
+    "about": {
+      "title": "Tìm hiểu thêm về chúng tôi",
+      "description": "Chúng tôi cung cấp giải pháp quản lý kho hàng toàn diện, giúp bạn theo dõi và quản lý hàng hóa một cách hiệu quả."
+    },
+    "security": {
+      "title": "An toàn và bảo mật",
+      "description": "Chúng tôi đảm bảo an toàn và bảo mật cho hàng hóa của bạn với các quy trình kiểm tra nghiêm ngặt."
+    },
+    "services": {
+      "title": "Dịch vụ của chúng tôi",
+      "learnMore": "Thêm thông tin",
+      "servOff1": "Quản lý hàng tồn kho",
+      "descOff1": "Theo dõi số lượng hàng tồn kho một cách chính xác.",
+      "servOff2": "Quản lý đơn hàng",
+      "descOff2": "Xử lý và theo dõi đơn hàng từ khi đặt hàng đến khi giao hàng.",
+      "servOff3": "Báo cáo và phân tích",
+      "descOff3": "Cung cấp các báo cáo và phân tích chi tiết về hoạt động kho hàng."
+    },
+    "app": {
+      "title": "Theo dõi kho hàng của bạn theo thời gian thực",
+      "description": "Với ứng dụng của chúng tôi, bạn có thể theo dõi tình trạng kho hàng và đơn hàng của mình mọi lúc, mọi nơi.",
+      "storeApple": "App Store",
+      "storeGoogle": "Google Play"
+    },
+    "contact": {
+      "title": "Liên hệ với chúng tôi",
+      "description": "Bạn có thể liên hệ với chúng tôi qua điện thoại, email hoặc đến trực tiếp văn phòng của chúng tôi.",
+      "info": {
+        "phoneLabel": "Điện Thoại",
+        "phone": "123 - 456 - 789",
+        "emailLabel": "Email",
+        "email": "khohang123@email.com",
+        "addressLabel": "Địa Chỉ",
+        "address": "140 Lê Trọng Tấn, Tân Phú, Hồ Chí Minh"
+      },
+      "contactUs": "Liên Hệ"
+    }
+  },
+  "footer": {
+    "logo": "Kho Hàng",
+    "description": "Quản lý kho hàng dễ dàng và hiệu quả",
+    "services": "Dịch Vụ Của Chúng Tôi",
+    "pricing": "Giá Cả",
+    "discounts": "Giảm Giá",
+    "reportBug": "Báo lỗi",
+    "terms": "Điều Khoản Dịch Vụ",
+    "company": "Công Ty Chúng Tôi",
+    "blog": "Blog",
+    "ourMission": "Sứ Mệnh Của Chúng Tôi",
+    "getTouch": "Liên Hệ",
+    "community": "Cộng Đồng",
+    "support": "Hỗ Trợ",
+    "questions": "Câu Hỏi",
+    "help": "Giúp Đỡ",
+    "social": {
+      "facebook": {
+        "title": "facebook",
+        "link": "https://www.facebook.com/"
+      },
+      "twitter": {
+        "title": "twitter",
+        "link": "https://www.twitter.com/"
+      },
+      "instagram": {
+        "title": "instagram",
+        "link": "https://www.instagram.com/"
+      }
+    }
+  },
+  "scrollUp": {
+    "title": "Lên Trên!"
+  },
+  "languageChanger": {
+    "languageSelector": "Chọn Ngôn Ngữ",
+    "zoneName": "Việt Nam",
+    "langName": "Tiếng Việt",
+    "zoneFlag": "Ngôn Ngữ $t(languageChanger.langName)"
+  },
+  "colorChanger": {
+    "yellow": "Đổi sang màu vàng!",
+    "red": "Đổi sang màu đỏ!",
+    "orange": "Đổi sang màu cam!",
+    "green": "Đổi sang màu xanh!"
+  }
+}

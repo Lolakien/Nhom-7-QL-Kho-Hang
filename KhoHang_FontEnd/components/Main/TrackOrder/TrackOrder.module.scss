@@ -1,0 +1,69 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--container-color);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.title {
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: var(--m-1);
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--text-color-light);
+  border-radius: 4px;
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: var(--black-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: var(--font-semi-bold);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  &:hover {
+    background-color: var(--first-color-alt);
+  }
+}
+
+.error {
+  color: red;
+  margin-top: 1rem;
+}
+
+.orderDetails {
+  margin-top: 2rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--text-color-light);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  th {
+    background-color: var(--first-color-lighten);
+    font-weight: bold;
+  }
+  tr:hover {
+    background-color: var(--first-color-light);
+  }
+}
