@@ -7,18 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using QL_KhoHang.Controller;
 namespace QL_KhoHang
 {
     public partial class BoxDetail : UserControl
     {
-     
+        SanPhamController spController = new SanPhamController();
         public BoxDetail(ViTriKho vt)
         {
             InitializeComponent();
             if (vt != null)
             {
+                SanPham sp = spController.GetSanPhamByID(vt.SanPhamID);
+                if (sp != null)
+                {
+                    lbName.Text = sp.TenSanPham;
+                }
                 lbPosition.Text = vt.ViTriID;
+           
                 lbNumber.Text = "Vị trí: " + vt.SoLuong + " / " + vt.SoLuongToiDa;
             }
         }

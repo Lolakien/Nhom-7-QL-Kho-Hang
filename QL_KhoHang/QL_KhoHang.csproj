@@ -43,6 +43,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress">
       <HintPath>C:\Users\khanh\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
+      <HintPath>C:\Users\khanh\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
       <HintPath>C:\Users\khanh\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
     </Reference>
@@ -51,6 +54,9 @@
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel">
       <HintPath>C:\Users\khanh\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGroupBox">
+      <HintPath>C:\Users\khanh\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
       <HintPath>C:\Users\khanh\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
@@ -95,6 +101,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Authentication.cs" />
+    <Compile Include="Controller\DanhMucController.cs" />
+    <Compile Include="Controller\PhieuNhapController.cs" />
+    <Compile Include="Controller\SanPhamController.cs" />
+    <Compile Include="Controller\ViTriKhoController.cs" />
     <Compile Include="UserControls\Box.cs">
       <SubType>UserControl</SubType>
     </Compile>

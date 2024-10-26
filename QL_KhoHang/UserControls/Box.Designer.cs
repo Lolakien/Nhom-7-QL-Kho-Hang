@@ -35,8 +35,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "Box";
-            this.Load += new System.EventHandler(this.Box_Load_1);
-            this.Click += new System.EventHandler(this.Box_Click);
+            this.Load += new System.EventHandler(this.Box_Load);
             this.ResumeLayout(false);
 
         }

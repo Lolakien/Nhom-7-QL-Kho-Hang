@@ -79,3 +79,5 @@ E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.Properties.Resources.resources
 E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.csproj.GenerateResource.Cache
 E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.exe.licenses
 E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.UserControls.Section.resources
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.dll
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuGroupBox.dll

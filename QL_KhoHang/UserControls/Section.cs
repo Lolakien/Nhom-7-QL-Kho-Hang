@@ -12,9 +12,17 @@ namespace QL_KhoHang.UserControls
 {
     public partial class Section : UserControl
     {
-        public Section()
+        public DanhMuc dm { get; set; }
+        public Section(DanhMuc dm)
         {
             InitializeComponent();
+            this.dm = dm;
+            lbTenSP.Text = dm.TenDanhMuc;
+        }
+
+        private void Section_Leave(object sender, EventArgs e)
+        {
+            this.BackColor = Color.White;
         }
     }
 }

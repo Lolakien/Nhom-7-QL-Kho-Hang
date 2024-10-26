@@ -33,7 +33,41 @@
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            this.panel1 = new System.Windows.Forms.Panel();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnOpenBox = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.pnBoxSetting = new Bunifu.UI.WinForms.BunifuGradientPanel();
+            this.cboSP = new System.Windows.Forms.ComboBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnBoxDelete = new System.Windows.Forms.Button();
+            this.btnBoxSave = new System.Windows.Forms.Button();
+            this.lblBoxID = new System.Windows.Forms.Label();
+            this.txtSoLuongMax = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
+            this.lblChuaXep = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lbDanhMuc = new System.Windows.Forms.Label();
+            this.pnInit = new System.Windows.Forms.Panel();
+            this.txtRow = new System.Windows.Forms.TextBox();
+            this.btnInit = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCol = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.pnHead = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.bunifuTextBox1 = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.bunifuGradientPanel1 = new Bunifu.UI.WinForms.BunifuGradientPanel();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -41,172 +75,29 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.crSucChua = new Bunifu.UI.WinForms.BunifuCircleProgress();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnOpenBox = new Bunifu.UI.WinForms.BunifuImageButton();
-            this.pnBoxSetting = new Bunifu.UI.WinForms.BunifuGradientPanel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cboSP = new Bunifu.UI.WinForms.BunifuDropdown();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pnSetting = new System.Windows.Forms.Panel();
-            this.txtRow = new System.Windows.Forms.TextBox();
-            this.btnInit = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCol = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBoxDanhMuc = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pnInit = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.bunifuTextBox1 = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.lbBoxed = new System.Windows.Forms.Label();
-            this.lbUnbox = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            this.bunifuGradientPanel1.SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.flowPanelSection = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.listboxPhieuNhap = new System.Windows.Forms.ListBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dgvSanPham = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.btnNhap = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.pnBoxSetting.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.pnSetting.SuspendLayout();
             this.pnInit.SuspendLayout();
+            this.pnHead.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.bunifuGradientPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.bunifuGradientPanel1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1136, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(311, 825);
-            this.panel1.TabIndex = 1;
-            // 
-            // bunifuGradientPanel1
-            // 
-            this.bunifuGradientPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
-            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel1.BorderRadius = 1;
-            this.bunifuGradientPanel1.Controls.Add(this.label9);
-            this.bunifuGradientPanel1.Controls.Add(this.label8);
-            this.bunifuGradientPanel1.Controls.Add(this.label7);
-            this.bunifuGradientPanel1.Controls.Add(this.label6);
-            this.bunifuGradientPanel1.Controls.Add(this.label5);
-            this.bunifuGradientPanel1.Controls.Add(this.crSucChua);
-            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.SeaGreen;
-            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.LimeGreen;
-            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.SeaGreen;
-            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.LimeGreen;
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuGradientPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
-            this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(311, 313);
-            this.bunifuGradientPanel1.TabIndex = 0;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label9.Location = new System.Drawing.Point(203, 281);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(52, 17);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "label9";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(43, 281);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 17);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "label8";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(217, 255);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 17);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "Còn trống";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(60, 255);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 17);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "Đã chứa";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(5, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(132, 25);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Sức chứa kho";
-            // 
-            // crSucChua
-            // 
-            this.crSucChua.Animated = false;
-            this.crSucChua.AnimationInterval = 1;
-            this.crSucChua.AnimationSpeed = 1;
-            this.crSucChua.BackColor = System.Drawing.Color.Transparent;
-            this.crSucChua.CircleMargin = 10;
-            this.crSucChua.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold);
-            this.crSucChua.ForeColor = System.Drawing.Color.White;
-            this.crSucChua.IsPercentage = true;
-            this.crSucChua.LineProgressThickness = 10;
-            this.crSucChua.LineThickness = 10;
-            this.crSucChua.Location = new System.Drawing.Point(63, 52);
-            this.crSucChua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.crSucChua.Name = "crSucChua";
-            this.crSucChua.ProgressAnimationSpeed = 200;
-            this.crSucChua.ProgressBackColor = System.Drawing.Color.Gainsboro;
-            this.crSucChua.ProgressColor = System.Drawing.Color.Gold;
-            this.crSucChua.ProgressColor2 = System.Drawing.Color.Yellow;
-            this.crSucChua.ProgressEndCap = Bunifu.UI.WinForms.BunifuCircleProgress.CapStyles.Round;
-            this.crSucChua.ProgressFillStyle = Bunifu.UI.WinForms.BunifuCircleProgress.FillStyles.Solid;
-            this.crSucChua.ProgressStartCap = Bunifu.UI.WinForms.BunifuCircleProgress.CapStyles.Round;
-            this.crSucChua.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.crSucChua.Size = new System.Drawing.Size(200, 200);
-            this.crSucChua.SubScriptColor = System.Drawing.Color.White;
-            this.crSucChua.SubScriptMargin = new System.Windows.Forms.Padding(5, -20, 0, 0);
-            this.crSucChua.SubScriptText = "";
-            this.crSucChua.SuperScriptColor = System.Drawing.Color.White;
-            this.crSucChua.SuperScriptMargin = new System.Windows.Forms.Padding(5, 50, 0, 0);
-            this.crSucChua.SuperScriptText = "%";
-            this.crSucChua.TabIndex = 22;
-            this.crSucChua.Text = "30";
-            this.crSucChua.TextMargin = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.crSucChua.Value = 30;
-            this.crSucChua.ValueByTransition = 30;
-            this.crSucChua.ValueMargin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             // 
             // panel2
             // 
@@ -216,12 +107,12 @@
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.pnBoxSetting);
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.pnInit);
+            this.panel2.Controls.Add(this.pnHead);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1136, 825);
+            this.panel2.Size = new System.Drawing.Size(1083, 825);
             this.panel2.TabIndex = 2;
             // 
             // panel6
@@ -229,9 +120,9 @@
             this.panel6.AutoScroll = true;
             this.panel6.Controls.Add(this.tableLayoutPanel1);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 114);
+            this.panel6.Location = new System.Drawing.Point(0, 102);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(734, 311);
+            this.panel6.Size = new System.Drawing.Size(681, 323);
             this.panel6.TabIndex = 22;
             // 
             // tableLayoutPanel1
@@ -251,9 +142,9 @@
             // 
             this.panel5.Controls.Add(this.btnOpenBox);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(734, 114);
+            this.panel5.Location = new System.Drawing.Point(681, 102);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(36, 311);
+            this.panel5.Size = new System.Drawing.Size(36, 323);
             this.panel5.TabIndex = 21;
             // 
             // btnOpenBox
@@ -298,44 +189,89 @@
             this.pnBoxSetting.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnBoxSetting.BackgroundImage")));
             this.pnBoxSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnBoxSetting.BorderRadius = 1;
-            this.pnBoxSetting.Controls.Add(this.lbUnbox);
-            this.pnBoxSetting.Controls.Add(this.lbBoxed);
+            this.pnBoxSetting.Controls.Add(this.cboSP);
             this.pnBoxSetting.Controls.Add(this.button4);
-            this.pnBoxSetting.Controls.Add(this.button3);
-            this.pnBoxSetting.Controls.Add(this.button1);
-            this.pnBoxSetting.Controls.Add(this.label13);
-            this.pnBoxSetting.Controls.Add(this.textBox2);
+            this.pnBoxSetting.Controls.Add(this.btnBoxDelete);
+            this.pnBoxSetting.Controls.Add(this.btnBoxSave);
+            this.pnBoxSetting.Controls.Add(this.lblBoxID);
+            this.pnBoxSetting.Controls.Add(this.txtSoLuongMax);
             this.pnBoxSetting.Controls.Add(this.label12);
             this.pnBoxSetting.Controls.Add(this.label4);
-            this.pnBoxSetting.Controls.Add(this.textBox1);
-            this.pnBoxSetting.Controls.Add(this.label11);
-            this.pnBoxSetting.Controls.Add(this.label10);
-            this.pnBoxSetting.Controls.Add(this.cboSP);
+            this.pnBoxSetting.Controls.Add(this.txtSoLuong);
+            this.pnBoxSetting.Controls.Add(this.lblChuaXep);
             this.pnBoxSetting.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnBoxSetting.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.pnBoxSetting.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.pnBoxSetting.GradientTopLeft = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.pnBoxSetting.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.pnBoxSetting.Location = new System.Drawing.Point(770, 114);
+            this.pnBoxSetting.Location = new System.Drawing.Point(717, 102);
             this.pnBoxSetting.Name = "pnBoxSetting";
             this.pnBoxSetting.Quality = 10;
-            this.pnBoxSetting.Size = new System.Drawing.Size(362, 311);
+            this.pnBoxSetting.Size = new System.Drawing.Size(362, 323);
             this.pnBoxSetting.TabIndex = 19;
             this.pnBoxSetting.Visible = false;
             // 
-            // textBox2
+            // cboSP
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(212, 206);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(122, 27);
-            this.textBox2.TabIndex = 9;
+            this.cboSP.FormattingEnabled = true;
+            this.cboSP.Location = new System.Drawing.Point(35, 60);
+            this.cboSP.Name = "cboSP";
+            this.cboSP.Size = new System.Drawing.Size(306, 24);
+            this.cboSP.TabIndex = 16;
+            this.cboSP.SelectedIndexChanged += new System.EventHandler(this.cboSP_SelectedIndexChanged);
+            this.cboSP.TextUpdate += new System.EventHandler(this.cboSP_TextChanged);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(30, 273);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(94, 32);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "Di chuyển";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // btnBoxDelete
+            // 
+            this.btnBoxDelete.Location = new System.Drawing.Point(178, 273);
+            this.btnBoxDelete.Name = "btnBoxDelete";
+            this.btnBoxDelete.Size = new System.Drawing.Size(75, 32);
+            this.btnBoxDelete.TabIndex = 12;
+            this.btnBoxDelete.Text = "Xóa";
+            this.btnBoxDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnBoxSave
+            // 
+            this.btnBoxSave.Location = new System.Drawing.Point(259, 273);
+            this.btnBoxSave.Name = "btnBoxSave";
+            this.btnBoxSave.Size = new System.Drawing.Size(75, 32);
+            this.btnBoxSave.TabIndex = 11;
+            this.btnBoxSave.Text = "Lưu";
+            this.btnBoxSave.UseVisualStyleBackColor = true;
+            this.btnBoxSave.Click += new System.EventHandler(this.btnBoxSave_Click);
+            // 
+            // lblBoxID
+            // 
+            this.lblBoxID.AutoSize = true;
+            this.lblBoxID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBoxID.Location = new System.Drawing.Point(33, 21);
+            this.lblBoxID.Name = "lblBoxID";
+            this.lblBoxID.Size = new System.Drawing.Size(48, 25);
+            this.lblBoxID.TabIndex = 10;
+            this.lblBoxID.Text = "A01";
+            // 
+            // txtSoLuongMax
+            // 
+            this.txtSoLuongMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoLuongMax.Location = new System.Drawing.Point(219, 175);
+            this.txtSoLuongMax.Name = "txtSoLuongMax";
+            this.txtSoLuongMax.Size = new System.Drawing.Size(122, 27);
+            this.txtSoLuongMax.TabIndex = 9;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(31, 213);
+            this.label12.Location = new System.Drawing.Point(38, 182);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(120, 20);
             this.label12.TabIndex = 8;
@@ -345,110 +281,68 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(31, 168);
+            this.label4.Location = new System.Drawing.Point(38, 137);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 20);
             this.label4.TabIndex = 7;
             this.label4.Text = "Số lượng";
             // 
-            // textBox1
+            // txtSoLuong
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(212, 161);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(122, 27);
-            this.textBox1.TabIndex = 6;
+            this.txtSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoLuong.Location = new System.Drawing.Point(219, 130);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(122, 27);
+            this.txtSoLuong.TabIndex = 6;
             // 
-            // label11
+            // lblChuaXep
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(199, 123);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(84, 20);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "Chưa xếp:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(31, 123);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 20);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Đã sắp xếp";
-            // 
-            // cboSP
-            // 
-            this.cboSP.BackColor = System.Drawing.Color.Transparent;
-            this.cboSP.BackgroundColor = System.Drawing.Color.White;
-            this.cboSP.BorderColor = System.Drawing.Color.Silver;
-            this.cboSP.BorderRadius = 1;
-            this.cboSP.Color = System.Drawing.Color.Silver;
-            this.cboSP.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.cboSP.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.cboSP.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.cboSP.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.cboSP.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.cboSP.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
-            this.cboSP.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboSP.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
-            this.cboSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSP.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.cboSP.FillDropDown = true;
-            this.cboSP.FillIndicator = false;
-            this.cboSP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboSP.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.cboSP.ForeColor = System.Drawing.Color.Black;
-            this.cboSP.FormattingEnabled = true;
-            this.cboSP.Icon = null;
-            this.cboSP.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.cboSP.IndicatorColor = System.Drawing.Color.Gray;
-            this.cboSP.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.cboSP.ItemBackColor = System.Drawing.Color.White;
-            this.cboSP.ItemBorderColor = System.Drawing.Color.White;
-            this.cboSP.ItemForeColor = System.Drawing.Color.Black;
-            this.cboSP.ItemHeight = 26;
-            this.cboSP.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
-            this.cboSP.ItemHighLightForeColor = System.Drawing.Color.White;
-            this.cboSP.ItemTopMargin = 3;
-            this.cboSP.Location = new System.Drawing.Point(33, 74);
-            this.cboSP.Name = "cboSP";
-            this.cboSP.Size = new System.Drawing.Size(301, 32);
-            this.cboSP.TabIndex = 2;
-            this.cboSP.Text = null;
-            this.cboSP.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.cboSP.TextLeftMargin = 5;
-            this.cboSP.SelectedIndexChanged += new System.EventHandler(this.cboSP_SelectedIndexChanged);
+            this.lblChuaXep.AutoSize = true;
+            this.lblChuaXep.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChuaXep.Location = new System.Drawing.Point(35, 96);
+            this.lblChuaXep.Name = "lblChuaXep";
+            this.lblChuaXep.Size = new System.Drawing.Size(271, 17);
+            this.lblChuaXep.TabIndex = 4;
+            this.lblChuaXep.Text = "Còn XX sản phẩm chưa được xếp vào kho";
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.pnSetting);
-            this.panel4.Controls.Add(this.comboBoxDanhMuc);
-            this.panel4.Controls.Add(this.button2);
+            this.panel4.Controls.Add(this.lbDanhMuc);
+            this.panel4.Controls.Add(this.pnInit);
+            this.panel4.Controls.Add(this.btnReset);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 67);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1132, 47);
+            this.panel4.Size = new System.Drawing.Size(1079, 35);
             this.panel4.TabIndex = 18;
             // 
-            // pnSetting
+            // lbDanhMuc
             // 
-            this.pnSetting.Controls.Add(this.txtRow);
-            this.pnSetting.Controls.Add(this.btnInit);
-            this.pnSetting.Controls.Add(this.label2);
-            this.pnSetting.Controls.Add(this.txtCol);
-            this.pnSetting.Controls.Add(this.label3);
-            this.pnSetting.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnSetting.Location = new System.Drawing.Point(695, 0);
-            this.pnSetting.Name = "pnSetting";
-            this.pnSetting.Size = new System.Drawing.Size(437, 47);
-            this.pnSetting.TabIndex = 12;
+            this.lbDanhMuc.AutoSize = true;
+            this.lbDanhMuc.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lbDanhMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDanhMuc.Location = new System.Drawing.Point(0, 0);
+            this.lbDanhMuc.Name = "lbDanhMuc";
+            this.lbDanhMuc.Size = new System.Drawing.Size(101, 25);
+            this.lbDanhMuc.TabIndex = 13;
+            this.lbDanhMuc.Text = "Danh muc";
+            // 
+            // pnInit
+            // 
+            this.pnInit.Controls.Add(this.txtRow);
+            this.pnInit.Controls.Add(this.btnInit);
+            this.pnInit.Controls.Add(this.label2);
+            this.pnInit.Controls.Add(this.txtCol);
+            this.pnInit.Controls.Add(this.label3);
+            this.pnInit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnInit.Location = new System.Drawing.Point(577, 0);
+            this.pnInit.Name = "pnInit";
+            this.pnInit.Size = new System.Drawing.Size(427, 35);
+            this.pnInit.TabIndex = 12;
             // 
             // txtRow
             // 
-            this.txtRow.Location = new System.Drawing.Point(86, 13);
+            this.txtRow.Location = new System.Drawing.Point(86, 9);
             this.txtRow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRow.Name = "txtRow";
             this.txtRow.Size = new System.Drawing.Size(81, 22);
@@ -457,14 +351,15 @@
             // btnInit
             // 
             this.btnInit.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnInit.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnInit.FlatAppearance.BorderSize = 0;
             this.btnInit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btnInit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInit.Location = new System.Drawing.Point(328, 10);
+            this.btnInit.Location = new System.Drawing.Point(339, 0);
             this.btnInit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInit.Name = "btnInit";
-            this.btnInit.Size = new System.Drawing.Size(88, 31);
+            this.btnInit.Size = new System.Drawing.Size(88, 35);
             this.btnInit.TabIndex = 10;
             this.btnInit.Text = "Khởi tạo";
             this.btnInit.UseVisualStyleBackColor = false;
@@ -474,7 +369,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(19, 16);
+            this.label2.Location = new System.Drawing.Point(19, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 17);
             this.label2.TabIndex = 9;
@@ -482,7 +377,7 @@
             // 
             // txtCol
             // 
-            this.txtCol.Location = new System.Drawing.Point(227, 15);
+            this.txtCol.Location = new System.Drawing.Point(249, 9);
             this.txtCol.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCol.Name = "txtCol";
             this.txtCol.Size = new System.Drawing.Size(84, 22);
@@ -492,50 +387,41 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(174, 17);
+            this.label3.Location = new System.Drawing.Point(195, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 17);
             this.label3.TabIndex = 13;
             this.label3.Text = "Số cột";
             // 
-            // comboBoxDanhMuc
+            // btnReset
             // 
-            this.comboBoxDanhMuc.FormattingEnabled = true;
-            this.comboBoxDanhMuc.Location = new System.Drawing.Point(21, 8);
-            this.comboBoxDanhMuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBoxDanhMuc.Name = "comboBoxDanhMuc";
-            this.comboBoxDanhMuc.Size = new System.Drawing.Size(305, 24);
-            this.comboBoxDanhMuc.TabIndex = 8;
-            this.comboBoxDanhMuc.SelectedIndexChanged += new System.EventHandler(this.comboBoxDanhMuc_SelectedIndexChanged);
+            this.btnReset.BackColor = System.Drawing.Color.Red;
+            this.btnReset.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnReset.FlatAppearance.BorderSize = 0;
+            this.btnReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnReset.Location = new System.Drawing.Point(1004, 0);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 35);
+            this.btnReset.TabIndex = 11;
+            this.btnReset.Text = "Đặt lại";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btn_Reset);
             // 
-            // button2
+            // pnHead
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(332, 4);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 31);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Đặt lại";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.btn_Reset);
-            // 
-            // pnInit
-            // 
-            this.pnInit.BackColor = System.Drawing.Color.Transparent;
-            this.pnInit.Controls.Add(this.label1);
-            this.pnInit.Controls.Add(this.bunifuTextBox1);
-            this.pnInit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnInit.Location = new System.Drawing.Point(0, 0);
-            this.pnInit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pnInit.Name = "pnInit";
-            this.pnInit.Size = new System.Drawing.Size(1132, 67);
-            this.pnInit.TabIndex = 17;
+            this.pnHead.BackColor = System.Drawing.Color.Transparent;
+            this.pnHead.Controls.Add(this.label1);
+            this.pnHead.Controls.Add(this.bunifuTextBox1);
+            this.pnHead.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnHead.Location = new System.Drawing.Point(0, 0);
+            this.pnHead.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnHead.Name = "pnHead";
+            this.pnHead.Size = new System.Drawing.Size(1079, 67);
+            this.pnHead.TabIndex = 17;
             // 
             // label1
             // 
@@ -575,7 +461,7 @@
             this.bunifuTextBox1.IconRight = null;
             this.bunifuTextBox1.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.bunifuTextBox1.Lines = new string[0];
-            this.bunifuTextBox1.Location = new System.Drawing.Point(744, 16);
+            this.bunifuTextBox1.Location = new System.Drawing.Point(691, 16);
             this.bunifuTextBox1.MaxLength = 32767;
             this.bunifuTextBox1.MinimumSize = new System.Drawing.Size(1, 1);
             this.bunifuTextBox1.Modified = false;
@@ -624,66 +510,292 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.tabControl1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 425);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1132, 396);
+            this.panel3.Size = new System.Drawing.Size(1079, 396);
             this.panel3.TabIndex = 0;
             // 
-            // label13
+            // tabControl1
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(33, 21);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(48, 25);
-            this.label13.TabIndex = 10;
-            this.label13.Text = "A01";
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1079, 396);
+            this.tabControl1.TabIndex = 0;
             // 
-            // button1
+            // tabPage1
             // 
-            this.button1.Location = new System.Drawing.Point(259, 273);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 32);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Lưu";
-            this.button1.UseVisualStyleBackColor = true;
+            this.tabPage1.Controls.Add(this.btnNhap);
+            this.tabPage1.Controls.Add(this.dgvSanPham);
+            this.tabPage1.Controls.Add(this.listboxPhieuNhap);
+            this.tabPage1.Controls.Add(this.panel7);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1071, 367);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Nhập kho";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // tabPage2
             // 
-            this.button3.Location = new System.Drawing.Point(178, 273);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 32);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Xóa";
-            this.button3.UseVisualStyleBackColor = true;
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1071, 367);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Xuất kho";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // bunifuGradientPanel1
             // 
-            this.button4.Location = new System.Drawing.Point(30, 273);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 32);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Di chuyển";
-            this.button4.UseVisualStyleBackColor = true;
+            this.bunifuGradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
+            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.BorderRadius = 1;
+            this.bunifuGradientPanel1.Controls.Add(this.label9);
+            this.bunifuGradientPanel1.Controls.Add(this.label8);
+            this.bunifuGradientPanel1.Controls.Add(this.label7);
+            this.bunifuGradientPanel1.Controls.Add(this.label6);
+            this.bunifuGradientPanel1.Controls.Add(this.label5);
+            this.bunifuGradientPanel1.Controls.Add(this.crSucChua);
+            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.SeaGreen;
+            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.LimeGreen;
+            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.SeaGreen;
+            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.LimeGreen;
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.bunifuGradientPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
+            this.bunifuGradientPanel1.Quality = 10;
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(364, 313);
+            this.bunifuGradientPanel1.TabIndex = 0;
             // 
-            // lbBoxed
+            // label9
             // 
-            this.lbBoxed.AutoSize = true;
-            this.lbBoxed.Location = new System.Drawing.Point(130, 126);
-            this.lbBoxed.Name = "lbBoxed";
-            this.lbBoxed.Size = new System.Drawing.Size(54, 17);
-            this.lbBoxed.TabIndex = 14;
-            this.lbBoxed.Text = "label14";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label9.Location = new System.Drawing.Point(238, 279);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(52, 17);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "label9";
             // 
-            // lbUnbox
+            // label8
             // 
-            this.lbUnbox.AutoSize = true;
-            this.lbUnbox.Location = new System.Drawing.Point(287, 126);
-            this.lbUnbox.Name = "lbUnbox";
-            this.lbUnbox.Size = new System.Drawing.Size(54, 17);
-            this.lbUnbox.TabIndex = 15;
-            this.lbUnbox.Text = "label15";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.Location = new System.Drawing.Point(85, 281);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(52, 17);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "label8";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
+            this.label7.Location = new System.Drawing.Point(220, 262);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 17);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Còn trống";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(56, 262);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(61, 17);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Đã chứa";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(5, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(132, 25);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Sức chứa kho";
+            // 
+            // crSucChua
+            // 
+            this.crSucChua.Animated = false;
+            this.crSucChua.AnimationInterval = 1;
+            this.crSucChua.AnimationSpeed = 1;
+            this.crSucChua.BackColor = System.Drawing.Color.Transparent;
+            this.crSucChua.CircleMargin = 10;
+            this.crSucChua.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold);
+            this.crSucChua.ForeColor = System.Drawing.Color.White;
+            this.crSucChua.IsPercentage = true;
+            this.crSucChua.LineProgressThickness = 10;
+            this.crSucChua.LineThickness = 10;
+            this.crSucChua.Location = new System.Drawing.Point(90, 59);
+            this.crSucChua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.crSucChua.Name = "crSucChua";
+            this.crSucChua.ProgressAnimationSpeed = 200;
+            this.crSucChua.ProgressBackColor = System.Drawing.Color.Gainsboro;
+            this.crSucChua.ProgressColor = System.Drawing.Color.Gold;
+            this.crSucChua.ProgressColor2 = System.Drawing.Color.Yellow;
+            this.crSucChua.ProgressEndCap = Bunifu.UI.WinForms.BunifuCircleProgress.CapStyles.Round;
+            this.crSucChua.ProgressFillStyle = Bunifu.UI.WinForms.BunifuCircleProgress.FillStyles.Solid;
+            this.crSucChua.ProgressStartCap = Bunifu.UI.WinForms.BunifuCircleProgress.CapStyles.Round;
+            this.crSucChua.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.crSucChua.Size = new System.Drawing.Size(200, 200);
+            this.crSucChua.SubScriptColor = System.Drawing.Color.White;
+            this.crSucChua.SubScriptMargin = new System.Windows.Forms.Padding(5, -20, 0, 0);
+            this.crSucChua.SubScriptText = "";
+            this.crSucChua.SuperScriptColor = System.Drawing.Color.White;
+            this.crSucChua.SuperScriptMargin = new System.Windows.Forms.Padding(5, 50, 0, 0);
+            this.crSucChua.SuperScriptText = "%";
+            this.crSucChua.TabIndex = 22;
+            this.crSucChua.Text = "30";
+            this.crSucChua.TextMargin = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.crSucChua.Value = 30;
+            this.crSucChua.ValueByTransition = 30;
+            this.crSucChua.ValueMargin = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.flowPanelSection);
+            this.panel1.Controls.Add(this.bunifuGradientPanel1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(1083, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(364, 825);
+            this.panel1.TabIndex = 1;
+            // 
+            // flowPanelSection
+            // 
+            this.flowPanelSection.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowPanelSection.Location = new System.Drawing.Point(0, 313);
+            this.flowPanelSection.Name = "flowPanelSection";
+            this.flowPanelSection.Size = new System.Drawing.Size(364, 512);
+            this.flowPanelSection.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.label15);
+            this.panel7.Controls.Add(this.label14);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(3, 3);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1065, 30);
+            this.panel7.TabIndex = 0;
+            // 
+            // listboxPhieuNhap
+            // 
+            this.listboxPhieuNhap.Dock = System.Windows.Forms.DockStyle.Left;
+            this.listboxPhieuNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listboxPhieuNhap.FormattingEnabled = true;
+            this.listboxPhieuNhap.ItemHeight = 25;
+            this.listboxPhieuNhap.Location = new System.Drawing.Point(3, 33);
+            this.listboxPhieuNhap.Name = "listboxPhieuNhap";
+            this.listboxPhieuNhap.Size = new System.Drawing.Size(140, 331);
+            this.listboxPhieuNhap.TabIndex = 1;
+            this.listboxPhieuNhap.SelectedIndexChanged += new System.EventHandler(this.listboxPhieuNhap_SelectedIndexChanged);
+            // 
+            // label14
+            // 
+            this.label14.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(0, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(140, 30);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Mã phiếu nhập";
+            // 
+            // label15
+            // 
+            this.label15.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(140, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(389, 30);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Danh sách sản phẩm";
+            // 
+            // dgvSanPham
+            // 
+            this.dgvSanPham.AllowCustomTheming = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dgvSanPham.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvSanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSanPham.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvSanPham.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvSanPham.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSanPham.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSanPham.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.dgvSanPham.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dgvSanPham.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvSanPham.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.dgvSanPham.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvSanPham.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.dgvSanPham.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.dgvSanPham.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.dgvSanPham.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.dgvSanPham.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvSanPham.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            this.dgvSanPham.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvSanPham.CurrentTheme.Name = null;
+            this.dgvSanPham.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvSanPham.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dgvSanPham.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvSanPham.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.dgvSanPham.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSanPham.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvSanPham.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dgvSanPham.EnableHeadersVisualStyles = false;
+            this.dgvSanPham.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.dgvSanPham.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.dgvSanPham.HeaderBgColor = System.Drawing.Color.Empty;
+            this.dgvSanPham.HeaderForeColor = System.Drawing.Color.White;
+            this.dgvSanPham.Location = new System.Drawing.Point(143, 33);
+            this.dgvSanPham.Name = "dgvSanPham";
+            this.dgvSanPham.RowHeadersVisible = false;
+            this.dgvSanPham.RowTemplate.Height = 40;
+            this.dgvSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSanPham.Size = new System.Drawing.Size(794, 331);
+            this.dgvSanPham.TabIndex = 2;
+            this.dgvSanPham.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.dgvSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanPham_CellClick);
+            // 
+            // btnNhap
+            // 
+            this.btnNhap.Location = new System.Drawing.Point(972, 39);
+            this.btnNhap.Name = "btnNhap";
+            this.btnNhap.Size = new System.Drawing.Size(93, 29);
+            this.btnNhap.TabIndex = 3;
+            this.btnNhap.Text = "Nhập";
+            this.btnNhap.UseVisualStyleBackColor = true;
             // 
             // frmStocks
             // 
@@ -696,52 +808,47 @@
             this.Name = "frmStocks";
             this.Text = "frmStocks";
             this.Load += new System.EventHandler(this.frmStocks_Load);
-            this.panel1.ResumeLayout(false);
-            this.bunifuGradientPanel1.ResumeLayout(false);
-            this.bunifuGradientPanel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.pnBoxSetting.ResumeLayout(false);
             this.pnBoxSetting.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.pnSetting.ResumeLayout(false);
-            this.pnSetting.PerformLayout();
+            this.panel4.PerformLayout();
             this.pnInit.ResumeLayout(false);
             this.pnInit.PerformLayout();
+            this.pnHead.ResumeLayout(false);
+            this.pnHead.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.bunifuGradientPanel1.ResumeLayout(false);
+            this.bunifuGradientPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private Bunifu.UI.WinForms.BunifuGradientPanel bunifuGradientPanel1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private Bunifu.UI.WinForms.BunifuCircleProgress crSucChua;
         private System.Windows.Forms.Panel panel2;
         private Bunifu.UI.WinForms.BunifuGradientPanel pnBoxSetting;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSoLuongMax;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private Bunifu.UI.WinForms.BunifuDropdown cboSP;
+        private System.Windows.Forms.TextBox txtSoLuong;
+        private System.Windows.Forms.Label lblChuaXep;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel pnSetting;
+        private System.Windows.Forms.Panel pnInit;
         private System.Windows.Forms.TextBox txtRow;
         private System.Windows.Forms.Button btnInit;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCol;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBoxDanhMuc;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel pnInit;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Panel pnHead;
         private System.Windows.Forms.Label label1;
         private Bunifu.UI.WinForms.BunifuTextBox bunifuTextBox1;
         private System.Windows.Forms.Panel panel3;
@@ -749,12 +856,30 @@
         private Bunifu.UI.WinForms.BunifuImageButton btnOpenBox;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label lbUnbox;
-        private System.Windows.Forms.Label lbBoxed;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnBoxDelete;
+        private System.Windows.Forms.Button btnBoxSave;
+        private System.Windows.Forms.Label lblBoxID;
+        private System.Windows.Forms.ComboBox cboSP;
+        private Bunifu.UI.WinForms.BunifuGradientPanel bunifuGradientPanel1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private Bunifu.UI.WinForms.BunifuCircleProgress crSucChua;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.FlowLayoutPanel flowPanelSection;
+        private System.Windows.Forms.Label lbDanhMuc;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ListBox listboxPhieuNhap;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private Bunifu.UI.WinForms.BunifuDataGridView dgvSanPham;
+        private System.Windows.Forms.Button btnNhap;
 
 
     }

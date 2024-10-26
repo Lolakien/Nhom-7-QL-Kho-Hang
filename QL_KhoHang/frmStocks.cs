@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-
+using QL_KhoHang.UserControls;
+using QL_KhoHang.Controller;
 namespace QL_KhoHang
 {
     public partial class frmStocks : Form
@@ -15,34 +16,87 @@ namespace QL_KhoHang
 
         DBConnect db = new DBConnect();
 
-        void loadCboDanhMuc()
-        {
-            var danhMucList = db.GetAllDanhMuc();
 
-            comboBoxDanhMuc.Items.Clear();
-
-            foreach (var danhMuc in danhMucList)
-            {
-                comboBoxDanhMuc.Items.Add(new ComboBoxItem { Text = danhMuc.TenDanhMuc, Value = danhMuc.DanhMucID });
-            }
-
-            comboBoxDanhMuc.DisplayMember = "Text";
-            comboBoxDanhMuc.ValueMember = "Value";
-        }
         void loadCboSanPham()
         {
-            var selectedDanhMuc = comboBoxDanhMuc.SelectedItem as ComboBoxItem;
-            string selectedDanhMucID = selectedDanhMuc.Value;
-            var sanPhamList = db.GetSanPhamByDanhMuc(selectedDanhMucID);
+
+            string selectedDanhMucID = selectedDanhMuc;
+            var sanPhamList = db.sanPhamController.GetSanPhamByDanhMuc(selectedDanhMucID);
             cboSP.DataSource = sanPhamList;
             cboSP.ValueMember = "SanPhamID";
             cboSP.DisplayMember = "TenSanPham";
             
         }
 
+        void loadPanelDanhMuc()
+        {
+            var danhMucList = db.danhMucController.GetAllDanhMuc();
+            
+            foreach (var danhMuc in danhMucList)
+            {
+                Section s = new Section(danhMuc);
+                s.Click += SectionDanhMuc_Click;
+                flowPanelSection.Controls.Add(s);
+            }
+
+        }
+        String selectedDanhMuc;
+
+        void SectionDanhMuc_Click(object sender, EventArgs e)
+        {
+            btnReset.Visible = false;
+            lbDanhMuc.Visible = false;
+            Section s = sender as Section;
+            s.BackColor = Color.Gainsboro;
+            selectedDanhMuc = s.dm.DanhMucID;
+            lbDanhMuc.Text = s.dm.TenDanhMuc;
+            loadCboSanPham();
+          
+
+            if (selectedDanhMuc != null)
+            {
+
+                if (db.danhMucController.DanhMucIsNotEmpty(selectedDanhMuc))
+                {
+                    pnInit.Visible = false;
+                    LoadTable(selectedDanhMuc);
+
+                }
+                else
+                {
+                    pnInit.Visible = true;
+                    MessageBox.Show("Kho hàng chưa được khởi tạo");
+
+                }
+            }
+        }
+        void loadPhieuNhap()
+        {
+            var listPhieuNhap = db.phieuNhapController.GetAllPhieuNhap();
+            listboxPhieuNhap.DataSource = listPhieuNhap;
+            listboxPhieuNhap.DisplayMember = "PhieuNhapID";
+            listboxPhieuNhap.ValueMember = "PhieuNhapID";
+
+        }
+        public void loadChiTietPN(Bunifu.UI.WinForms.BunifuDataGridView bunifuDataGridView)
+        {
+            var data = db.phieuNhapController.GetChiTietPhieuNhapInfo(listboxPhieuNhap.SelectedValue.ToString());
+            dgvSanPham.DataSource = data;
+            bunifuDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            bunifuDataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            bunifuDataGridView.DefaultCellStyle.Font = new Font("Segoe UI", 9);
+            bunifuDataGridView.BorderStyle = BorderStyle.None;
+            bunifuDataGridView.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+           
+        
+        }
+
+    
         private void frmStocks_Load(object sender, EventArgs e)
         {
-            loadCboDanhMuc();
+
+            loadPhieuNhap();
+            loadPanelDanhMuc();
         }
 
         private void btnInit_Click(object sender, EventArgs e)
@@ -53,8 +107,8 @@ namespace QL_KhoHang
             tableLayoutPanel1.Controls.Clear();
             tableLayoutPanel1.ColumnStyles.Clear();
             tableLayoutPanel1.RowStyles.Clear();
-            var selectedDanhMuc = comboBoxDanhMuc.SelectedItem as ComboBoxItem;
-            string selectedDanhMucID = selectedDanhMuc.Value;
+
+            string selectedDanhMucID = selectedDanhMuc;
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < columns; j++)
@@ -66,7 +120,7 @@ namespace QL_KhoHang
                     vt.ViTriID = ((char)('A' + i )).ToString() + (j+1) ;
                     vt.DanhMucID = selectedDanhMucID;
            
-                    db.AddViTri(vt);
+                    db.viTriKhoController.AddViTri(vt);
 
                 }
            
@@ -75,61 +129,40 @@ namespace QL_KhoHang
             MessageBox.Show("Khởi tạo thành công");
         }
 
-        public class ComboBoxItem
-        {
-            public string Text { get; set; }
-            public string Value { get; set; }
-
-            public override string ToString()
-            {
-                return Text;
-            }
-        }
-
+        ViTriKho selectedViTriKho;
         void loadBox(object sender, EventArgs e)
         {
-            if (cboSP.SelectedValue == null) return;
-            int inbox = db.GetTotalQuantityInBoxBySanPhamID(cboSP.SelectedValue.ToString());
-            int total = db.GetQuantityBySanPhamID(cboSP.SelectedValue.ToString());
-            lbBoxed.Text = total - inbox + "";
+        
+            Box box = sender as Box;
+            selectedViTriKho = box.ViTri;
+            txtSoLuong.Text = box.ViTri.SoLuong.ToString();
+            txtSoLuongMax.Text = box.ViTri.SoLuongToiDa.ToString();
+                
+            box.ViTri = selectedViTriKho;
+            lblBoxID.Text = box.ViTri.ViTriID;
+            if (cboSP.SelectedValue != null)
+            {
+                int daXep = db.sanPhamController.GetTotalQuantityInBoxBySanPhamID(cboSP.SelectedValue.ToString());
+                int total = db.sanPhamController.GetQuantityBySanPhamID(cboSP.SelectedValue.ToString());
+                lblChuaXep.Text = "Còn " + (total - daXep) + " sản phẩm chưa được xếp vào kho";
+            }
+         
+            
         }
-        private void comboBoxDanhMuc_SelectedIndexChanged(object sender, EventArgs e)
+
+       //Tải kho
+        private void LoadTable(string danhMucID)
         {
-            loadCboSanPham();
             tableLayoutPanel1.Controls.Clear();
             tableLayoutPanel1.ColumnStyles.Clear();
             tableLayoutPanel1.RowStyles.Clear();
             tableLayoutPanel1.AutoSize = true;
-            if (comboBoxDanhMuc.SelectedItem != null)
-            {
-                btnInit.Enabled = true; 
-                var selectedDanhMuc = comboBoxDanhMuc.SelectedItem as ComboBoxItem;
 
-                if (selectedDanhMuc != null)
-                {
-                    string selectedDanhMucID = selectedDanhMuc.Value;
-                    if (db.KTDanhMucTrong(selectedDanhMucID))
-                    {
-                      
-                        LoadTable(selectedDanhMucID);
-                     
-                    }
-                    else
-                    {
-                      
-                        MessageBox.Show("Kho hàng chưa được khởi tạo");
-                       
-                    }
-                }
-            }
-            else btnInit.Enabled = false; 
-        }
-
-        private void LoadTable(string danhMucID)
-        {
-            var viTriList = db.GetViTriByDanhMuc(danhMucID);
+            var viTriList = db.viTriKhoController.GetListViTriByDanhMuc(danhMucID);
             if (viTriList.Count > 0)
             {
+                lbDanhMuc.Visible = true;
+                btnReset.Visible = true;
                 tableLayoutPanel1.Controls.Clear();
                 tableLayoutPanel1.ColumnStyles.Clear();
                 tableLayoutPanel1.RowStyles.Clear();
@@ -178,7 +211,7 @@ namespace QL_KhoHang
                     int column =  viTri.ViTriID[0] - 'A' + 1; 
                     Box box = new Box();
                     box.Size = new Size(buttonSize, buttonSize);
-                    box.BackColor = Color.DarkOrange;
+                   
                     box.ViTri = viTri;
                     box.Dock = DockStyle.Fill;
                    
@@ -245,17 +278,16 @@ namespace QL_KhoHang
      
             tableLayoutPanel1.ColumnStyles.Clear();
             tableLayoutPanel1.RowStyles.Clear();
-            var selectedDanhMuc = comboBoxDanhMuc.SelectedItem as ComboBoxItem;
-            string selectedDanhMucID = selectedDanhMuc.Value;
-            db.DeleteViTriByDanhMuc(selectedDanhMucID);
+            string selectedDanhMucID = selectedDanhMuc;
+            db.viTriKhoController.DeleteViTriByDanhMuc(selectedDanhMucID);
         }
 
-        bool isBoxOpen = false;
+
         private void btnOpenBox_Click(object sender, EventArgs e)
         {
             pnBoxSetting.Visible = !pnBoxSetting.Visible;
-            if (isBoxOpen) btnOpenBox.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Vertical;
-            else btnOpenBox.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            if (pnBoxSetting.Visible) btnOpenBox.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Vertical;
+            else btnOpenBox.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Horizontal; ;
         }
 
         private void cboSP_SelectedIndexChanged(object sender, EventArgs e)
@@ -263,7 +295,62 @@ namespace QL_KhoHang
         
         }
 
+        private void cboSP_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = cboSP.Text;
+            var matchingProducts = db.sanPhamController.SearchSanPhamByDanhMucID(searchText, selectedDanhMuc);
+            cboSP.DataSource = matchingProducts;
+            cboSP.DisplayMember = "TenSanPham";
+            cboSP.ValueMember = "SanPhamID";
 
+            // Đặt lại văn bản tìm kiếm
+            cboSP.Text = searchText;
+            cboSP.SelectionStart = searchText.Length;
+            cboSP.SelectionLength = 0;
+
+            // Hiển thị danh sách gợi ý
+            cboSP.DroppedDown = true;
+        }
+
+        private void listboxPhieuNhap_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            loadChiTietPN(dgvSanPham);
+
+   
+        }
+
+        private void dgvSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+               if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                {
+                   
+   
+                    var maSanPham = dgvSanPham.Rows[e.RowIndex].Cells["MaSanPham"].Value;
+                    var maDanhMuc = dgvSanPham.Rows[e.RowIndex].Cells["DanhMucID"].Value;
+                    var tenDanhMuc = dgvSanPham.Rows[e.RowIndex].Cells["TenDanhMuc"].Value;
+                    selectedDanhMuc = maDanhMuc.ToString();
+                    LoadTable(selectedDanhMuc);
+                    var matchingProducts = db.sanPhamController.SearchSanPhamByDanhMucID("", selectedDanhMuc);
+                    cboSP.DataSource = matchingProducts;
+                    cboSP.DisplayMember = "TenSanPham";
+                    cboSP.ValueMember = "SanPhamID";
+                    cboSP.SelectedValue = maSanPham;
+                    lbDanhMuc.Text = tenDanhMuc.ToString();
+                }
+        }
+
+        private void btnBoxSave_Click(object sender, EventArgs e)
+        {
+            string viTriID = selectedViTriKho.ViTriID;
+            ViTriKho vt = new ViTriKho();
+            vt.SanPhamID =cboSP.SelectedValue.ToString();
+            vt.SoLuong =int.Parse(txtSoLuong.Text);
+            vt.SoLuongToiDa =int.Parse(txtSoLuongMax.Text);
+            db.viTriKhoController.UpdateViTriKho(viTriID,vt);
+ 
+        }
+
+      
 
 
 
