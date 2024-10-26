@@ -1,0 +1,81 @@
+E:\Winform\QL_KhoHang\QL_KhoHang\bin\Debug\QL_KhoHang.exe.config
+E:\Winform\QL_KhoHang\QL_KhoHang\bin\Debug\QL_KhoHang.exe
+E:\Winform\QL_KhoHang\QL_KhoHang\bin\Debug\QL_KhoHang.pdb
+E:\Winform\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.1.5.3.dll
+E:\Winform\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll
+E:\Winform\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuGradientPanel.dll
+E:\Winform\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.dll
+E:\Winform\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.dll
+E:\Winform\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuPictureBox.dll
+E:\Winform\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll
+E:\Winform\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmDashboard.resources
+E:\Winform\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmLogin.resources
+E:\Winform\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.Properties.Resources.resources
+E:\Winform\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.csproj.GenerateResource.Cache
+E:\Winform\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.exe.licenses
+E:\Winform\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.exe
+E:\Winform\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.pdb
+E:\Winform\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuFormDock.dll
+E:\Winform\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuPanel.dll
+E:\Winform\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuShadowPanel.dll
+E:\Winform\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuToolTip.dll
+E:\Winform\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmHome.resources
+E:\Winform\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuProgressBar.dll
+E:\Winform\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.csprojResolveAssemblyReference.cache
+E:\Winform\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmStocks.resources
+E:\Winform\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmInit.resources
+E:\Winform\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.BoxDetail.resources
+E:\Winform\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.Box.resources
+E:\Winform\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuCircleProgress.dll
+E:\Winform\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll
+D:\Do AN\QL_KhoHang\QL_KhoHang\bin\Debug\QL_KhoHang.exe.config
+D:\Do AN\QL_KhoHang\QL_KhoHang\bin\Debug\QL_KhoHang.exe
+D:\Do AN\QL_KhoHang\QL_KhoHang\bin\Debug\QL_KhoHang.pdb
+D:\Do AN\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.csproj.AssemblyReference.cache
+D:\Do AN\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.Box.resources
+D:\Do AN\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.BoxDetail.resources
+D:\Do AN\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmDashboard.resources
+D:\Do AN\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmHome.resources
+D:\Do AN\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmInit.resources
+D:\Do AN\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmLogin.resources
+D:\Do AN\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmStocks.resources
+D:\Do AN\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.Properties.Resources.resources
+D:\Do AN\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.csproj.GenerateResource.cache
+D:\Do AN\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.exe.licenses
+D:\Do AN\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.csproj.CoreCompileInputs.cache
+D:\Do AN\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.csproj.CopyComplete
+D:\Do AN\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.exe
+D:\Do AN\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.pdb
+D:\Do AN\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmPhieuNhap.resources
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\QL_KhoHang.exe.config
+E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.exe
+E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.pdb
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\QL_KhoHang.exe
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\QL_KhoHang.pdb
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.1.5.3.dll
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuCircleProgress.dll
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuFormDock.dll
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuGradientPanel.dll
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.dll
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.dll
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuPanel.dll
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuPictureBox.dll
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuProgressBar.dll
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuShadowPanel.dll
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuToolTip.dll
+E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.csprojResolveAssemblyReference.cache
+E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.Box.resources
+E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.BoxDetail.resources
+E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmDashboard.resources
+E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmHome.resources
+E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmInit.resources
+E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmLogin.resources
+E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmPhieuNhap.resources
+E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmStocks.resources
+E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.Properties.Resources.resources
+E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.csproj.GenerateResource.Cache
+E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.exe.licenses
+E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.UserControls.Section.resources

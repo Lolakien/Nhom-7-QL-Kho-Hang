@@ -1,0 +1,206 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Winform\\QL_KhoHang\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|e:\\winform\\ql_khohang\\ql_khohang\\frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Winform\\QL_KhoHang\\ql_khohang\\frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Winform\\QL_KhoHang\\ql_khohang\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Winform\\QL_KhoHang\\ql_khohang\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Winform\\QL_KhoHang\\ql_khohang\\authentication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\authentication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Winform\\QL_KhoHang\\ql_khohang\\frmhome.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\frmhome.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|e:\\winform\\ql_khohang\\ql_khohang\\frmlogin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\frmlogin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|e:\\winform\\ql_khohang\\ql_khohang\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Winform\\QL_KhoHang\\ql_khohang\\frmdashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\frmdashboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Winform\\QL_KhoHang\\ql_khohang\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Winform\\QL_KhoHang\\ql_khohang\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmHome.cs",
+              "DocumentMoniker": "E:\\Winform\\QL_KhoHang\\QL_KhoHang\\frmHome.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\frmHome.cs",
+              "ToolTip": "E:\\Winform\\QL_KhoHang\\QL_KhoHang\\frmHome.cs",
+              "RelativeToolTip": "QL_KhoHang\\frmHome.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAD4vyQAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T04:55:48.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmHome.cs [Design]",
+              "DocumentMoniker": "E:\\Winform\\QL_KhoHang\\QL_KhoHang\\frmHome.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\frmHome.cs",
+              "ToolTip": "E:\\Winform\\QL_KhoHang\\QL_KhoHang\\frmHome.cs [Design]",
+              "RelativeToolTip": "QL_KhoHang\\frmHome.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T21:50:35.707Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmLogin.cs [Design]",
+              "DocumentMoniker": "E:\\Winform\\QL_KhoHang\\QL_KhoHang\\frmLogin.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\frmLogin.cs",
+              "ToolTip": "E:\\Winform\\QL_KhoHang\\QL_KhoHang\\frmLogin.cs [Design]",
+              "RelativeToolTip": "QL_KhoHang\\frmLogin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T21:49:28.34Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmLogin.cs",
+              "DocumentMoniker": "E:\\Winform\\QL_KhoHang\\QL_KhoHang\\frmLogin.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\frmLogin.cs",
+              "ToolTip": "E:\\Winform\\QL_KhoHang\\QL_KhoHang\\frmLogin.cs",
+              "RelativeToolTip": "QL_KhoHang\\frmLogin.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAIAwwCUAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T22:39:58.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Authentication.cs",
+              "DocumentMoniker": "E:\\Winform\\QL_KhoHang\\QL_KhoHang\\Authentication.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\Authentication.cs",
+              "ToolTip": "E:\\Winform\\QL_KhoHang\\QL_KhoHang\\Authentication.cs",
+              "RelativeToolTip": "QL_KhoHang\\Authentication.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T22:40:08.414Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmHome.Designer.cs",
+              "DocumentMoniker": "E:\\Winform\\QL_KhoHang\\QL_KhoHang\\frmHome.Designer.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\frmHome.Designer.cs",
+              "ToolTip": "E:\\Winform\\QL_KhoHang\\QL_KhoHang\\frmHome.Designer.cs",
+              "RelativeToolTip": "QL_KhoHang\\frmHome.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T22:40:18.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmLogin.Designer.cs",
+              "DocumentMoniker": "E:\\Winform\\QL_KhoHang\\QL_KhoHang\\frmLogin.Designer.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\frmLogin.Designer.cs",
+              "ToolTip": "E:\\Winform\\QL_KhoHang\\QL_KhoHang\\frmLogin.Designer.cs",
+              "RelativeToolTip": "QL_KhoHang\\frmLogin.Designer.cs",
+              "ViewState": "AgIAAEABAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-20T04:53:12.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmDashboard.cs",
+              "DocumentMoniker": "E:\\Winform\\QL_KhoHang\\QL_KhoHang\\frmDashboard.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\frmDashboard.cs",
+              "ToolTip": "E:\\Winform\\QL_KhoHang\\QL_KhoHang\\frmDashboard.cs",
+              "RelativeToolTip": "QL_KhoHang\\frmDashboard.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T22:20:38.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmDashboard.cs [Design]",
+              "DocumentMoniker": "E:\\Winform\\QL_KhoHang\\QL_KhoHang\\frmDashboard.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\frmDashboard.cs",
+              "ToolTip": "E:\\Winform\\QL_KhoHang\\QL_KhoHang\\frmDashboard.cs [Design]",
+              "RelativeToolTip": "QL_KhoHang\\frmDashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T21:50:44.834Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frmDashboard.Designer.cs",
+              "DocumentMoniker": "E:\\Winform\\QL_KhoHang\\QL_KhoHang\\frmDashboard.Designer.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\frmDashboard.Designer.cs",
+              "ToolTip": "E:\\Winform\\QL_KhoHang\\QL_KhoHang\\frmDashboard.Designer.cs",
+              "RelativeToolTip": "QL_KhoHang\\frmDashboard.Designer.cs",
+              "ViewState": "AgIAACMBAAAAAAAAAAD4vzABAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T22:33:03.76Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Winform\\QL_KhoHang\\QL_KhoHang\\Program.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\Program.cs",
+              "ToolTip": "E:\\Winform\\QL_KhoHang\\QL_KhoHang\\Program.cs",
+              "RelativeToolTip": "QL_KhoHang\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T21:50:33.653Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
