@@ -91,6 +91,15 @@ function Header() {
             </li>
             <li className={style.nav__item}>
               <a
+                href='#trackOrder'
+                title={t('header.nav.trackOrder')}
+                className={style.nav__link}
+              >
+                {t('header.nav.trackOrder')}
+              </a>
+            </li>
+            <li className={style.nav__item}>
+              <a
                 href='#services'
                 title={t('header.nav.services')}
                 className={style.nav__link}
