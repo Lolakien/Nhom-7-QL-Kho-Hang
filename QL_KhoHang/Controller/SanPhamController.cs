@@ -9,6 +9,10 @@ namespace QL_KhoHang.Controller
     public class SanPhamController
     {
         QL_KhoHangDataContext qlkh = new QL_KhoHangDataContext();
+        public List<SanPham> GetAllSanPham()
+        {
+            return qlkh.SanPhams.ToList();
+        }
         public List<SanPham> GetSanPhamByDanhMuc(string danhMucID)
         {
             return (from sp in qlkh.SanPhams

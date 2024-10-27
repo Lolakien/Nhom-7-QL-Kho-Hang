@@ -214,6 +214,7 @@
             this.Name = "frmHome";
             this.Text = "frmDashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmHome_FormClosed);
             this.Load += new System.EventHandler(this.frmHome_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

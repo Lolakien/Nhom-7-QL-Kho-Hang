@@ -33,6 +33,8 @@ namespace QL_KhoHang
         private void frmHome_Load(object sender, EventArgs e)
         {
             lblID.Text = Authentication.ID;
+
+            openChildForm(new frmStocks());
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -65,6 +67,11 @@ namespace QL_KhoHang
         {
             frmPhieuNhap f = new frmPhieuNhap();
             openChildForm(f);
+        }
+
+        private void frmHome_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -73,6 +73,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar">
       <HintPath>C:\Users\khanh\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSeparator">
+      <HintPath>C:\Users\khanh\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel">
       <HintPath>C:\Users\khanh\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
     </Reference>

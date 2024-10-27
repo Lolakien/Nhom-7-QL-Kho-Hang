@@ -37,7 +37,7 @@ namespace QL_KhoHang.Controller
         {
             return qlkh.ViTriKhos.FirstOrDefault(vt => vt.DanhMucID == danhMucID && vt.ViTriID == viTriID);
         }
-        public void UpdateViTriKho(String ViTriID,ViTriKho newViTriKho)
+        public void UpdateViTriKho(String ViTriID, ViTriKho newViTriKho)
         {
             // Tìm vị trí kho cần cập nhật
             var oldViTriKho = qlkh.ViTriKhos.FirstOrDefault(vt => vt.ViTriID == ViTriID);
@@ -50,5 +50,22 @@ namespace QL_KhoHang.Controller
                 qlkh.SubmitChanges();
             }
         }
+        public int DemViTriKhoDaXep(String DanhMucID)
+        {
+            int count = qlkh.ViTriKhos
+                .Where(v => v.DanhMucID == DanhMucID && v.SoLuong > 0)
+                .Count();
+            return count;
+        }
+
+        public int DemTongViTriKho(String DanhMucID)
+        {
+            int count = qlkh.ViTriKhos
+                .Where(v => v.DanhMucID == DanhMucID)
+                .Count();
+            return count;
+        }
     }
+
+    
 }

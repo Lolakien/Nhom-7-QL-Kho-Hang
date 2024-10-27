@@ -13,20 +13,11 @@ namespace QL_KhoHang
     public partial class BoxDetail : UserControl
     {
         SanPhamController spController = new SanPhamController();
+        ViTriKho vt;
         public BoxDetail(ViTriKho vt)
         {
             InitializeComponent();
-            if (vt != null)
-            {
-                SanPham sp = spController.GetSanPhamByID(vt.SanPhamID);
-                if (sp != null)
-                {
-                    lbName.Text = sp.TenSanPham;
-                }
-                lbPosition.Text = vt.ViTriID;
-           
-                lbNumber.Text = "Vị trí: " + vt.SoLuong + " / " + vt.SoLuongToiDa;
-            }
+            this.vt = vt;
         }
       
    
@@ -37,7 +28,18 @@ namespace QL_KhoHang
 
         private void BoxDetail_Load(object sender, EventArgs e)
         {
-            
+            if (vt != null)
+            {
+                SanPham sp = spController.GetSanPhamByID(vt.SanPhamID);
+                if (sp != null)
+                {
+                    lbName.Text = sp.TenSanPham;
+                }
+                lbPosition.Text = vt.ViTriID;
+
+                lbNumber.Text = vt.SoLuong + " / " + vt.SoLuongToiDa;
+
+            }
          
         }
     }

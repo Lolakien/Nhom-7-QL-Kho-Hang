@@ -62,17 +62,17 @@
             // 
             // lbNumber
             // 
-            this.lbNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNumber.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbNumber.Location = new System.Drawing.Point(111, 68);
             this.lbNumber.Name = "lbNumber";
-            this.lbNumber.Size = new System.Drawing.Size(86, 27);
+            this.lbNumber.Size = new System.Drawing.Size(169, 27);
             this.lbNumber.TabIndex = 3;
             this.lbNumber.Text = "Số lượng:";
             // 
             // lbName
             // 
-            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbName.Location = new System.Drawing.Point(109, 41);
             this.lbName.Name = "lbName";
@@ -82,7 +82,7 @@
             // 
             // lbPosition
             // 
-            this.lbPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPosition.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lbPosition.Location = new System.Drawing.Point(109, 14);
             this.lbPosition.Name = "lbPosition";
