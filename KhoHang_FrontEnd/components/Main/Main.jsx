@@ -6,6 +6,7 @@ import Services from './Services/Services'
 import ContactUs from './Contact/Contact'
 import TrackOrder from './TrackOrder/TrackOrder'
 import style from './Main.module.scss'
+import ChatBox from './ChatBox/ChatBox'
 
 function Main() {
   return (
@@ -14,6 +15,7 @@ function Main() {
       <About />
       <Security />
       <TrackOrder />
+      <ChatBox />
       <Services />
       {/* <InfoApp /> */}
       <ContactUs />

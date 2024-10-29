@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './TrackOrder.module.scss';
 
-const TrackOrder = () => {
+export default function TrackOrder() {
   const [orderId, setOrderId] = useState('');
   const [order, setOrder] = useState(null);
   const [error, setError] = useState('');
@@ -22,7 +22,7 @@ const TrackOrder = () => {
   };
 
   return (
-    <div id="trackOrder" className={styles.container}>
+    <div className={styles.container}>
       <h1 className={styles.title}>Track Order</h1>
       <input
         type="text"
@@ -45,27 +45,27 @@ const TrackOrder = () => {
             </thead>
             <tbody>
               <tr>
-                <td>Mã đơn hàng</td>
+                <td>Order ID</td>
                 <td>{order.PhieuXuatID}</td>
               </tr>
               <tr>
-                <td>Mã khách hàng</td>
+                <td>Customer ID</td>
                 <td>{order.KhachHangID}</td>
               </tr>
               <tr>
-                <td>Mã nhân viên</td>
+                <td>Employee ID</td>
                 <td>{order.NhanVienID}</td>
               </tr>
               <tr>
-                <td>Ngày xuất hàng</td>
+                <td>Order Date</td>
                 <td>{order.NgayXuat}</td>
               </tr>
               <tr>
-                <td>Ghi chú</td>
+                <td>Note</td>
                 <td>{order.GhiChu}</td>
               </tr>
               <tr>
-                <td>Tổng tiền</td>
+                <td>Total Amount</td>
                 <td>{order.TongTien}</td>
               </tr>
             </tbody>
@@ -74,6 +74,4 @@ const TrackOrder = () => {
       )}
     </div>
   );
-};
-
-export default TrackOrder;
+}
