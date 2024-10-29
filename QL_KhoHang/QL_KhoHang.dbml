@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_HangHoa" Class="QL_KhoHangDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=MSI;Initial Catalog=QL_HangHoa;Integrated Security=True" SettingsObjectName="QL_KhoHang.Properties.Settings" SettingsPropertyName="QL_HangHoaConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-KVMLTGB;Initial Catalog=QL_HangHoa;Integrated Security=True" SettingsObjectName="QL_KhoHang.Properties.Settings" SettingsPropertyName="QL_HangHoaConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ChiTietPhieuNhap" Member="ChiTietPhieuNhaps">
     <Type Name="ChiTietPhieuNhap">
       <Column Name="ChiTietPhieuNhapID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -38,6 +38,7 @@
       <Column Name="DiaChi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="ThanhPho" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="SDT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Member="TenKH" Type="System.String" CanBeNull="false" />
       <Association Name="KhachHang_PhieuXuat" Member="PhieuXuats" ThisKey="KhachHangID" OtherKey="KhachHangID" Type="PhieuXuat" />
     </Type>
   </Table>

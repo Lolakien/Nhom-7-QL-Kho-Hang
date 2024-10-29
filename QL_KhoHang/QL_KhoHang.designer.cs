@@ -884,6 +884,8 @@ namespace QL_KhoHang
 		
 		private string _SDT;
 		
+		private string _TenKH;
+		
 		private EntitySet<PhieuXuat> _PhieuXuats;
 		
     #region Extensibility Method Definitions
@@ -898,6 +900,8 @@ namespace QL_KhoHang
     partial void OnThanhPhoChanged();
     partial void OnSDTChanging(string value);
     partial void OnSDTChanged();
+    partial void OnTenKHChanging(string value);
+    partial void OnTenKHChanged();
     #endregion
 		
 		public KhachHang()
@@ -982,6 +986,26 @@ namespace QL_KhoHang
 					this._SDT = value;
 					this.SendPropertyChanged("SDT");
 					this.OnSDTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenKH", CanBeNull=false)]
+		public string TenKH
+		{
+			get
+			{
+				return this._TenKH;
+			}
+			set
+			{
+				if ((this._TenKH != value))
+				{
+					this.OnTenKHChanging(value);
+					this.SendPropertyChanging();
+					this._TenKH = value;
+					this.SendPropertyChanged("TenKH");
+					this.OnTenKHChanged();
 				}
 			}
 		}

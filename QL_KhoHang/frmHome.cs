@@ -62,14 +62,24 @@ namespace QL_KhoHang
         {
 
         }
+        private void frmHome_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
 
-        private void btnNhapHang_Click(object sender, EventArgs e)
+        private void btnPhieuNhap_Click(object sender, EventArgs e)
         {
             frmPhieuNhap f = new frmPhieuNhap();
             openChildForm(f);
         }
 
-        private void frmHome_FormClosed(object sender, FormClosedEventArgs e)
+        private void btnPhieuXuat_Click(object sender, EventArgs e)
+        {
+            frmPhieuXuat f = new frmPhieuXuat();
+            openChildForm(f);
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

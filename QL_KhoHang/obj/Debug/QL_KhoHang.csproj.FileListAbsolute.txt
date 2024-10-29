@@ -82,3 +82,28 @@ E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.UserControls.Section.resources
 E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.dll
 E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuGroupBox.dll
 E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuSeparator.dll
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\bin\Debug\QL_KhoHang.exe.config
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\bin\Debug\QL_KhoHang.exe
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\bin\Debug\QL_KhoHang.pdb
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\bin\Debug\Syncfusion.Compression.Base.dll
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\bin\Debug\Syncfusion.DocIO.Base.dll
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\bin\Debug\Syncfusion.XlsIO.Base.dll
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.csproj.AssemblyReference.cache
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.csproj.ResolveComReference.cache
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.frmPhieuXuat.resources
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.Box.resources
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.BoxDetail.resources
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.frmDashboard.resources
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.frmHome.resources
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.frmInit.resources
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.frmLogin.resources
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.frmPhieuNhap.resources
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.frmStocks.resources
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.Properties.Resources.resources
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.UserControls.Section.resources
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.csproj.GenerateResource.cache
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.exe.licenses
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.csproj.CoreCompileInputs.cache
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.csproj.CopyComplete
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.exe
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.pdb

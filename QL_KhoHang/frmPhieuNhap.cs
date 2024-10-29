@@ -131,5 +131,18 @@ namespace QL_KhoHang
         {
 
         }
+
+        private void btnInPhieuNhap_Click(object sender, EventArgs e)
+        {
+            ExcelExport excel = new ExcelExport();
+            PhieuNhap ph = qlkh.PhieuNhaps.Where(t => t.PhieuNhapID == txtMaphieu.Text).FirstOrDefault();
+
+            var cts = from ct in qlkh.ChiTietPhieuNhaps
+                      where ct.PhieuNhapID == ph.PhieuNhapID
+                      select ct;
+
+            string path = string.Empty;
+            excel.ExportPhieuNhap(ph, ref path, false);
+        }
     }
 }
