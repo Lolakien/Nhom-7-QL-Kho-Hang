@@ -72,6 +72,11 @@ namespace QL_KhoHang
 
         }
 
+        private void Box_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
   
     }

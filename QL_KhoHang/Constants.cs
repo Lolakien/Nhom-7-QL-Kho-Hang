@@ -8,8 +8,9 @@ namespace QL_KhoHang
 {
    public class Constants
     {
+       public const string ConnectionString = "";
         public const string DATE_PATTERN = "dd/MM/yyyy";
-
+      
         public const string CHAR_DATE_SEPARATOR = "/";
         public const string CHAR_FLASH = @"\";
         public const string CHAR_COMMA = ",";

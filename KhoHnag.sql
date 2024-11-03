@@ -100,16 +100,17 @@ CREATE TABLE PhieuXuat (
 
 -- Tạo bảng ChiTietPhieuXuat
 CREATE TABLE ChiTietPhieuXuat (
-    ChiTietPhieuXuatID INT PRIMARY KEY IDENTITY(1,1),
     PhieuXuatID VARCHAR(20),
     SanPhamID VARCHAR(20),
     SoLuong INT NOT NULL,
     GiaXuat DECIMAL(10, 2) NOT NULL,
 	TongTien AS (SoLuong * GiaXuat),
+	PRIMARY KEY (PhieuXuatID, SanPhamID),
     FOREIGN KEY (PhieuXuatID) REFERENCES PhieuXuat(PhieuXuatID),
     FOREIGN KEY (SanPhamID) REFERENCES SanPham(SanPhamID)
 );
 
+drop ChiTietPhieuX 
 CREATE TABLE ViTriKho (
     ViTriID VARCHAR(20),
     DanhMucID VARCHAR(20),
@@ -139,13 +140,7 @@ VALUES
     ('DM002', N'Laptop'),
     ('DM003', N'Phụ kiện điện tử');
 
--- Now insert into SanPham with existing NhaCungCap and DanhMuc
-INSERT INTO SanPham (SanPhamID, TenSanPham, SoLuong, SanPhamToiThieu, GiaBan, DanhMucID, NhaCungCapID)
-VALUES 
-    ('SP001', N'iPhone 14', 50, 10, 20000000, 'DM001', 'NCC001'),  -- Ensure NCC001 exists
-    ('SP002', N'MacBook Pro', 30, 5, 45000000, 'DM002', 'NCC002'),  -- Ensure NCC002 exists
-    ('SP003', N'Tai nghe Bluetooth', 100, 20, 500000, 'DM003', 'NCC001');  -- Ensure NCC001 exists
-
+    
 -- Insert into VaiTro
 INSERT INTO VaiTro (VaiTroID, TenVaiTro)
 VALUES 

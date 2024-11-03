@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
+            this.pnLoad = new System.Windows.Forms.Panel();
             this.bunifuGradientPanel1 = new Bunifu.UI.WinForms.BunifuGradientPanel();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.btnPhieuXuat = new System.Windows.Forms.Button();
             this.btnPhieuNhap = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -39,11 +39,21 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblID = new System.Windows.Forms.Label();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.pnLoad = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.bunifuGradientPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pnLoad
+            // 
+            this.pnLoad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnLoad.Location = new System.Drawing.Point(115, 0);
+            this.pnLoad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnLoad.Name = "pnLoad";
+            this.pnLoad.Size = new System.Drawing.Size(1809, 1055);
+            this.pnLoad.TabIndex = 3;
+            this.pnLoad.Paint += new System.Windows.Forms.PaintEventHandler(this.pnLoad_Paint);
             // 
             // bunifuGradientPanel1
             // 
@@ -51,7 +61,7 @@
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuGradientPanel1.BorderRadius = 1;
-            this.bunifuGradientPanel1.Controls.Add(this.btnThoat);
+            this.bunifuGradientPanel1.Controls.Add(this.button1);
             this.bunifuGradientPanel1.Controls.Add(this.btnPhieuXuat);
             this.bunifuGradientPanel1.Controls.Add(this.btnPhieuNhap);
             this.bunifuGradientPanel1.Controls.Add(this.button2);
@@ -64,26 +74,11 @@
             this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.Green;
             this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.OliveDrab;
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuGradientPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.bunifuGradientPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(86, 857);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(115, 1055);
             this.bunifuGradientPanel1.TabIndex = 2;
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.BackColor = System.Drawing.Color.Transparent;
-            this.btnThoat.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnThoat.FlatAppearance.BorderSize = 0;
-            this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
-            this.btnThoat.Location = new System.Drawing.Point(0, 362);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(86, 46);
-            this.btnThoat.TabIndex = 12;
-            this.btnThoat.UseVisualStyleBackColor = false;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnPhieuXuat
             // 
@@ -92,10 +87,10 @@
             this.btnPhieuXuat.FlatAppearance.BorderSize = 0;
             this.btnPhieuXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPhieuXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnPhieuXuat.Image")));
-            this.btnPhieuXuat.Location = new System.Drawing.Point(0, 316);
-            this.btnPhieuXuat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPhieuXuat.Location = new System.Drawing.Point(0, 390);
+            this.btnPhieuXuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPhieuXuat.Name = "btnPhieuXuat";
-            this.btnPhieuXuat.Size = new System.Drawing.Size(86, 46);
+            this.btnPhieuXuat.Size = new System.Drawing.Size(115, 57);
             this.btnPhieuXuat.TabIndex = 11;
             this.btnPhieuXuat.UseVisualStyleBackColor = false;
             this.btnPhieuXuat.Click += new System.EventHandler(this.btnPhieuXuat_Click);
@@ -108,10 +103,10 @@
             this.btnPhieuNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPhieuNhap.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnPhieuNhap.Image = ((System.Drawing.Image)(resources.GetObject("btnPhieuNhap.Image")));
-            this.btnPhieuNhap.Location = new System.Drawing.Point(0, 270);
-            this.btnPhieuNhap.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPhieuNhap.Location = new System.Drawing.Point(0, 333);
+            this.btnPhieuNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPhieuNhap.Name = "btnPhieuNhap";
-            this.btnPhieuNhap.Size = new System.Drawing.Size(86, 46);
+            this.btnPhieuNhap.Size = new System.Drawing.Size(115, 57);
             this.btnPhieuNhap.TabIndex = 10;
             this.btnPhieuNhap.UseVisualStyleBackColor = false;
             this.btnPhieuNhap.Click += new System.EventHandler(this.btnPhieuNhap_Click);
@@ -123,10 +118,10 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(0, 224);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Location = new System.Drawing.Point(0, 276);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 46);
+            this.button2.Size = new System.Drawing.Size(115, 57);
             this.button2.TabIndex = 9;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -138,10 +133,10 @@
             this.btnDashboard.FlatAppearance.BorderSize = 0;
             this.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
-            this.btnDashboard.Location = new System.Drawing.Point(0, 178);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDashboard.Location = new System.Drawing.Point(0, 219);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(86, 46);
+            this.btnDashboard.Size = new System.Drawing.Size(115, 57);
             this.btnDashboard.TabIndex = 8;
             this.btnDashboard.UseVisualStyleBackColor = false;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
@@ -150,10 +145,10 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 81);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(0, 100);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(86, 97);
+            this.panel2.Size = new System.Drawing.Size(115, 119);
             this.panel2.TabIndex = 7;
             // 
             // panel1
@@ -163,19 +158,18 @@
             this.panel1.Controls.Add(this.bunifuPictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(86, 81);
+            this.panel1.Size = new System.Drawing.Size(115, 100);
             this.panel1.TabIndex = 6;
             // 
             // lblID
             // 
             this.lblID.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblID.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblID.Location = new System.Drawing.Point(0, 67);
-            this.lblID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblID.Location = new System.Drawing.Point(0, 83);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(86, 14);
+            this.lblID.Size = new System.Drawing.Size(115, 17);
             this.lblID.TabIndex = 1;
             this.lblID.Text = "Ten";
             this.lblID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -185,36 +179,40 @@
             this.bunifuPictureBox1.AllowFocused = false;
             this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuPictureBox1.AutoSizeHeight = true;
-            this.bunifuPictureBox1.BorderRadius = 21;
+            this.bunifuPictureBox1.BorderRadius = 28;
             this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
             this.bunifuPictureBox1.IsCircle = true;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(22, 14);
-            this.bunifuPictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(29, 17);
+            this.bunifuPictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bunifuPictureBox1.Name = "bunifuPictureBox1";
-            this.bunifuPictureBox1.Size = new System.Drawing.Size(43, 43);
+            this.bunifuPictureBox1.Size = new System.Drawing.Size(57, 57);
             this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuPictureBox1.TabIndex = 0;
             this.bunifuPictureBox1.TabStop = false;
             this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
-            // pnLoad
+            // button1
             // 
-            this.pnLoad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnLoad.Location = new System.Drawing.Point(86, 0);
-            this.pnLoad.Margin = new System.Windows.Forms.Padding(2);
-            this.pnLoad.Name = "pnLoad";
-            this.pnLoad.Size = new System.Drawing.Size(1357, 857);
-            this.pnLoad.TabIndex = 3;
-            this.pnLoad.Paint += new System.Windows.Forms.PaintEventHandler(this.pnLoad_Paint);
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(0, 447);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(115, 57);
+            this.button1.TabIndex = 12;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // frmHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1443, 857);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.pnLoad);
             this.Controls.Add(this.bunifuGradientPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmHome";
             this.Text = "frmDashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -238,7 +236,7 @@
         private System.Windows.Forms.Label lblID;
         private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox1;
         private System.Windows.Forms.Panel pnLoad;
-        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnPhieuXuat;
+        private System.Windows.Forms.Button button1;
     }
 }

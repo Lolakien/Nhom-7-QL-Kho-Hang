@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using QL_KhoHang.UserControls;
 using QL_KhoHang.Controller;
+using QL_KhoHang.MiniForm;
 namespace QL_KhoHang
 {
     public partial class frmStocks : Form
@@ -51,12 +52,12 @@ namespace QL_KhoHang
             {
                 if (db.danhMucController.DanhMucIsNotEmpty(selectedDanhMuc))
                 {
-                    pnInit.Visible = false;
+                    btnInit.Visible = false;
                     LoadTable(selectedDanhMuc);
                 }
                 else
                 {
-                    pnInit.Visible = true;
+                    btnInit.Visible = true;
                 
                 }
             }
@@ -109,18 +110,24 @@ namespace QL_KhoHang
 
         private void btnInit_Click(object sender, EventArgs e)
         {
-            int rows = int.Parse(txtRow.Text);
-            int columns = int.Parse(txtCol.Text);
+            InitFrm f = new InitFrm();
+            f.ShowDialog();
+        }
+
+      public void initTable(int rows, int columns)
+        {
+         
+         
             tableLayoutPanel1.Controls.Clear();
             tableLayoutPanel1.ColumnStyles.Clear();
             tableLayoutPanel1.RowStyles.Clear();
             string selectedDanhMucID = selectedDanhMuc;
-            for (int i = 0; i < rows; i++)
+            for (int i = 0; i <= rows; i++)
             {
-                for (int j = 0; j < columns; j++)
-                {     
-                    ViTriKho vt = new ViTriKho();         
-                    vt.ViTriID = ((char)('A' + i )).ToString() + (j+1) ;
+                for (int j = 0; j <= columns; j++)
+                {
+                    ViTriKho vt = new ViTriKho();
+                    vt.ViTriID = ((char)('A' + i)).ToString() + (j + 1);
                     vt.DanhMucID = selectedDanhMucID;
                     db.viTriKhoController.AddViTri(vt);
                 }
@@ -135,11 +142,11 @@ namespace QL_KhoHang
         {
         
             Box box = sender as Box;
+            //Hien thi tren thong tin vi tri
             selectedBox = box;
             selectedViTriKho = box.ViTri;
             txtSoLuong.Text = box.ViTri.SoLuong.ToString();
             txtSoLuongMax.Text = box.ViTri.SoLuongToiDa.ToString();
-      
             box.ViTri = selectedViTriKho;
             lblBoxID.Text = box.ViTri.ViTriID;
          
@@ -151,8 +158,17 @@ namespace QL_KhoHang
                 int total = db.sanPhamController.GetQuantityBySanPhamID(cboSP.SelectedValue.ToString());
                 lblChuaXep.Text = "Còn " + (total - daXep) + " sản phẩm chưa được xếp vào kho";
             }
-         
-            
+            //Hien thi tren phieu xuat kho
+            lbXKTenSP.Text = cboSP.Text;
+            lbXKSoLuong.Text = box.ViTri.SoLuong.ToString();
+            lbXKViTri.Text = box.ViTri.ViTriID;
+
+
+            foreach (Box b in listBox)
+            {
+                b.setBorderDefault();
+            }
+            box.setBorder();
         }
 
         void ClearTable()
@@ -165,7 +181,7 @@ namespace QL_KhoHang
         {
             loadProgressPanel();
             btnReset.Visible = false;
-            pnInit.Visible = false;
+            btnInit.Visible = false;
             ClearTable();
             tableLayoutPanel1.AutoSize = true;
 
@@ -235,12 +251,12 @@ namespace QL_KhoHang
             }
             else
             {
-                pnInit.Visible = true;
+                    btnInit.Visible = true;
                 MessageBox.Show("Kho hàng chưa được khởi tạo");
             }
         }
 
-
+        
 
 
         private void ShowBoxDetail(BoxDetail boxDetail)
@@ -285,17 +301,12 @@ namespace QL_KhoHang
         private void btnReset_Click(object sender, EventArgs e)
         {
             ClearTable();
-            pnInit.Visible = true;
+            btnInit.Visible = true;
             btnReset.Visible = false;
             string selectedDanhMucID = selectedDanhMuc;
             db.viTriKhoController.DeleteViTriByDanhMuc(selectedDanhMucID);
         }
-        private void btnOpenBox_Click(object sender, EventArgs e)
-        {
-            pnBoxSetting.Visible = !pnBoxSetting.Visible;
-            if (pnBoxSetting.Visible) btnOpenBox.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Vertical;
-            else btnOpenBox.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Horizontal; ;
-        }
+ 
 
         private void cboSP_TextChanged(object sender, EventArgs e)
         {
@@ -380,5 +391,38 @@ namespace QL_KhoHang
             autoCompleteData.AddRange(listTenSP.ToArray());
             txtTimKiem.AutoCompleteCustomSource = autoCompleteData;
         }
+
+        private void btnThemXK_Click(object sender, EventArgs e)
+        {
+            ViTriKho vt = selectedBox.ViTri;
+            string masp = vt.SanPhamID;
+            int sl = vt.SoLuong;
+            bool isExisting = false;
+            SanPham sp = db.sanPhamController.GetSanPhamByID(masp);
+            foreach (DataGridViewRow row in dgvPhieuXuat.Rows)
+            {
+                if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == masp)
+                {
+                    int currentQuantity = Convert.ToInt32(row.Cells[2].Value);
+                    decimal tongTien = Convert.ToDecimal(row.Cells["TongTien"].Value);
+                    row.Cells[2].Value = currentQuantity + sl;
+                    row.Cells["TongTien"].Value = tongTien + (sl*sp.GiaBan);
+                    isExisting = true;
+                    break;
+                }
+            }
+        
+            dgvViTri.Rows.Add(lbXKTenSP.Text, sl, vt.ViTriID);
+            if (!isExisting)
+            {
+               
+                dgvPhieuXuat.Rows.Add(masp, lbXKTenSP.Text, sl,sp.GiaBan,(sl*sp.GiaBan));
+           
+            }
+        }
+
+     
+
+   
     }
 }
