@@ -411,8 +411,8 @@ namespace QL_KhoHang
                     break;
                 }
             }
-        
-            dgvViTri.Rows.Add(lbXKTenSP.Text, sl, vt.ViTriID);
+            //Them vao lich su vi tri xuat
+            dgvViTri.Rows.Add(masp, sl, vt.ViTriID, selectedDanhMuc);
             if (!isExisting)
             {
                
@@ -421,8 +421,34 @@ namespace QL_KhoHang
             }
         }
 
-     
+        void PhieuXuatChange()
+        {
+            if (txtTenKH.Text == null) return;
+            string date = dtpNgayXuat.Value.ToString("ddMMyyyy");
+            string MaPX = db.phieuXuatController.GenerateMaPhieuXuat(txtMaKH.Text,date);
+            txtMaPX.Text = MaPX;
+        }
 
-   
+        private void dtpNgayXuat_ValueChanged(object sender, EventArgs e)
+        {
+            PhieuXuatChange();
+        }
+
+        private void txtMaKH_Leave(object sender, EventArgs e)
+        {
+            KhachHang kh = db.khachHangController.GetKhachHangByID(txtMaKH.Text.Trim());
+            txtTenKH.Text = kh.TenKH;
+            PhieuXuatChange();
+        
+         
+          
+         
+        }
+
+        private void btnTimKH_Click(object sender, EventArgs e)
+        {
+         
+        }
+     
     }
 }

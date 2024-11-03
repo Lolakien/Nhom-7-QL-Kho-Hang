@@ -46,6 +46,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
       <HintPath>C:\Users\khanh\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>C:\Users\khanh\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
       <HintPath>C:\Users\khanh\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
     </Reference>
@@ -121,7 +124,9 @@
     <Compile Include="ChiTietPN.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Controller\DanhMucController.cs" />
+    <Compile Include="Controller\KhachHangController.cs" />
     <Compile Include="Controller\PhieuNhapController.cs" />
+    <Compile Include="Controller\PhieuXuatController.cs" />
     <Compile Include="Controller\SanPhamController.cs" />
     <Compile Include="Controller\ViTriKhoController.cs" />
     <Compile Include="ExcelExport.cs" />

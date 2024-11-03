@@ -16,8 +16,10 @@ namespace QL_KhoHang
 
         internal DanhMucController danhMucController = new DanhMucController();
 
+        internal KhachHangController khachHangController = new KhachHangController();
         internal PhieuNhapController phieuNhapController = new PhieuNhapController();
 
+        internal PhieuXuatController phieuXuatController = new PhieuXuatController();
        
 
 
