@@ -21,19 +21,20 @@ namespace QL_KhoHang.Controller
         }
         public SanPham GetSanPhamByID(string sanPhamID)
         {
+            
             var sanPham = qlkh.SanPhams
                               .FirstOrDefault(s => s.SanPhamID == sanPhamID);
 
             return sanPham; 
         }
-        public int GetTotalQuantityInBoxBySanPhamID(string sanPhamID)
+        public int GetTotalQuantityNotInBoxBySanPhamID(string sanPhamID)
         {
-            if (!IsSanPhamIDExists(sanPhamID)) return 0;
+            if (!IsSanPhamIDExists(sanPhamID)) return GetQuantityBySanPhamID(sanPhamID);
             var totalQuantity = qlkh.ViTriKhos
                              .Where(v => v.SanPhamID != null && v.SanPhamID == sanPhamID)
                              .Sum(v => (v.SoLuong != null ? v.SoLuong : 0)); // Kiểm tra null và thay thế bằng 0
 
-            return totalQuantity;
+            return  GetQuantityBySanPhamID(sanPhamID)- totalQuantity;
         }
         public bool IsSanPhamIDExists(string sanPhamID)
         {

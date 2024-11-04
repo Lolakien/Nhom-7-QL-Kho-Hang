@@ -38,16 +38,26 @@ namespace QL_KhoHang
                     SanPham sp = spController.GetSanPhamByID(ViTri.SanPhamID);
                     tenSP = sp.TenSanPham;
                 }
-                double daChua = ((float)ViTri.SoLuong / ViTri.SoLuongToiDa) * 100;
+
+                setBackColor();
+            }
+            else BackColor = Color.LightGray;
+        }
+
+       public void setBackColor()
+        {
+              double daChua = ((float)ViTri.SoLuong / ViTri.SoLuongToiDa) * 100;
 
                 if (daChua == 100) BackColor = Color.DarkOrange;
                 else
                     if (daChua > 70) BackColor = Color.SandyBrown;
-
-                    else if (daChua > 0) BackColor = Color.Khaki;
+                else 
+                    if (daChua > 0) BackColor = Color.Khaki;
                     else BackColor = Color.LightGray;
-            }
-            else BackColor = Color.LightGray;
+            
+       
+
+
         }
         public void setBorder()
         {

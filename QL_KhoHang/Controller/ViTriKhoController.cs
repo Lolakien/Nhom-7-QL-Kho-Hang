@@ -37,18 +37,27 @@ namespace QL_KhoHang.Controller
         {
             return qlkh.ViTriKhos.FirstOrDefault(vt => vt.DanhMucID == danhMucID && vt.ViTriID == viTriID);
         }
-        public void UpdateViTriKho(String ViTriID, ViTriKho newViTriKho)
+        public bool UpdateViTriKho(String ViTriID, ViTriKho newViTriKho)
         {
             // Tìm vị trí kho cần cập nhật
-            var oldViTriKho = qlkh.ViTriKhos.FirstOrDefault(vt => vt.ViTriID == ViTriID);
-            if (oldViTriKho != null)
+            try
             {
-                oldViTriKho.SoLuong = newViTriKho.SoLuong;
-                oldViTriKho.SoLuongToiDa = newViTriKho.SoLuongToiDa;
-                oldViTriKho.SanPhamID = newViTriKho.SanPhamID;
+                var oldViTriKho = qlkh.ViTriKhos.FirstOrDefault(vt => vt.ViTriID == ViTriID);
+                if (oldViTriKho != null)
+                {
+                    oldViTriKho.SoLuong = newViTriKho.SoLuong;
+                    oldViTriKho.SoLuongToiDa = newViTriKho.SoLuongToiDa;
+                    oldViTriKho.SanPhamID = newViTriKho.SanPhamID;
 
-                qlkh.SubmitChanges();
+                    qlkh.SubmitChanges();
+                }
             }
+            catch (Exception ex)
+            {
+                
+                return false;
+            }
+            return true;
         }
         public int DemViTriKhoDaXep(String DanhMucID)
         {
@@ -65,7 +74,9 @@ namespace QL_KhoHang.Controller
                 .Count();
             return count;
         }
+
     }
+    
 
     
 }

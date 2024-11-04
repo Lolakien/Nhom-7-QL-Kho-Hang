@@ -47,6 +47,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties17 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties21 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties22 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties23 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -54,14 +62,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties17 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties15 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties16 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -79,6 +79,7 @@
             this.cboSP = new System.Windows.Forms.ComboBox();
             this.btnBoxSave = new System.Windows.Forms.Button();
             this.lblBoxID = new System.Windows.Forms.Label();
+            this.lblChuaXep = new System.Windows.Forms.Label();
             this.bunifuGradientPanel4 = new Bunifu.UI.WinForms.BunifuGradientPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -100,13 +101,19 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.bunifuShadowPanel1 = new Bunifu.UI.WinForms.BunifuShadowPanel();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.dgvPhieuXuat = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.masp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvChiTietPhieuXuat = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.CTMaSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CTTenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CTSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CTGiaXuat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CTTongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtGhiChu = new System.Windows.Forms.TextBox();
+            this.btnTimKH = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.txtTenKH = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.txtMaKH = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.dtpNgayXuat = new System.Windows.Forms.DateTimePicker();
             this.txtMaPX = new Bunifu.UI.WinForms.BunifuTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -117,12 +124,15 @@
             this.btnLuu = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.dgvViTri = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label17 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.txtXKSoLuong = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.lbXKTenSP = new System.Windows.Forms.Label();
+            this.lbXKViTri = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnThemXK = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnSection = new System.Windows.Forms.Panel();
@@ -134,18 +144,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.bunifuCircleProgressbar1 = new Bunifu.UI.WinForms.BunifuCircleProgress();
             this.bunifuGradientPanel1 = new Bunifu.UI.WinForms.BunifuGradientPanel();
-            this.lbXKSoLuong = new System.Windows.Forms.Label();
-            this.lbXKTenSP = new System.Windows.Forms.Label();
-            this.lbXKViTri = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.lblChuaXep = new System.Windows.Forms.Label();
-            this.dtpNgayXuat = new System.Windows.Forms.DateTimePicker();
-            this.txtMaKH = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.txtTenKH = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.btnTimKH = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.VTMaSanPhamID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VTSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VTViTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VTDanhMucID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label22 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -160,7 +163,7 @@
             this.tabPage2.SuspendLayout();
             this.bunifuShadowPanel1.SuspendLayout();
             this.panel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuXuat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPhieuXuat)).BeginInit();
             this.bunifuPanel1.SuspendLayout();
             this.panelThongTinXuat.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -181,7 +184,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1371, 825);
+            this.panel2.Size = new System.Drawing.Size(1371, 967);
             this.panel2.TabIndex = 2;
             // 
             // panel6
@@ -194,7 +197,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 125);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1367, 193);
+            this.panel6.Size = new System.Drawing.Size(1367, 335);
             this.panel6.TabIndex = 22;
             // 
             // panel5
@@ -208,7 +211,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(782, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(221, 183);
+            this.panel5.Size = new System.Drawing.Size(221, 325);
             this.panel5.TabIndex = 29;
             // 
             // label20
@@ -268,6 +271,7 @@
             this.pnBoxSetting.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnBoxSetting.BackgroundImage")));
             this.pnBoxSetting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnBoxSetting.BorderRadius = 25;
+            this.pnBoxSetting.Controls.Add(this.label22);
             this.pnBoxSetting.Controls.Add(this.label13);
             this.pnBoxSetting.Controls.Add(this.label12);
             this.pnBoxSetting.Controls.Add(this.txtSoLuong);
@@ -284,26 +288,26 @@
             this.pnBoxSetting.Location = new System.Drawing.Point(1003, 0);
             this.pnBoxSetting.Name = "pnBoxSetting";
             this.pnBoxSetting.Quality = 10;
-            this.pnBoxSetting.Size = new System.Drawing.Size(364, 183);
+            this.pnBoxSetting.Size = new System.Drawing.Size(364, 325);
             this.pnBoxSetting.TabIndex = 28;
             // 
             // label13
             // 
             this.label13.Location = new System.Drawing.Point(38, 200);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(103, 35);
+            this.label13.Size = new System.Drawing.Size(185, 35);
             this.label13.TabIndex = 20;
             this.label13.Text = "Số lượng tối đa";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label12
             // 
             this.label12.Location = new System.Drawing.Point(38, 138);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(64, 33);
+            this.label12.Size = new System.Drawing.Size(185, 33);
             this.label12.TabIndex = 19;
             this.label12.Text = "Số lượng";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtSoLuong
             // 
@@ -481,6 +485,16 @@
             this.lblBoxID.TabIndex = 10;
             this.lblBoxID.Text = "A01";
             // 
+            // lblChuaXep
+            // 
+            this.lblChuaXep.AutoSize = true;
+            this.lblChuaXep.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChuaXep.Location = new System.Drawing.Point(55, 96);
+            this.lblChuaXep.Name = "lblChuaXep";
+            this.lblChuaXep.Size = new System.Drawing.Size(30, 18);
+            this.lblChuaXep.TabIndex = 4;
+            this.lblChuaXep.Text = "XX";
+            // 
             // bunifuGradientPanel4
             // 
             this.bunifuGradientPanel4.BackColor = System.Drawing.Color.Transparent;
@@ -492,7 +506,7 @@
             this.bunifuGradientPanel4.GradientBottomRight = System.Drawing.Color.DarkGray;
             this.bunifuGradientPanel4.GradientTopLeft = System.Drawing.Color.Transparent;
             this.bunifuGradientPanel4.GradientTopRight = System.Drawing.Color.Transparent;
-            this.bunifuGradientPanel4.Location = new System.Drawing.Point(0, 183);
+            this.bunifuGradientPanel4.Location = new System.Drawing.Point(0, 325);
             this.bunifuGradientPanel4.Name = "bunifuGradientPanel4";
             this.bunifuGradientPanel4.Quality = 10;
             this.bunifuGradientPanel4.Size = new System.Drawing.Size(1367, 10);
@@ -688,7 +702,7 @@
             // 
             this.panel3.Controls.Add(this.tabControl1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 318);
+            this.panel3.Location = new System.Drawing.Point(0, 460);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1367, 503);
             this.panel3.TabIndex = 0;
@@ -712,7 +726,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1359, 343);
+            this.tabPage1.Size = new System.Drawing.Size(1359, 474);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nhập kho";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -773,7 +787,7 @@
             this.dgvSanPham.RowHeadersVisible = false;
             this.dgvSanPham.RowTemplate.Height = 40;
             this.dgvSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSanPham.Size = new System.Drawing.Size(794, 307);
+            this.dgvSanPham.Size = new System.Drawing.Size(794, 438);
             this.dgvSanPham.TabIndex = 2;
             this.dgvSanPham.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.dgvSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanPham_CellClick);
@@ -786,7 +800,7 @@
             this.listboxPhieuNhap.ItemHeight = 25;
             this.listboxPhieuNhap.Location = new System.Drawing.Point(3, 33);
             this.listboxPhieuNhap.Name = "listboxPhieuNhap";
-            this.listboxPhieuNhap.Size = new System.Drawing.Size(140, 307);
+            this.listboxPhieuNhap.Size = new System.Drawing.Size(140, 438);
             this.listboxPhieuNhap.TabIndex = 1;
             this.listboxPhieuNhap.SelectedIndexChanged += new System.EventHandler(this.listboxPhieuNhap_SelectedIndexChanged);
             // 
@@ -858,7 +872,7 @@
             // 
             // panel14
             // 
-            this.panel14.Controls.Add(this.dgvPhieuXuat);
+            this.panel14.Controls.Add(this.dgvChiTietPhieuXuat);
             this.panel14.Controls.Add(this.bunifuPanel1);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel14.Location = new System.Drawing.Point(0, 0);
@@ -866,16 +880,16 @@
             this.panel14.Size = new System.Drawing.Size(683, 468);
             this.panel14.TabIndex = 6;
             // 
-            // dgvPhieuXuat
+            // dgvChiTietPhieuXuat
             // 
-            this.dgvPhieuXuat.AllowCustomTheming = false;
+            this.dgvChiTietPhieuXuat.AllowCustomTheming = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.dgvPhieuXuat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvPhieuXuat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPhieuXuat.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvPhieuXuat.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvPhieuXuat.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvChiTietPhieuXuat.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvChiTietPhieuXuat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvChiTietPhieuXuat.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvChiTietPhieuXuat.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvChiTietPhieuXuat.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
@@ -883,32 +897,32 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPhieuXuat.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvPhieuXuat.ColumnHeadersHeight = 40;
-            this.dgvPhieuXuat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.masp,
-            this.Column1,
-            this.Column2,
-            this.sl,
-            this.TongTien});
-            this.dgvPhieuXuat.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            this.dgvPhieuXuat.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.dgvPhieuXuat.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.dgvPhieuXuat.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            this.dgvPhieuXuat.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvPhieuXuat.CurrentTheme.BackColor = System.Drawing.Color.White;
-            this.dgvPhieuXuat.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.dgvPhieuXuat.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
-            this.dgvPhieuXuat.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            this.dgvPhieuXuat.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvPhieuXuat.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            this.dgvPhieuXuat.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvPhieuXuat.CurrentTheme.Name = null;
-            this.dgvPhieuXuat.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvPhieuXuat.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.dgvPhieuXuat.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.dgvPhieuXuat.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            this.dgvPhieuXuat.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvChiTietPhieuXuat.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvChiTietPhieuXuat.ColumnHeadersHeight = 40;
+            this.dgvChiTietPhieuXuat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CTMaSanPham,
+            this.CTTenSP,
+            this.CTSoLuong,
+            this.CTGiaXuat,
+            this.CTTongTien});
+            this.dgvChiTietPhieuXuat.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.dgvChiTietPhieuXuat.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dgvChiTietPhieuXuat.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvChiTietPhieuXuat.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.dgvChiTietPhieuXuat.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvChiTietPhieuXuat.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.dgvChiTietPhieuXuat.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.dgvChiTietPhieuXuat.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.dgvChiTietPhieuXuat.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.dgvChiTietPhieuXuat.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvChiTietPhieuXuat.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            this.dgvChiTietPhieuXuat.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvChiTietPhieuXuat.CurrentTheme.Name = null;
+            this.dgvChiTietPhieuXuat.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvChiTietPhieuXuat.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dgvChiTietPhieuXuat.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvChiTietPhieuXuat.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.dgvChiTietPhieuXuat.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
@@ -916,46 +930,46 @@
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPhieuXuat.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvPhieuXuat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPhieuXuat.EnableHeadersVisualStyles = false;
-            this.dgvPhieuXuat.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.dgvPhieuXuat.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.dgvPhieuXuat.HeaderBgColor = System.Drawing.Color.Empty;
-            this.dgvPhieuXuat.HeaderForeColor = System.Drawing.Color.White;
-            this.dgvPhieuXuat.Location = new System.Drawing.Point(0, 154);
-            this.dgvPhieuXuat.Name = "dgvPhieuXuat";
-            this.dgvPhieuXuat.RowHeadersVisible = false;
-            this.dgvPhieuXuat.RowTemplate.Height = 40;
-            this.dgvPhieuXuat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPhieuXuat.Size = new System.Drawing.Size(683, 314);
-            this.dgvPhieuXuat.TabIndex = 3;
-            this.dgvPhieuXuat.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.dgvChiTietPhieuXuat.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvChiTietPhieuXuat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvChiTietPhieuXuat.EnableHeadersVisualStyles = false;
+            this.dgvChiTietPhieuXuat.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.dgvChiTietPhieuXuat.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.dgvChiTietPhieuXuat.HeaderBgColor = System.Drawing.Color.Empty;
+            this.dgvChiTietPhieuXuat.HeaderForeColor = System.Drawing.Color.White;
+            this.dgvChiTietPhieuXuat.Location = new System.Drawing.Point(0, 249);
+            this.dgvChiTietPhieuXuat.Name = "dgvChiTietPhieuXuat";
+            this.dgvChiTietPhieuXuat.RowHeadersVisible = false;
+            this.dgvChiTietPhieuXuat.RowTemplate.Height = 40;
+            this.dgvChiTietPhieuXuat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvChiTietPhieuXuat.Size = new System.Drawing.Size(683, 219);
+            this.dgvChiTietPhieuXuat.TabIndex = 3;
+            this.dgvChiTietPhieuXuat.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
-            // masp
+            // CTMaSanPham
             // 
-            this.masp.HeaderText = "Mã sản phẩm";
-            this.masp.Name = "masp";
+            this.CTMaSanPham.HeaderText = "Mã sản phẩm";
+            this.CTMaSanPham.Name = "CTMaSanPham";
             // 
-            // Column1
+            // CTTenSP
             // 
-            this.Column1.HeaderText = "Tên sản phẩm";
-            this.Column1.Name = "Column1";
+            this.CTTenSP.HeaderText = "Tên sản phẩm";
+            this.CTTenSP.Name = "CTTenSP";
             // 
-            // Column2
+            // CTSoLuong
             // 
-            this.Column2.HeaderText = "Số lượng";
-            this.Column2.Name = "Column2";
+            this.CTSoLuong.HeaderText = "Số lượng";
+            this.CTSoLuong.Name = "CTSoLuong";
             // 
-            // sl
+            // CTGiaXuat
             // 
-            this.sl.HeaderText = "Giá xuất";
-            this.sl.Name = "sl";
+            this.CTGiaXuat.HeaderText = "Giá xuất";
+            this.CTGiaXuat.Name = "CTGiaXuat";
             // 
-            // TongTien
+            // CTTongTien
             // 
-            this.TongTien.HeaderText = "Tổng tiền";
-            this.TongTien.Name = "TongTien";
+            this.CTTongTien.HeaderText = "Tổng tiền";
+            this.CTTongTien.Name = "CTTongTien";
             // 
             // bunifuPanel1
             // 
@@ -965,6 +979,8 @@
             this.bunifuPanel1.BorderColor = System.Drawing.Color.Transparent;
             this.bunifuPanel1.BorderRadius = 3;
             this.bunifuPanel1.BorderThickness = 1;
+            this.bunifuPanel1.Controls.Add(this.label19);
+            this.bunifuPanel1.Controls.Add(this.txtGhiChu);
             this.bunifuPanel1.Controls.Add(this.btnTimKH);
             this.bunifuPanel1.Controls.Add(this.txtTenKH);
             this.bunifuPanel1.Controls.Add(this.txtMaKH);
@@ -978,8 +994,218 @@
             this.bunifuPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(683, 154);
+            this.bunifuPanel1.Size = new System.Drawing.Size(683, 249);
             this.bunifuPanel1.TabIndex = 2;
+            // 
+            // label19
+            // 
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(19, 151);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(136, 20);
+            this.label19.TabIndex = 29;
+            this.label19.Text = "Ghi chú";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtGhiChu
+            // 
+            this.txtGhiChu.Location = new System.Drawing.Point(204, 148);
+            this.txtGhiChu.Multiline = true;
+            this.txtGhiChu.Name = "txtGhiChu";
+            this.txtGhiChu.Size = new System.Drawing.Size(553, 95);
+            this.txtGhiChu.TabIndex = 28;
+            // 
+            // btnTimKH
+            // 
+            this.btnTimKH.ActiveImage = null;
+            this.btnTimKH.AllowAnimations = true;
+            this.btnTimKH.AllowBuffering = false;
+            this.btnTimKH.AllowToggling = false;
+            this.btnTimKH.AllowZooming = true;
+            this.btnTimKH.AllowZoomingOnFocus = false;
+            this.btnTimKH.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnTimKH.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnTimKH.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnTimKH.ErrorImage")));
+            this.btnTimKH.FadeWhenInactive = false;
+            this.btnTimKH.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btnTimKH.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKH.Image")));
+            this.btnTimKH.ImageActive = null;
+            this.btnTimKH.ImageLocation = null;
+            this.btnTimKH.ImageMargin = 10;
+            this.btnTimKH.ImageSize = new System.Drawing.Size(19, 20);
+            this.btnTimKH.ImageZoomSize = new System.Drawing.Size(29, 30);
+            this.btnTimKH.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnTimKH.InitialImage")));
+            this.btnTimKH.Location = new System.Drawing.Point(390, 55);
+            this.btnTimKH.Name = "btnTimKH";
+            this.btnTimKH.Rotation = 0;
+            this.btnTimKH.ShowActiveImage = true;
+            this.btnTimKH.ShowCursorChanges = true;
+            this.btnTimKH.ShowImageBorders = true;
+            this.btnTimKH.ShowSizeMarkers = false;
+            this.btnTimKH.Size = new System.Drawing.Size(29, 30);
+            this.btnTimKH.TabIndex = 27;
+            this.btnTimKH.ToolTipText = "";
+            this.btnTimKH.WaitOnLoad = false;
+            this.btnTimKH.Zoom = 10;
+            this.btnTimKH.ZoomSpeed = 10;
+            // 
+            // txtTenKH
+            // 
+            this.txtTenKH.AcceptsReturn = false;
+            this.txtTenKH.AcceptsTab = false;
+            this.txtTenKH.AnimationSpeed = 200;
+            this.txtTenKH.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtTenKH.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtTenKH.BackColor = System.Drawing.Color.Transparent;
+            this.txtTenKH.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtTenKH.BackgroundImage")));
+            this.txtTenKH.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txtTenKH.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txtTenKH.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txtTenKH.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txtTenKH.BorderRadius = 10;
+            this.txtTenKH.BorderThickness = 1;
+            this.txtTenKH.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtTenKH.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenKH.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtTenKH.DefaultText = "";
+            this.txtTenKH.FillColor = System.Drawing.Color.White;
+            this.txtTenKH.HideSelection = true;
+            this.txtTenKH.IconLeft = null;
+            this.txtTenKH.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenKH.IconPadding = 10;
+            this.txtTenKH.IconRight = null;
+            this.txtTenKH.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenKH.Lines = new string[0];
+            this.txtTenKH.Location = new System.Drawing.Point(587, 55);
+            this.txtTenKH.MaxLength = 32767;
+            this.txtTenKH.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtTenKH.Modified = false;
+            this.txtTenKH.Multiline = false;
+            this.txtTenKH.Name = "txtTenKH";
+            stateProperties13.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties13.FillColor = System.Drawing.Color.Empty;
+            stateProperties13.ForeColor = System.Drawing.Color.Empty;
+            stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtTenKH.OnActiveState = stateProperties13;
+            stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties14.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtTenKH.OnDisabledState = stateProperties14;
+            stateProperties15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties15.FillColor = System.Drawing.Color.Empty;
+            stateProperties15.ForeColor = System.Drawing.Color.Empty;
+            stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtTenKH.OnHoverState = stateProperties15;
+            stateProperties16.BorderColor = System.Drawing.Color.Silver;
+            stateProperties16.FillColor = System.Drawing.Color.White;
+            stateProperties16.ForeColor = System.Drawing.Color.Empty;
+            stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtTenKH.OnIdleState = stateProperties16;
+            this.txtTenKH.Padding = new System.Windows.Forms.Padding(3);
+            this.txtTenKH.PasswordChar = '\0';
+            this.txtTenKH.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtTenKH.PlaceholderText = "";
+            this.txtTenKH.ReadOnly = false;
+            this.txtTenKH.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtTenKH.SelectedText = "";
+            this.txtTenKH.SelectionLength = 0;
+            this.txtTenKH.SelectionStart = 0;
+            this.txtTenKH.ShortcutsEnabled = true;
+            this.txtTenKH.Size = new System.Drawing.Size(260, 30);
+            this.txtTenKH.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.txtTenKH.TabIndex = 26;
+            this.txtTenKH.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtTenKH.TextMarginBottom = 0;
+            this.txtTenKH.TextMarginLeft = 3;
+            this.txtTenKH.TextMarginTop = 0;
+            this.txtTenKH.TextPlaceholder = "";
+            this.txtTenKH.UseSystemPasswordChar = false;
+            this.txtTenKH.WordWrap = true;
+            // 
+            // txtMaKH
+            // 
+            this.txtMaKH.AcceptsReturn = false;
+            this.txtMaKH.AcceptsTab = false;
+            this.txtMaKH.AnimationSpeed = 200;
+            this.txtMaKH.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtMaKH.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtMaKH.BackColor = System.Drawing.Color.Transparent;
+            this.txtMaKH.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtMaKH.BackgroundImage")));
+            this.txtMaKH.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txtMaKH.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txtMaKH.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txtMaKH.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txtMaKH.BorderRadius = 10;
+            this.txtMaKH.BorderThickness = 1;
+            this.txtMaKH.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtMaKH.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaKH.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtMaKH.DefaultText = "";
+            this.txtMaKH.FillColor = System.Drawing.Color.White;
+            this.txtMaKH.HideSelection = true;
+            this.txtMaKH.IconLeft = null;
+            this.txtMaKH.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaKH.IconPadding = 10;
+            this.txtMaKH.IconRight = null;
+            this.txtMaKH.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaKH.Lines = new string[0];
+            this.txtMaKH.Location = new System.Drawing.Point(204, 55);
+            this.txtMaKH.MaxLength = 32767;
+            this.txtMaKH.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtMaKH.Modified = false;
+            this.txtMaKH.Multiline = false;
+            this.txtMaKH.Name = "txtMaKH";
+            stateProperties17.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties17.FillColor = System.Drawing.Color.Empty;
+            stateProperties17.ForeColor = System.Drawing.Color.Empty;
+            stateProperties17.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtMaKH.OnActiveState = stateProperties17;
+            stateProperties18.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties18.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties18.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtMaKH.OnDisabledState = stateProperties18;
+            stateProperties19.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties19.FillColor = System.Drawing.Color.Empty;
+            stateProperties19.ForeColor = System.Drawing.Color.Empty;
+            stateProperties19.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtMaKH.OnHoverState = stateProperties19;
+            stateProperties20.BorderColor = System.Drawing.Color.Silver;
+            stateProperties20.FillColor = System.Drawing.Color.White;
+            stateProperties20.ForeColor = System.Drawing.Color.Empty;
+            stateProperties20.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtMaKH.OnIdleState = stateProperties20;
+            this.txtMaKH.Padding = new System.Windows.Forms.Padding(3);
+            this.txtMaKH.PasswordChar = '\0';
+            this.txtMaKH.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtMaKH.PlaceholderText = "KH001";
+            this.txtMaKH.ReadOnly = false;
+            this.txtMaKH.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtMaKH.SelectedText = "";
+            this.txtMaKH.SelectionLength = 0;
+            this.txtMaKH.SelectionStart = 0;
+            this.txtMaKH.ShortcutsEnabled = true;
+            this.txtMaKH.Size = new System.Drawing.Size(193, 30);
+            this.txtMaKH.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.txtMaKH.TabIndex = 25;
+            this.txtMaKH.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtMaKH.TextMarginBottom = 0;
+            this.txtMaKH.TextMarginLeft = 3;
+            this.txtMaKH.TextMarginTop = 0;
+            this.txtMaKH.TextPlaceholder = "KH001";
+            this.txtMaKH.UseSystemPasswordChar = false;
+            this.txtMaKH.WordWrap = true;
+            this.txtMaKH.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMaKH_KeyDown);
+            // 
+            // dtpNgayXuat
+            // 
+            this.dtpNgayXuat.Location = new System.Drawing.Point(204, 113);
+            this.dtpNgayXuat.Name = "dtpNgayXuat";
+            this.dtpNgayXuat.Size = new System.Drawing.Size(215, 22);
+            this.dtpNgayXuat.TabIndex = 24;
+            this.dtpNgayXuat.ValueChanged += new System.EventHandler(this.dtpNgayXuat_ValueChanged);
             // 
             // txtMaPX
             // 
@@ -1129,12 +1355,13 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(530, 433);
+            this.btnLuu.Location = new System.Drawing.Point(521, 421);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(112, 23);
+            this.btnLuu.Size = new System.Drawing.Size(121, 35);
             this.btnLuu.TabIndex = 2;
             this.btnLuu.Text = "Tạo phiếu xuất";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // panel10
             // 
@@ -1166,10 +1393,10 @@
             this.dgvViTri.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvViTri.ColumnHeadersHeight = 40;
             this.dgvViTri.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
+            this.VTMaSanPhamID,
+            this.VTSoLuong,
+            this.VTViTri,
+            this.VTDanhMucID});
             this.dgvViTri.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.dgvViTri.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.dgvViTri.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
@@ -1211,26 +1438,6 @@
             this.dgvViTri.TabIndex = 2;
             this.dgvViTri.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Mã sản phẩm";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Số lượng";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Vị trí";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Danh mục";
-            this.Column6.Name = "Column6";
-            // 
             // label17
             // 
             this.label17.BackColor = System.Drawing.Color.MediumSeaGreen;
@@ -1241,15 +1448,15 @@
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(658, 29);
             this.label17.TabIndex = 1;
-            this.label17.Text = "Lịch sử vị trí xuất";
+            this.label17.Text = "Lịch sử vị trí xuất kho";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.Khaki;
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.txtXKSoLuong);
             this.panel9.Controls.Add(this.label21);
-            this.panel9.Controls.Add(this.lbXKSoLuong);
             this.panel9.Controls.Add(this.lbXKTenSP);
             this.panel9.Controls.Add(this.lbXKViTri);
             this.panel9.Controls.Add(this.label11);
@@ -1261,6 +1468,71 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(658, 177);
             this.panel9.TabIndex = 0;
+            // 
+            // txtXKSoLuong
+            // 
+            this.txtXKSoLuong.Location = new System.Drawing.Point(141, 114);
+            this.txtXKSoLuong.Name = "txtXKSoLuong";
+            this.txtXKSoLuong.Size = new System.Drawing.Size(53, 22);
+            this.txtXKSoLuong.TabIndex = 15;
+            // 
+            // label21
+            // 
+            this.label21.BackColor = System.Drawing.Color.Gold;
+            this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label21.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(0, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(656, 31);
+            this.label21.TabIndex = 14;
+            this.label21.Text = "Thông tin sản phẩm xuất kho";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbXKTenSP
+            // 
+            this.lbXKTenSP.AutoSize = true;
+            this.lbXKTenSP.Location = new System.Drawing.Point(140, 80);
+            this.lbXKTenSP.Name = "lbXKTenSP";
+            this.lbXKTenSP.Size = new System.Drawing.Size(54, 17);
+            this.lbXKTenSP.TabIndex = 12;
+            this.lbXKTenSP.Text = "label13";
+            // 
+            // lbXKViTri
+            // 
+            this.lbXKViTri.AutoSize = true;
+            this.lbXKViTri.Location = new System.Drawing.Point(140, 41);
+            this.lbXKViTri.Name = "lbXKViTri";
+            this.lbXKViTri.Size = new System.Drawing.Size(54, 17);
+            this.lbXKViTri.TabIndex = 11;
+            this.lbXKViTri.Text = "label12";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(25, 117);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(64, 17);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Số lượng";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(25, 80);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(99, 17);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Tên sản phẩm";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(25, 41);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 17);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Vị trí";
             // 
             // btnThemXK
             // 
@@ -1285,7 +1557,7 @@
             this.panel1.Location = new System.Drawing.Point(1371, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(370, 825);
+            this.panel1.Size = new System.Drawing.Size(370, 967);
             this.panel1.TabIndex = 1;
             // 
             // pnSection
@@ -1294,7 +1566,7 @@
             this.pnSection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnSection.Location = new System.Drawing.Point(10, 308);
             this.pnSection.Name = "pnSection";
-            this.pnSection.Size = new System.Drawing.Size(360, 517);
+            this.pnSection.Size = new System.Drawing.Size(360, 659);
             this.pnSection.TabIndex = 5;
             // 
             // bunifuGradientPanel2
@@ -1425,284 +1697,43 @@
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(10, 825);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(10, 967);
             this.bunifuGradientPanel1.TabIndex = 0;
             // 
-            // lbXKSoLuong
+            // VTMaSanPhamID
             // 
-            this.lbXKSoLuong.AutoSize = true;
-            this.lbXKSoLuong.Location = new System.Drawing.Point(140, 117);
-            this.lbXKSoLuong.Name = "lbXKSoLuong";
-            this.lbXKSoLuong.Size = new System.Drawing.Size(54, 17);
-            this.lbXKSoLuong.TabIndex = 13;
-            this.lbXKSoLuong.Text = "label16";
+            this.VTMaSanPhamID.HeaderText = "Mã sản phẩm";
+            this.VTMaSanPhamID.Name = "VTMaSanPhamID";
             // 
-            // lbXKTenSP
+            // VTSoLuong
             // 
-            this.lbXKTenSP.AutoSize = true;
-            this.lbXKTenSP.Location = new System.Drawing.Point(140, 80);
-            this.lbXKTenSP.Name = "lbXKTenSP";
-            this.lbXKTenSP.Size = new System.Drawing.Size(54, 17);
-            this.lbXKTenSP.TabIndex = 12;
-            this.lbXKTenSP.Text = "label13";
+            this.VTSoLuong.HeaderText = "Số lượng";
+            this.VTSoLuong.Name = "VTSoLuong";
             // 
-            // lbXKViTri
+            // VTViTri
             // 
-            this.lbXKViTri.AutoSize = true;
-            this.lbXKViTri.Location = new System.Drawing.Point(140, 41);
-            this.lbXKViTri.Name = "lbXKViTri";
-            this.lbXKViTri.Size = new System.Drawing.Size(54, 17);
-            this.lbXKViTri.TabIndex = 11;
-            this.lbXKViTri.Text = "label12";
+            this.VTViTri.HeaderText = "Vị trí";
+            this.VTViTri.Name = "VTViTri";
             // 
-            // label11
+            // VTDanhMucID
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(25, 117);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(64, 17);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Số lượng";
+            this.VTDanhMucID.HeaderText = "Danh mục";
+            this.VTDanhMucID.Name = "VTDanhMucID";
             // 
-            // label10
+            // label22
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(25, 80);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(99, 17);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Tên sản phẩm";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 41);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 17);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Vị trí";
-            // 
-            // label21
-            // 
-            this.label21.BackColor = System.Drawing.Color.Gold;
-            this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(0, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(656, 31);
-            this.label21.TabIndex = 14;
-            this.label21.Text = "Thông tin sản phẩm";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblChuaXep
-            // 
-            this.lblChuaXep.AutoSize = true;
-            this.lblChuaXep.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChuaXep.Location = new System.Drawing.Point(35, 96);
-            this.lblChuaXep.Name = "lblChuaXep";
-            this.lblChuaXep.Size = new System.Drawing.Size(271, 17);
-            this.lblChuaXep.TabIndex = 4;
-            this.lblChuaXep.Text = "Còn XX sản phẩm chưa được xếp vào kho";
-            // 
-            // dtpNgayXuat
-            // 
-            this.dtpNgayXuat.Location = new System.Drawing.Point(204, 113);
-            this.dtpNgayXuat.Name = "dtpNgayXuat";
-            this.dtpNgayXuat.Size = new System.Drawing.Size(215, 22);
-            this.dtpNgayXuat.TabIndex = 24;
-            this.dtpNgayXuat.ValueChanged += new System.EventHandler(this.dtpNgayXuat_ValueChanged);
-            // 
-            // txtMaKH
-            // 
-            this.txtMaKH.AcceptsReturn = false;
-            this.txtMaKH.AcceptsTab = false;
-            this.txtMaKH.AnimationSpeed = 200;
-            this.txtMaKH.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtMaKH.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtMaKH.BackColor = System.Drawing.Color.Transparent;
-            this.txtMaKH.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtMaKH.BackgroundImage")));
-            this.txtMaKH.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txtMaKH.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txtMaKH.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txtMaKH.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txtMaKH.BorderRadius = 10;
-            this.txtMaKH.BorderThickness = 1;
-            this.txtMaKH.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtMaKH.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaKH.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txtMaKH.DefaultText = "";
-            this.txtMaKH.FillColor = System.Drawing.Color.White;
-            this.txtMaKH.HideSelection = true;
-            this.txtMaKH.IconLeft = null;
-            this.txtMaKH.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaKH.IconPadding = 10;
-            this.txtMaKH.IconRight = null;
-            this.txtMaKH.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaKH.Lines = new string[0];
-            this.txtMaKH.Location = new System.Drawing.Point(204, 55);
-            this.txtMaKH.MaxLength = 32767;
-            this.txtMaKH.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtMaKH.Modified = false;
-            this.txtMaKH.Multiline = false;
-            this.txtMaKH.Name = "txtMaKH";
-            stateProperties17.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties17.FillColor = System.Drawing.Color.Empty;
-            stateProperties17.ForeColor = System.Drawing.Color.Empty;
-            stateProperties17.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtMaKH.OnActiveState = stateProperties17;
-            stateProperties18.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties18.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties18.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtMaKH.OnDisabledState = stateProperties18;
-            stateProperties19.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties19.FillColor = System.Drawing.Color.Empty;
-            stateProperties19.ForeColor = System.Drawing.Color.Empty;
-            stateProperties19.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtMaKH.OnHoverState = stateProperties19;
-            stateProperties20.BorderColor = System.Drawing.Color.Silver;
-            stateProperties20.FillColor = System.Drawing.Color.White;
-            stateProperties20.ForeColor = System.Drawing.Color.Empty;
-            stateProperties20.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtMaKH.OnIdleState = stateProperties20;
-            this.txtMaKH.Padding = new System.Windows.Forms.Padding(3);
-            this.txtMaKH.PasswordChar = '\0';
-            this.txtMaKH.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtMaKH.PlaceholderText = "KH001";
-            this.txtMaKH.ReadOnly = false;
-            this.txtMaKH.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtMaKH.SelectedText = "";
-            this.txtMaKH.SelectionLength = 0;
-            this.txtMaKH.SelectionStart = 0;
-            this.txtMaKH.ShortcutsEnabled = true;
-            this.txtMaKH.Size = new System.Drawing.Size(180, 30);
-            this.txtMaKH.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtMaKH.TabIndex = 25;
-            this.txtMaKH.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtMaKH.TextMarginBottom = 0;
-            this.txtMaKH.TextMarginLeft = 3;
-            this.txtMaKH.TextMarginTop = 0;
-            this.txtMaKH.TextPlaceholder = "KH001";
-            this.txtMaKH.UseSystemPasswordChar = false;
-            this.txtMaKH.WordWrap = true;
-            this.txtMaKH.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMaKH_KeyDown);
-          
-            // 
-            // txtTenKH
-            // 
-            this.txtTenKH.AcceptsReturn = false;
-            this.txtTenKH.AcceptsTab = false;
-            this.txtTenKH.AnimationSpeed = 200;
-            this.txtTenKH.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtTenKH.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtTenKH.BackColor = System.Drawing.Color.Transparent;
-            this.txtTenKH.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtTenKH.BackgroundImage")));
-            this.txtTenKH.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.txtTenKH.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.txtTenKH.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txtTenKH.BorderColorIdle = System.Drawing.Color.Silver;
-            this.txtTenKH.BorderRadius = 10;
-            this.txtTenKH.BorderThickness = 1;
-            this.txtTenKH.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtTenKH.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTenKH.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.txtTenKH.DefaultText = "";
-            this.txtTenKH.FillColor = System.Drawing.Color.White;
-            this.txtTenKH.HideSelection = true;
-            this.txtTenKH.IconLeft = null;
-            this.txtTenKH.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTenKH.IconPadding = 10;
-            this.txtTenKH.IconRight = null;
-            this.txtTenKH.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTenKH.Lines = new string[0];
-            this.txtTenKH.Location = new System.Drawing.Point(587, 55);
-            this.txtTenKH.MaxLength = 32767;
-            this.txtTenKH.MinimumSize = new System.Drawing.Size(1, 1);
-            this.txtTenKH.Modified = false;
-            this.txtTenKH.Multiline = false;
-            this.txtTenKH.Name = "txtTenKH";
-            stateProperties13.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties13.FillColor = System.Drawing.Color.Empty;
-            stateProperties13.ForeColor = System.Drawing.Color.Empty;
-            stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtTenKH.OnActiveState = stateProperties13;
-            stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties14.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txtTenKH.OnDisabledState = stateProperties14;
-            stateProperties15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties15.FillColor = System.Drawing.Color.Empty;
-            stateProperties15.ForeColor = System.Drawing.Color.Empty;
-            stateProperties15.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtTenKH.OnHoverState = stateProperties15;
-            stateProperties16.BorderColor = System.Drawing.Color.Silver;
-            stateProperties16.FillColor = System.Drawing.Color.White;
-            stateProperties16.ForeColor = System.Drawing.Color.Empty;
-            stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txtTenKH.OnIdleState = stateProperties16;
-            this.txtTenKH.Padding = new System.Windows.Forms.Padding(3);
-            this.txtTenKH.PasswordChar = '\0';
-            this.txtTenKH.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtTenKH.PlaceholderText = "";
-            this.txtTenKH.ReadOnly = false;
-            this.txtTenKH.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtTenKH.SelectedText = "";
-            this.txtTenKH.SelectionLength = 0;
-            this.txtTenKH.SelectionStart = 0;
-            this.txtTenKH.ShortcutsEnabled = true;
-            this.txtTenKH.Size = new System.Drawing.Size(260, 30);
-            this.txtTenKH.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.txtTenKH.TabIndex = 26;
-            this.txtTenKH.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtTenKH.TextMarginBottom = 0;
-            this.txtTenKH.TextMarginLeft = 3;
-            this.txtTenKH.TextMarginTop = 0;
-            this.txtTenKH.TextPlaceholder = "";
-            this.txtTenKH.UseSystemPasswordChar = false;
-            this.txtTenKH.WordWrap = true;
-            // 
-            // btnTimKH
-            // 
-            this.btnTimKH.ActiveImage = null;
-            this.btnTimKH.AllowAnimations = true;
-            this.btnTimKH.AllowBuffering = false;
-            this.btnTimKH.AllowToggling = false;
-            this.btnTimKH.AllowZooming = true;
-            this.btnTimKH.AllowZoomingOnFocus = false;
-            this.btnTimKH.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnTimKH.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnTimKH.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnTimKH.ErrorImage")));
-            this.btnTimKH.FadeWhenInactive = false;
-            this.btnTimKH.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.btnTimKH.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKH.Image")));
-            this.btnTimKH.ImageActive = null;
-            this.btnTimKH.ImageLocation = null;
-            this.btnTimKH.ImageMargin = 10;
-            this.btnTimKH.ImageSize = new System.Drawing.Size(19, 20);
-            this.btnTimKH.ImageZoomSize = new System.Drawing.Size(29, 30);
-            this.btnTimKH.InitialImage = ((System.Drawing.Image)(resources.GetObject("btnTimKH.InitialImage")));
-            this.btnTimKH.Location = new System.Drawing.Point(390, 55);
-            this.btnTimKH.Name = "btnTimKH";
-            this.btnTimKH.Rotation = 0;
-            this.btnTimKH.ShowActiveImage = true;
-            this.btnTimKH.ShowCursorChanges = true;
-            this.btnTimKH.ShowImageBorders = true;
-            this.btnTimKH.ShowSizeMarkers = false;
-            this.btnTimKH.Size = new System.Drawing.Size(29, 30);
-            this.btnTimKH.TabIndex = 27;
-            this.btnTimKH.ToolTipText = "";
-            this.btnTimKH.WaitOnLoad = false;
-            this.btnTimKH.Zoom = 10;
-            this.btnTimKH.ZoomSpeed = 10;
-      
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(97, 96);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(196, 17);
+            this.label22.TabIndex = 21;
+            this.label22.Text = "sản phẩm chưa được xếp vị trí";
             // 
             // frmStocks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1741, 825);
+            this.ClientSize = new System.Drawing.Size(1741, 967);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1725,8 +1756,9 @@
             this.tabPage2.ResumeLayout(false);
             this.bunifuShadowPanel1.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuXuat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPhieuXuat)).EndInit();
             this.bunifuPanel1.ResumeLayout(false);
+            this.bunifuPanel1.PerformLayout();
             this.panelThongTinXuat.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvViTri)).EndInit();
@@ -1789,12 +1821,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private Bunifu.UI.WinForms.BunifuShadowPanel bunifuShadowPanel1;
         private System.Windows.Forms.Panel panel14;
-        private Bunifu.UI.WinForms.BunifuDataGridView dgvPhieuXuat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn masp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sl;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
+        private Bunifu.UI.WinForms.BunifuDataGridView dgvChiTietPhieuXuat;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel1;
         private Bunifu.UI.WinForms.BunifuTextBox txtMaPX;
         private System.Windows.Forms.Label label9;
@@ -1805,16 +1832,11 @@
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Panel panel10;
         private Bunifu.UI.WinForms.BunifuDataGridView dgvViTri;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button btnThemXK;
         private Bunifu.UI.WinForms.BunifuGradientPanel bunifuGradientPanel5;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label lbXKSoLuong;
         private System.Windows.Forms.Label lbXKTenSP;
         private System.Windows.Forms.Label lbXKViTri;
         private System.Windows.Forms.Label label11;
@@ -1825,6 +1847,19 @@
         private Bunifu.UI.WinForms.BunifuTextBox txtMaKH;
         private Bunifu.UI.WinForms.BunifuTextBox txtTenKH;
         private Bunifu.UI.WinForms.BunifuImageButton btnTimKH;
+        private System.Windows.Forms.TextBox txtXKSoLuong;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox txtGhiChu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CTMaSanPham;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CTTenSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CTSoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CTGiaXuat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CTTongTien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VTMaSanPhamID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VTSoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VTViTri;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VTDanhMucID;
+        private System.Windows.Forms.Label label22;
 
 
     }

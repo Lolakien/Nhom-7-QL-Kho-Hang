@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Forms;
 namespace QL_KhoHang.Controller
 {
     class PhieuXuatController
@@ -63,6 +63,45 @@ namespace QL_KhoHang.Controller
 
             return maPhieuXuat;
         }
+        public bool ThemPhieuXuat(string maNV, string maKH, DateTime ngayXuat, string maPX, List<dynamic> chiTietPhieuXuats, String ghiChu)
+        {
+          
+                // Tạo đối tượng PhieuXuat mới
+                PhieuXuat phieuXuat = new PhieuXuat
+                {
+                    PhieuXuatID = maPX,
+                    KhachHangID = maKH,
+                    NhanVienID = maNV, // Thay "NV01" bằng ID nhân viên hiện tại nếu có
+                    NgayXuat = ngayXuat,
+                    GhiChu = ghiChu,        // Ghi chú nếu có
+       
+                };
+
+                // Thêm phiếu xuất vào cơ sở dữ liệu
+                qlkh.PhieuXuats.InsertOnSubmit(phieuXuat);
+
+                // Thêm chi tiết phiếu xuất
+                foreach (var chiTiet in chiTietPhieuXuats)
+                {
+                    ChiTietPhieuXuat ctPhieuXuat = new ChiTietPhieuXuat
+                    {
+                        PhieuXuatID = maPX,
+                        SanPhamID = chiTiet.MaSanPham,
+                        SoLuong = chiTiet.SoLuong,
+                        GiaXuat = chiTiet.GiaXuat
+                    };
+
+                    qlkh.ChiTietPhieuXuats.InsertOnSubmit(ctPhieuXuat);
+                }
+              
+                // Lưu thay đổi vào cơ sở dữ liệu
+                qlkh.SubmitChanges();
+                return true;
+            
+     
+        }
+
     }
+        
     
 }

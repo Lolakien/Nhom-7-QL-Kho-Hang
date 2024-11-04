@@ -101,13 +101,7 @@ CREATE TABLE PhieuXuat (
 
 -- Tạo bảng ChiTietPhieuXuat
 
-CREATE TABLE LichSuXuatKho(
-	 PhieuXuatID VARCHAR(20),
-	 ViTriID VARCHAR(20),
-	 PRIMARY KEY (ViTriID, PhieuXuatID),
-	 SanPhamID VARCHAR(20),
-	 SoLuong INT NOT NULL,
-)
+
 CREATE TABLE ChiTietPhieuXuat (
    
     PhieuXuatID VARCHAR(20),
@@ -133,9 +127,47 @@ CREATE TABLE ViTriKho (
     FOREIGN KEY (DanhMucID) REFERENCES DanhMuc(DanhMucID)
 );
 
-GO 
 
-select * from ViTriKho
+CREATE TABLE LichSuXuatKho (
+    PhieuXuatID VARCHAR(20),
+    ViTriID VARCHAR(20),
+    DanhMucID VARCHAR(20),
+    PRIMARY KEY (ViTriID, DanhMucID, PhieuXuatID),
+    SanPhamID VARCHAR(20),
+    SoLuong INT NOT NULL,
+    FOREIGN KEY (PhieuXuatID) REFERENCES PhieuXuat(PhieuXuatID),
+    FOREIGN KEY (ViTriID, DanhMucID) REFERENCES ViTriKho(ViTriID, DanhMucID),
+
+);
+
+CREATE TRIGGER trg_UpdateViTriKhoOnInsert
+ON LichSuXuatKho
+AFTER INSERT
+AS
+BEGIN
+    -- Khai báo các biến để lưu thông tin từ bản ghi mới được thêm vào
+    DECLARE @ViTriID VARCHAR(20),
+            @DanhMucID VARCHAR(20),
+            @SanPhamID VARCHAR(20),
+            @SoLuong INT;
+
+    -- Lấy dữ liệu từ bản ghi được thêm vào LichSuXuatKho
+    SELECT @ViTriID = i.ViTriID,
+           @DanhMucID = i.DanhMucID,
+           @SanPhamID = i.SanPhamID,
+           @SoLuong = i.SoLuong
+    FROM INSERTED i;
+
+    -- Cập nhật số lượng trong ViTriKho
+    UPDATE ViTriKho
+    SET SoLuong = SoLuong - @SoLuong
+    WHERE ViTriID = @ViTriID AND DanhMucID = @DanhMucID;
+
+    -- Kiểm tra nếu số lượng = 0 thì đặt SanPhamID thành NULL
+    UPDATE ViTriKho
+    SET SanPhamID = NULL
+    WHERE ViTriID = @ViTriID AND DanhMucID = @DanhMucID AND SoLuong = 0;
+END;
 
 
 
@@ -144,118 +176,178 @@ select * from ViTriKho
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--- Tạo trigger để đảm bảo tổng số lượng ở các vị trí bằng số lượng trong bảng sản phẩm
-CREATE TRIGGER trg_SoLuongViTri
+drop TRIGGER trg_SoLuongViTri
 ON ViTriKho
 AFTER INSERT, UPDATE, DELETE
 AS
 BEGIN
-    DECLARE @SanPhamID INT;
+    DECLARE @SanPhamID VARCHAR(20);
 
-    -- Lấy SanPhamID từ bảng ViTriKho
-    SELECT @SanPhamID = SanPhamID FROM inserted;
+    -- Lấy các SanPhamID bị ảnh hưởng
+    DECLARE affectedSanPhamIDs CURSOR FOR 
+    SELECT DISTINCT SanPhamID FROM inserted
+    UNION
+    SELECT DISTINCT SanPhamID FROM deleted;
 
-    -- Cập nhật lại số lượng sản phẩm trong bảng SanPham dựa trên tổng số lượng ở các vị trí
-    UPDATE SanPham
-    SET SoLuong = (
-        SELECT SUM(SoLuong) 
-        FROM ViTriKho 
-        WHERE SanPhamID = @SanPhamID
-    )
-    WHERE SanPhamID = @SanPhamID;
+    OPEN affectedSanPhamIDs;
+    FETCH NEXT FROM affectedSanPhamIDs INTO @SanPhamID;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        -- Cập nhật lại số lượng sản phẩm trong bảng SanPham dựa trên tổng số lượng ở các vị trí
+        UPDATE SanPham
+        SET SoLuong = (
+            SELECT COALESCE(SUM(SoLuong), 0)
+            FROM ViTriKho 
+            WHERE SanPhamID = @SanPhamID
+        )
+        WHERE SanPhamID = @SanPhamID;
+
+        FETCH NEXT FROM affectedSanPhamIDs INTO @SanPhamID;
+    END
+
+    CLOSE affectedSanPhamIDs;
+    DEALLOCATE affectedSanPhamIDs;
 END;
 GO
 
-
-
-
--- Tạo trigger để trừ số lượng ở các vị trí khi xuất kho
-drop TRIGGER trg_TruSoLuongXuatKho
+CREATE TRIGGER trg_TruSoLuongXuatKho
 ON ChiTietPhieuXuat
 AFTER INSERT
 AS
 BEGIN
-    DECLARE @SanPhamID INT;
+    DECLARE @SanPhamID VARCHAR(20);
     DECLARE @SoLuong INT;
 
-    -- Lấy SanPhamID và SoLuong từ bảng ChiTietPhieuXuat
-    SELECT @SanPhamID = SanPhamID, @SoLuong = SoLuong FROM inserted;
+    DECLARE affectedItems CURSOR FOR 
+    SELECT SanPhamID, SoLuong FROM inserted;
 
-    -- Giảm số lượng ở các vị trí
-    UPDATE ViTriKho
-    SET SoLuong = SoLuong - @SoLuong
-    WHERE SanPhamID = @SanPhamID AND SoLuong >= @SoLuong;
+    OPEN affectedItems;
+    FETCH NEXT FROM affectedItems INTO @SanPhamID, @SoLuong;
 
-    -- Cập nhật lại số lượng sản phẩm trong bảng SanPham
-    UPDATE SanPham
-    SET SoLuong = (
-        SELECT SUM(SoLuong) 
-        FROM ViTriKho 
-        WHERE SanPhamID = @SanPhamID
-    )
-    WHERE SanPhamID = @SanPhamID;
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        -- Giảm số lượng ở các vị trí
+        UPDATE ViTriKho
+        SET SoLuong = SoLuong - @SoLuong
+        WHERE SanPhamID = @SanPhamID AND SoLuong >= @SoLuong;
+
+        -- Cập nhật lại số lượng sản phẩm trong bảng SanPham
+        UPDATE SanPham
+        SET SoLuong = (
+            SELECT COALESCE(SUM(SoLuong), 0) 
+            FROM ViTriKho 
+            WHERE SanPhamID = @SanPhamID
+        )
+        WHERE SanPhamID = @SanPhamID;
+
+        FETCH NEXT FROM affectedItems INTO @SanPhamID, @SoLuong;
+    END
+
+    CLOSE affectedItems;
+    DEALLOCATE affectedItems;
 END;
 GO
 
 
--- Tạo trigger để cập nhật TổngTiền trong NhapKho
-CREATE TRIGGER trg_CapNhatTongTienNhapKho
-ON NhapKho
-AFTER INSERT
+
+CREATE TRIGGER trg_CapNhatTongTienPhieuXuat
+ON ChiTietPhieuXuat
+AFTER INSERT, UPDATE, DELETE
 AS
 BEGIN
-    DECLARE @NhapKhoID INT;
+    DECLARE @PhieuXuatID VARCHAR(20);
 
-    -- Lấy NhapKhoID từ bảng NhapKho
-    SELECT @NhapKhoID = NhapKhoID FROM inserted;
+    DECLARE affectedPhieuXuatIDs CURSOR FOR 
+    SELECT DISTINCT PhieuXuatID FROM inserted
+    UNION
+    SELECT DISTINCT PhieuXuatID FROM deleted;
 
-    -- Cập nhật TổngTiền trong NhapKho
-    UPDATE NhapKho
-    SET TongTien = (
-        SELECT SUM(ThanhTien)
-        FROM ChiTietPhieuNhap
-        WHERE NhapKhoID = @NhapKhoID
-    )
-    WHERE NhapKhoID = @NhapKhoID;
+    OPEN affectedPhieuXuatIDs;
+    FETCH NEXT FROM affectedPhieuXuatIDs INTO @PhieuXuatID;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        -- Cập nhật TongTien cho mỗi phiếu xuất
+        UPDATE PhieuXuat
+        SET TongTien = (
+            SELECT COALESCE(SUM(CAST(SoLuong AS DECIMAL(10, 2)) * GiaXuat), 0)
+            FROM ChiTietPhieuXuat
+            WHERE PhieuXuatID = @PhieuXuatID
+        )
+        WHERE PhieuXuatID = @PhieuXuatID;
+
+        FETCH NEXT FROM affectedPhieuXuatIDs INTO @PhieuXuatID;
+    END
+
+    CLOSE affectedPhieuXuatIDs;
+    DEALLOCATE affectedPhieuXuatIDs;
 END;
 GO
 
--- Tạo trigger để cập nhật TổngTiền trong XuatKho
-CREATE TRIGGER trg_CapNhatTongTienXuatKho
-ON XuatKho
+CREATE TRIGGER trg_CapNhatSoLuongSanPhamKhiNhap
+ON ChiTietPhieuNhap
 AFTER INSERT
 AS
 BEGIN
-    DECLARE @XuatKhoID INT;
+    DECLARE @SanPhamID VARCHAR(20);
+    DECLARE @SoLuong INT;
 
-    -- Lấy XuatKhoID từ bảng XuatKho
-    SELECT @XuatKhoID = XuatKhoID FROM inserted;
+    DECLARE affectedItems CURSOR FOR 
+    SELECT SanPhamID, SoLuong FROM inserted;
 
-    -- Cập nhật TổngTiền trong XuatKho
-    UPDATE XuatKho
-    SET TongTien = (
-        SELECT SUM(ThanhTien)
-        FROM ChiTietPhieuXuat
-        WHERE XuatKhoID = @XuatKhoID
-    )
-    WHERE XuatKhoID = @XuatKhoID;
+    OPEN affectedItems;
+    FETCH NEXT FROM affectedItems INTO @SanPhamID, @SoLuong;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        -- Tăng số lượng sản phẩm trong bảng SanPham dựa trên số lượng nhập
+        UPDATE SanPham
+        SET SoLuong = SoLuong + @SoLuong
+        WHERE SanPhamID = @SanPhamID;
+
+        FETCH NEXT FROM affectedItems INTO @SanPhamID, @SoLuong;
+    END
+
+    CLOSE affectedItems;
+    DEALLOCATE affectedItems;
+END;
+GO
+
+
+CREATE TRIGGER trg_CapNhatSoLuongSanPhamKhiXuat
+ON ChiTietPhieuXuat
+AFTER INSERT
+AS
+BEGIN
+    DECLARE @SanPhamID VARCHAR(20);
+    DECLARE @SoLuong INT;
+
+    DECLARE affectedItems CURSOR FOR 
+    SELECT SanPhamID, SoLuong FROM inserted;
+
+    OPEN affectedItems;
+    FETCH NEXT FROM affectedItems INTO @SanPhamID, @SoLuong;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        -- Giảm số lượng sản phẩm trong bảng SanPham dựa trên số lượng xuất
+        UPDATE SanPham
+        SET SoLuong = SoLuong - @SoLuong
+        WHERE SanPhamID = @SanPhamID AND SoLuong >= @SoLuong;
+
+        -- Kiểm tra nếu số lượng sau khi giảm bằng 0, đặt sản phẩm đó về trạng thái không còn trong kho (nếu cần)
+        IF (SELECT SoLuong FROM SanPham WHERE SanPhamID = @SanPhamID) <= 0
+        BEGIN
+            UPDATE SanPham
+            SET SoLuong = 0
+            WHERE SanPhamID = @SanPhamID;
+        END
+
+        FETCH NEXT FROM affectedItems INTO @SanPhamID, @SoLuong;
+    END
+
+    CLOSE affectedItems;
+    DEALLOCATE affectedItems;
 END;
 GO

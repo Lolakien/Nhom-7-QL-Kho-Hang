@@ -52,4 +52,6 @@ VALUES ('PX01', 'SP01', 5, 18000.000);
 INSERT INTO ChiTietPhieuXuat (PhieuXuatID, SanPhamID, SoLuong, GiaXuat) 
 VALUES ('PX01', 'SP02', 3, 13000.000);
 
-select * from KhachHang
+
+
+
