@@ -471,60 +471,64 @@ namespace QL_KhoHang
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            string maKH = txtMaKH.Text;
-            DateTime ngayXuat = dtpNgayXuat.Value.Date;
-            string ngayThangNam = ngayXuat.ToString("dd/MM/yyyy");
-            string maPX = txtMaPX.Text;
-
-          
-            List<dynamic> chiTietPhieuXuats = new List<dynamic>();
-            
-            foreach (DataGridViewRow row in dgvChiTietPhieuXuat.Rows)
+            if (txtTenKH.Text.Count() > 0)
             {
-                if (row.Cells["CTMaSanPham"].Value != null)
+
+                string maKH = txtMaKH.Text;
+                DateTime ngayXuat = dtpNgayXuat.Value.Date;
+                string ngayThangNam = ngayXuat.ToString("dd/MM/yyyy");
+                string maPX = txtMaPX.Text;
+
+
+                List<dynamic> chiTietPhieuXuats = new List<dynamic>();
+
+                foreach (DataGridViewRow row in dgvChiTietPhieuXuat.Rows)
                 {
-                    chiTietPhieuXuats.Add(new
+                    if (row.Cells["CTMaSanPham"].Value != null)
                     {
-                        MaSanPham = row.Cells["CTMaSanPham"].Value.ToString(),
-                        SoLuong = Convert.ToInt32(row.Cells["CTSoLuong"].Value),
-                        GiaXuat = Convert.ToDecimal(row.Cells["CTGiaXuat"].Value)
-                    });
+                        chiTietPhieuXuats.Add(new
+                        {
+                            MaSanPham = row.Cells["CTMaSanPham"].Value.ToString(),
+                            SoLuong = Convert.ToInt32(row.Cells["CTSoLuong"].Value),
+                            GiaXuat = Convert.ToDecimal(row.Cells["CTGiaXuat"].Value)
+                        });
+                    }
+                }
+
+                //Vi tri
+                List<dynamic> ViTris = new List<dynamic>();
+                foreach (DataGridViewRow row in dgvViTri.Rows)
+                {
+                    if (row.Cells["VTMaSanPhamID"].Value != null)
+                    {
+
+                        ViTris.Add(new
+                        {
+                            MaSanPham = row.Cells["VTMaSanPhamID"].Value.ToString(),
+                            SoLuong = Convert.ToInt32(row.Cells["VTSoLuong"].Value),
+                            ViTriID = row.Cells["VTViTri"].Value,
+                            DanhMucID = row.Cells["VTDanhMucID"].Value.ToString()
+                        });
+                    }
+                }
+
+                // Gọi phương thức ThemPhieuXuat để lưu vào CSDL
+                bool isSuccess = db.phieuXuatController.ThemPhieuXuat(Authentication.ID, maKH, ngayXuat, maPX, chiTietPhieuXuats, txtGhiChu.Text);
+                if (isSuccess)
+                {
+                    selectedBox.ViTri.SoLuong -= Int16.Parse(txtXKSoLuong.Text);
+                    selectedBox.setBackColor();
+                    MessageBox.Show("Lưu phiếu xuất thành công!");
+
+
+                    // Bạn có thể thêm mã để làm mới giao diện sau khi lưu thành công, nếu cần
+                }
+                else
+                {
+                    MessageBox.Show("Lưu phiếu xuất thất bại!");
                 }
             }
-
-            //Vi tri
-            List<dynamic>ViTris = new List<dynamic>();
-            foreach (DataGridViewRow row in dgvViTri.Rows)
-            {
-                if (row.Cells["VTMaSanPhamID"].Value != null)
-                {
-                    
-                    ViTris.Add(new
-                    {
-                        MaSanPham = row.Cells["VTMaSanPhamID"].Value.ToString(),
-                        SoLuong = Convert.ToInt32(row.Cells["VTSoLuong"].Value),
-                        ViTriID = row.Cells["VTViTri"].Value,
-                        DanhMucID = row.Cells["VTDanhMucID"].Value.ToString()
-                    });
-                }
-            }
-
-            // Gọi phương thức ThemPhieuXuat để lưu vào CSDL
-            bool isSuccess = db.phieuXuatController.ThemPhieuXuat(Authentication.ID, maKH, ngayXuat, maPX, chiTietPhieuXuats, txtGhiChu.Text);
-            if (isSuccess)
-            {
-                selectedBox.ViTri.SoLuong -= Int16.Parse(txtXKSoLuong.Text);
-                selectedBox.setBackColor();
-                MessageBox.Show("Lưu phiếu xuất thành công!");
-              
-              
-                // Bạn có thể thêm mã để làm mới giao diện sau khi lưu thành công, nếu cần
-            }
-            else
-            {
-                MessageBox.Show("Lưu phiếu xuất thất bại!");
-            }
+            else MessageBox.Show("Không tìm thấy khách hàng !");
         }
-     
     }
 }

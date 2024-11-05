@@ -83,5 +83,11 @@ namespace QL_KhoHang
         {
             Application.Exit();
         }
+
+        private void btnSanPham_Click(object sender, EventArgs e)
+        {
+            frmDMvaSP f = new frmDMvaSP();
+            openChildForm(f);
+        }
     }
 }

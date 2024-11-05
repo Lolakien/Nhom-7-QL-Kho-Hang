@@ -138,6 +138,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDMvaSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDMvaSP.Designer.cs">
+      <DependentUpon>frmDMvaSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPhieuXuat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDMvaSP.resx">
+      <DependentUpon>frmDMvaSP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPhieuXuat.resx">
       <DependentUpon>frmPhieuXuat.cs</DependentUpon>

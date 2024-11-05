@@ -115,3 +115,4 @@ E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.MiniForm.InitFrm.resources
 E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuSnackbar.dll
 E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.Form1.resources
 E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.dll
+E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmDMvaSP.resources
