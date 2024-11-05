@@ -131,7 +131,7 @@ namespace QL_KhoHang
                       select ct;
 
             string path = string.Empty;
-            excel.ExportPhieuNhap(ph, ref path, false);
+            excel.ExportPhieuXuat(ph, ref path, false); // Corrected method call
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
