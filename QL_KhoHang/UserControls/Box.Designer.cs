@@ -80,6 +80,7 @@
             this.Controls.Add(this.pnRight);
             this.Name = "Box";
             this.Load += new System.EventHandler(this.Box_Load);
+            this.Click += new System.EventHandler(this.Box_Click);
             this.ResumeLayout(false);
 
         }

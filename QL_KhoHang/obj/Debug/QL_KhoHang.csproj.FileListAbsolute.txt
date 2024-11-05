@@ -71,7 +71,6 @@ E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.Box.resources
 E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.BoxDetail.resources
 E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmDashboard.resources
 E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmHome.resources
-E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmInit.resources
 E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmLogin.resources
 E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmPhieuNhap.resources
 E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmStocks.resources
@@ -107,3 +106,13 @@ D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.csproj.CoreCompileIn
 D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.csproj.CopyComplete
 D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.exe
 D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.pdb
+E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.csproj.ResolveComReference.cache
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\Syncfusion.Compression.Base.dll
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\Syncfusion.DocIO.Base.dll
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\Syncfusion.XlsIO.Base.dll
+E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmPhieuXuat.resources
+E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.MiniForm.InitFrm.resources
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuSnackbar.dll
+E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.Form1.resources
+E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.dll
+E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmDMvaSP.resources

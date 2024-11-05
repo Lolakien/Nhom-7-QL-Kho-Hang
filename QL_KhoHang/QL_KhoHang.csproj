@@ -46,6 +46,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
       <HintPath>C:\Users\khanh\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>C:\Users\khanh\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
       <HintPath>C:\Users\khanh\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
     </Reference>
@@ -79,6 +82,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel">
       <HintPath>C:\Users\khanh\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSnackbar">
+      <HintPath>C:\Users\khanh\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuSnackbar.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
       <HintPath>C:\Users\khanh\Downloads\BunifuCrack-main\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
     </Reference>
@@ -97,9 +103,11 @@
       <HintPath>DLL\Syncfusion.XlsIO.Base.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
@@ -117,11 +125,26 @@
     <Compile Include="ChiTietPX.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Controller\DanhMucController.cs" />
+    <Compile Include="Controller\KhachHangController.cs" />
+    <Compile Include="Controller\LichSuXuatKhoController.cs" />
     <Compile Include="Controller\PhieuNhapController.cs" />
+    <Compile Include="Controller\PhieuXuatController.cs" />
     <Compile Include="Controller\SanPhamController.cs" />
     <Compile Include="Controller\ViTriKhoController.cs" />
     <Compile Include="ExcelExport.cs" />
     <Compile Include="FileCommon.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDMvaSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDMvaSP.Designer.cs">
+      <DependentUpon>frmDMvaSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPhieuXuat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +152,12 @@
       <DependentUpon>frmPhieuXuat.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="MiniForm\InitFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MiniForm\InitFrm.Designer.cs">
+      <DependentUpon>InitFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Box.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,12 +182,6 @@
     </Compile>
     <Compile Include="frmHome.Designer.cs">
       <DependentUpon>frmHome.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmInit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmInit.Designer.cs">
-      <DependentUpon>frmInit.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -191,8 +214,17 @@
     <Compile Include="UserControls\Section.Designer.cs">
       <DependentUpon>Section.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDMvaSP.resx">
+      <DependentUpon>frmDMvaSP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPhieuXuat.resx">
       <DependentUpon>frmPhieuXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiniForm\InitFrm.resx">
+      <DependentUpon>InitFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Box.resx">
       <DependentUpon>Box.cs</DependentUpon>
@@ -205,9 +237,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmInit.resx">
-      <DependentUpon>frmInit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -251,7 +280,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lock.png" />
@@ -287,6 +318,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

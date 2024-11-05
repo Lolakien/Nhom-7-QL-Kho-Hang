@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using QL_KhoHang.UserControls;
 using QL_KhoHang.Controller;
+using QL_KhoHang.MiniForm;
 namespace QL_KhoHang
 {
     public partial class frmStocks : Form
@@ -51,12 +52,12 @@ namespace QL_KhoHang
             {
                 if (db.danhMucController.DanhMucIsNotEmpty(selectedDanhMuc))
                 {
-                    pnInit.Visible = false;
+                    btnInit.Visible = false;
                     LoadTable(selectedDanhMuc);
                 }
                 else
                 {
-                    pnInit.Visible = true;
+                    btnInit.Visible = true;
                 
                 }
             }
@@ -109,18 +110,24 @@ namespace QL_KhoHang
 
         private void btnInit_Click(object sender, EventArgs e)
         {
-            int rows = int.Parse(txtRow.Text);
-            int columns = int.Parse(txtCol.Text);
+            InitFrm f = new InitFrm();
+            f.ShowDialog();
+        }
+
+      public void initTable(int rows, int columns)
+        {
+         
+         
             tableLayoutPanel1.Controls.Clear();
             tableLayoutPanel1.ColumnStyles.Clear();
             tableLayoutPanel1.RowStyles.Clear();
             string selectedDanhMucID = selectedDanhMuc;
-            for (int i = 0; i < rows; i++)
+            for (int i = 0; i <= rows; i++)
             {
-                for (int j = 0; j < columns; j++)
-                {     
-                    ViTriKho vt = new ViTriKho();         
-                    vt.ViTriID = ((char)('A' + i )).ToString() + (j+1) ;
+                for (int j = 0; j <= columns; j++)
+                {
+                    ViTriKho vt = new ViTriKho();
+                    vt.ViTriID = ((char)('A' + i)).ToString() + (j + 1);
                     vt.DanhMucID = selectedDanhMucID;
                     db.viTriKhoController.AddViTri(vt);
                 }
@@ -131,15 +138,16 @@ namespace QL_KhoHang
 
         ViTriKho selectedViTriKho;
         Box selectedBox;
+     
         void Box_Click(object sender, EventArgs e)
         {
         
             Box box = sender as Box;
+            //Hien thi tren thong tin vi tri
             selectedBox = box;
             selectedViTriKho = box.ViTri;
             txtSoLuong.Text = box.ViTri.SoLuong.ToString();
             txtSoLuongMax.Text = box.ViTri.SoLuongToiDa.ToString();
-      
             box.ViTri = selectedViTriKho;
             lblBoxID.Text = box.ViTri.ViTriID;
          
@@ -147,12 +155,20 @@ namespace QL_KhoHang
             if (cboSP.SelectedValue != null)
             {
                 
-                int daXep = db.sanPhamController.GetTotalQuantityInBoxBySanPhamID(cboSP.SelectedValue.ToString());
-                int total = db.sanPhamController.GetQuantityBySanPhamID(cboSP.SelectedValue.ToString());
-                lblChuaXep.Text = "Còn " + (total - daXep) + " sản phẩm chưa được xếp vào kho";
+               int chuaXepViTri = db.sanPhamController.GetTotalQuantityNotInBoxBySanPhamID(cboSP.SelectedValue.ToString());
+               lblChuaXep.Text = chuaXepViTri.ToString();
             }
-         
-            
+            //Hien thi tren phieu xuat kho
+            lbXKTenSP.Text = cboSP.Text;
+            txtXKSoLuong.Text = box.ViTri.SoLuong.ToString();
+            lbXKViTri.Text = box.ViTri.ViTriID;
+
+
+            foreach (Box b in listBox)
+            {
+                b.setBorderDefault();
+            }
+            box.setBorder();
         }
 
         void ClearTable()
@@ -165,7 +181,7 @@ namespace QL_KhoHang
         {
             loadProgressPanel();
             btnReset.Visible = false;
-            pnInit.Visible = false;
+            btnInit.Visible = false;
             ClearTable();
             tableLayoutPanel1.AutoSize = true;
 
@@ -235,12 +251,12 @@ namespace QL_KhoHang
             }
             else
             {
-                pnInit.Visible = true;
+                    btnInit.Visible = true;
                 MessageBox.Show("Kho hàng chưa được khởi tạo");
             }
         }
 
-
+        
 
 
         private void ShowBoxDetail(BoxDetail boxDetail)
@@ -285,17 +301,12 @@ namespace QL_KhoHang
         private void btnReset_Click(object sender, EventArgs e)
         {
             ClearTable();
-            pnInit.Visible = true;
+            btnInit.Visible = true;
             btnReset.Visible = false;
             string selectedDanhMucID = selectedDanhMuc;
             db.viTriKhoController.DeleteViTriByDanhMuc(selectedDanhMucID);
         }
-        private void btnOpenBox_Click(object sender, EventArgs e)
-        {
-            pnBoxSetting.Visible = !pnBoxSetting.Visible;
-            if (pnBoxSetting.Visible) btnOpenBox.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Vertical;
-            else btnOpenBox.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Horizontal; ;
-        }
+ 
 
         private void cboSP_TextChanged(object sender, EventArgs e)
         {
@@ -337,15 +348,33 @@ namespace QL_KhoHang
         private void btnBoxSave_Click(object sender, EventArgs e)
         {
             string viTriID = selectedViTriKho.ViTriID;
-            ViTriKho vt = new ViTriKho();
+            int soLuong = int.Parse(txtSoLuong.Text);
+            int chuaXepViTri = db.sanPhamController.GetTotalQuantityNotInBoxBySanPhamID(cboSP.SelectedValue.ToString());
+            int soLuongToiDa = int.Parse(txtSoLuongMax.Text);
            
-            vt.SanPhamID =cboSP.SelectedValue.ToString();
-            vt.SoLuong =int.Parse(txtSoLuong.Text);
-            vt.SoLuongToiDa =int.Parse(txtSoLuongMax.Text);
-            db.viTriKhoController.UpdateViTriKho(viTriID,vt);
-            selectedBox.setBox();
-            loadProgressPanel();
-            MessageBox.Show("Lưu thành công");
+            if (soLuong > soLuongToiDa || soLuong > chuaXepViTri) MessageBox.Show("Số lượng không hợp lệ ");
+            else
+            {
+                ViTriKho vt = new ViTriKho();
+
+
+                vt.SanPhamID = cboSP.SelectedValue.ToString();
+                vt.SoLuong = soLuong;
+
+                vt.SoLuongToiDa = soLuongToiDa;
+                if (db.viTriKhoController.UpdateViTriKho(viTriID, vt))
+                {
+                    MessageBox.Show("Cập nhật thành công");
+                    int daXepViTri = db.sanPhamController.GetTotalQuantityNotInBoxBySanPhamID(cboSP.SelectedValue.ToString());
+                    lblChuaXep.Text = daXepViTri.ToString();
+                    selectedBox.ViTri = vt;
+                    selectedBox.setBox();
+                    loadProgressPanel();
+                }
+                else MessageBox.Show("Cập nhật thất bại");
+       
+
+            }
         }
 
         private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)
@@ -379,6 +408,127 @@ namespace QL_KhoHang
             AutoCompleteStringCollection autoCompleteData = new AutoCompleteStringCollection();
             autoCompleteData.AddRange(listTenSP.ToArray());
             txtTimKiem.AutoCompleteCustomSource = autoCompleteData;
+        }
+
+        private void btnThemXK_Click(object sender, EventArgs e)
+        {
+            ViTriKho vt = selectedBox.ViTri;
+            string masp = vt.SanPhamID;
+            int sl = vt.SoLuong;
+            bool isExisting = false;
+            SanPham sp = db.sanPhamController.GetSanPhamByID(masp);
+            if (vt.SoLuong - Int32.Parse(txtXKSoLuong.Text) < 0) MessageBox.Show("Số lượng xuất > số lượng hiện có, nhập lại !");
+            else
+            {
+                vt.SoLuong -= Int32.Parse(txtXKSoLuong.Text);
+                //Neu da ton tai SP thi + them so luong va tong tien
+                foreach (DataGridViewRow row in dgvChiTietPhieuXuat.Rows)
+                {
+                    if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == masp)
+                    {
+                        int currentQuantity = Convert.ToInt32(row.Cells["CTSoLuong"].Value);
+                        decimal tongTien = Convert.ToDecimal(row.Cells["CTTongTien"].Value);
+                        row.Cells[2].Value = currentQuantity + sl;
+                        row.Cells["CTTongTien"].Value = tongTien + (sl * sp.GiaBan);
+                        isExisting = true;
+                        break;
+                    }
+                }
+                //Them vao lich su vi tri xuat
+                dgvViTri.Rows.Add(masp, sl, vt.ViTriID, selectedDanhMuc);
+                if (!isExisting)
+                {
+
+                    dgvChiTietPhieuXuat.Rows.Add(masp, lbXKTenSP.Text, sl, sp.GiaBan, (sl * sp.GiaBan));
+
+                }
+            }
+        }
+
+        void PhieuXuatChange()
+        {
+            if (txtTenKH.Text == null) return;
+            string date = dtpNgayXuat.Value.ToString("ddMMyyyy");
+            string MaPX = db.phieuXuatController.GenerateMaPhieuXuat(txtMaKH.Text,date);
+            txtMaPX.Text = MaPX;
+        }
+
+        private void dtpNgayXuat_ValueChanged(object sender, EventArgs e)
+        {
+            PhieuXuatChange();
+        }
+
+  
+        private void txtMaKH_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                KhachHang kh = db.khachHangController.GetKhachHangByID(txtMaKH.Text.Trim());
+                txtTenKH.Text = kh.TenKH;
+                PhieuXuatChange();
+            }
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            if (txtTenKH.Text.Count() > 0)
+            {
+
+                string maKH = txtMaKH.Text;
+                DateTime ngayXuat = dtpNgayXuat.Value.Date;
+                string ngayThangNam = ngayXuat.ToString("dd/MM/yyyy");
+                string maPX = txtMaPX.Text;
+
+
+                List<dynamic> chiTietPhieuXuats = new List<dynamic>();
+
+                foreach (DataGridViewRow row in dgvChiTietPhieuXuat.Rows)
+                {
+                    if (row.Cells["CTMaSanPham"].Value != null)
+                    {
+                        chiTietPhieuXuats.Add(new
+                        {
+                            MaSanPham = row.Cells["CTMaSanPham"].Value.ToString(),
+                            SoLuong = Convert.ToInt32(row.Cells["CTSoLuong"].Value),
+                            GiaXuat = Convert.ToDecimal(row.Cells["CTGiaXuat"].Value)
+                        });
+                    }
+                }
+
+                //Vi tri
+                List<dynamic> ViTris = new List<dynamic>();
+                foreach (DataGridViewRow row in dgvViTri.Rows)
+                {
+                    if (row.Cells["VTMaSanPhamID"].Value != null)
+                    {
+
+                        ViTris.Add(new
+                        {
+                            MaSanPham = row.Cells["VTMaSanPhamID"].Value.ToString(),
+                            SoLuong = Convert.ToInt32(row.Cells["VTSoLuong"].Value),
+                            ViTriID = row.Cells["VTViTri"].Value,
+                            DanhMucID = row.Cells["VTDanhMucID"].Value.ToString()
+                        });
+                    }
+                }
+
+                // Gọi phương thức ThemPhieuXuat để lưu vào CSDL
+                bool isSuccess = db.phieuXuatController.ThemPhieuXuat(Authentication.ID, maKH, ngayXuat, maPX, chiTietPhieuXuats, txtGhiChu.Text);
+                if (isSuccess)
+                {
+                    selectedBox.ViTri.SoLuong -= Int16.Parse(txtXKSoLuong.Text);
+                    selectedBox.setBackColor();
+                    MessageBox.Show("Lưu phiếu xuất thành công!");
+
+
+                    // Bạn có thể thêm mã để làm mới giao diện sau khi lưu thành công, nếu cần
+                }
+                else
+                {
+                    MessageBox.Show("Lưu phiếu xuất thất bại!");
+                }
+            }
+            else MessageBox.Show("Không tìm thấy khách hàng !");
         }
     }
 }

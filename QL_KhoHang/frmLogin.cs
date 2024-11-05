@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Configuration;
+using System.Windows.Forms;
+using System.Xml;
+using System.Data.Sql;
 namespace QL_KhoHang
 {
     public partial class frmLogin : Form
@@ -47,7 +51,7 @@ namespace QL_KhoHang
         }
         private const string shitty = "nvm.bin";
 
-        //Đừng quan tâm hàm này
+     
         void DungQuanTamHamNay()
         {
             int forgetable = 0;     
@@ -71,5 +75,22 @@ namespace QL_KhoHang
         {
             Application.Exit();
         }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+        
+            string server = Environment.MachineName;
+            lblServerName.Text = server;
+            string newConnectionString = "Data Source="+ server+";Initial Catalog=QL_HangHoa;Integrated Security=True";
+            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            config.ConnectionStrings.ConnectionStrings["QL_KhoHang.Properties.Settings.QL_HangHoaConnectionString"].ConnectionString = newConnectionString;
+            config.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("connectionStrings");
+
+        }
+
+
+      
+     
     }
 }

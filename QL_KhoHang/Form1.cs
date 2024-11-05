@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QL_KhoHang
 {
-    public partial class frmInit : Form
+    public partial class Form1 : Form
     {
-        public frmInit()
+        public Form1()
         {
             InitializeComponent();
         }
