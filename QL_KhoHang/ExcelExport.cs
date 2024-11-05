@@ -117,21 +117,6 @@ namespace QL_KhoHang
                 MessageBox.Show("Không có chi tiết phiếu nhập để xuất.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            //List<ChiTietPhieuNhap> ctpns = pn.ChiTietPhieuNhaps.Where(t => t.PhieuNhapID == pn.PhieuNhapID).ToList();
-            //List<ChiTietPN> cthdSTT = new List<ChiTietPN>();
-            //int stt = 1;
-            //foreach (ChiTietPhieuNhap ct in ctpns)
-            //{
-            //    ChiTietPN ctstt = new ChiTietPN(ct, stt);
-            //    ctstt.TenSP = qlhh.SanPhams.Where(t => t.SanPhamID == ct.SanPhamID).FirstOrDefault().TenSanPham;
-            //    cthdSTT.Add(ctstt);
-            //}
-
-            //string viewName = "Phieunhaphang";
-            //markProcessor.AddVariable(viewName, cthdSTT);
-            //markProcessor.ApplyMarkers(UnknownVariableAction.ReplaceBlank);
-
-
             //Delete temporary row
             Syncfusion.XlsIO.IRange range = workSheet.FindFirst("[TMP]", ExcelFindType.Text);
             if (range != null)
@@ -152,10 +137,99 @@ namespace QL_KhoHang
             {
                 System.Diagnostics.Process.Start(fileName);
             }
+        }
+        public void ExportPhieuXuat(PhieuXuat px, ref string fileName, bool isPrintPreview)
+        {
+            Dictionary<string, string> replacer = new Dictionary<string, string>();
+            string ngay = "Ngày " + px.NgayXuat.Day + " Tháng " + px.NgayXuat.Month + " Năm " + px.NgayXuat.Year;
+            replacer.Add("%NgayThangNam", ngay);
 
+            QL_KhoHangDataContext qlhh = new QL_KhoHangDataContext();
+            KhachHang kh = qlhh.KhachHangs.Where(t => t.KhachHangID == px.KhachHangID).FirstOrDefault();
+            replacer.Add("%MaPX", px.PhieuXuatID);
+            replacer.Add("%KH", kh.TenKH);
 
+            string diachi = kh.DiaChi + " " + kh.ThanhPho;
+            replacer.Add("%DiaChi", diachi);
+            replacer.Add("%DienThoai", kh.SDT);
 
-         }
+            replacer.Add("%TongTien", String.Format("{0:0,0.00}", px.TongTien));
+
+            NhanVien nv = qlhh.NhanViens.Where(t => t.NhanVienID == px.NhanVienID).FirstOrDefault();
+            replacer.Add("%TenNV", nv.HoTen);
+
+            MemoryStream stream = null;
+            byte[] arrByte = File.ReadAllBytes("phieuxuathang.xlsx").ToArray();
+
+            // Get stream
+            if (arrByte.Length > 0)
+            {
+                stream = new MemoryStream(arrByte);
+            }
+
+            ExcelEngine engine = new ExcelEngine();
+            IWorkbook workBook = engine.Excel.Workbooks.Open(stream);
+            IWorksheet workSheet = workBook.Worksheets[0];
+            ITemplateMarkersProcessor markProcessor = workSheet.CreateTemplateMarkersProcessor();
+
+            // Replace value
+            if (replacer != null && replacer.Count > 0)
+            {
+                foreach (KeyValuePair<string, string> repl in replacer)
+                {
+                    Replace(workSheet, repl.Key, repl.Value);
+                }
+            }
+
+            // Create a list of ChiTietPX from ChiTietPhieuXuat
+            List<ChiTietPhieuXuat> ctpxs = px.ChiTietPhieuXuats.Where(t => t.PhieuXuatID == px.PhieuXuatID).ToList();
+            List<ChiTietPX> ctpxSTT = new List<ChiTietPX>();
+            int stt = 1;
+
+            foreach (ChiTietPhieuXuat ct in ctpxs)
+            {
+                ChiTietPX ctstt = new ChiTietPX(ct, stt);
+                ctpxSTT.Add(ctstt);
+                stt++;
+            }
+
+            // Check data
+            if (ctpxSTT.Count > 0)
+            {
+                string viewName = "Phieuxuathang";
+                markProcessor.AddVariable(viewName, ctpxSTT);
+                markProcessor.ApplyMarkers(UnknownVariableAction.ReplaceBlank);
+            }
+            else
+            {
+                MessageBox.Show("Không có chi tiết phiếu xuất để xuất.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            // Delete temporary row
+            Syncfusion.XlsIO.IRange range = workSheet.FindFirst("[TMP]", ExcelFindType.Text);
+            if (range != null)
+            {
+                workSheet.DeleteRow(range.Row);
+            }
+
+            string file = Path.GetTempFileName() + Constants.FILE_EXT_XLS;
+            fileName = file;
+
+            // Output file
+            if (!FileCommon.IsFileOpenOrReadOnly(file))
+            {
+                workBook.SaveAs(file);
+            }
+
+            // Close
+            workBook.Close();
+            engine.Dispose();
+
+            if (!string.IsNullOrEmpty(fileName) && MessageBox.Show("Bạn có muốn mở file không?", "Thông tin", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+            {
+                System.Diagnostics.Process.Start(fileName);
+            }
+        }
     }
 }
 

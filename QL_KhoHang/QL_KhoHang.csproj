@@ -114,6 +114,7 @@
   <ItemGroup>
     <Compile Include="Authentication.cs" />
     <Compile Include="ChiTietPN.cs" />
+    <Compile Include="ChiTietPX.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Controller\DanhMucController.cs" />
     <Compile Include="Controller\PhieuNhapController.cs" />

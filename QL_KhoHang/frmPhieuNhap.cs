@@ -127,10 +127,6 @@ namespace QL_KhoHang
             }
         }
 
-        private void btnCapNhat_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnInPhieuNhap_Click(object sender, EventArgs e)
         {
@@ -143,6 +139,45 @@ namespace QL_KhoHang
 
             string path = string.Empty;
             excel.ExportPhieuNhap(ph, ref path, false);
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            // Ensure a PhieuNhap is selected
+            if (string.IsNullOrEmpty(txtMaphieu.Text))
+            {
+                MessageBox.Show("Vui lòng chọn phiếu nhập để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Get the selected PhieuNhapID
+            string phieuNhapID = txtMaphieu.Text;
+
+            // Confirm deletion
+            var result = MessageBox.Show("Bạn có chắc chắn muốn xóa phiếu nhập này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                // Delete ChiTietPhieuNhaps associated with the selected PhieuNhap
+                var chiTietPhieuNhaps = qlkh.ChiTietPhieuNhaps.Where(ct => ct.PhieuNhapID == phieuNhapID).ToList();
+                foreach (var chiTiet in chiTietPhieuNhaps)
+                {
+                    qlkh.ChiTietPhieuNhaps.DeleteOnSubmit(chiTiet);
+                }
+
+                // Delete the selected PhieuNhap
+                var phieuNhap = qlkh.PhieuNhaps.FirstOrDefault(p => p.PhieuNhapID == phieuNhapID);
+                if (phieuNhap != null)
+                {
+                    qlkh.PhieuNhaps.DeleteOnSubmit(phieuNhap);
+                }
+
+                // Submit changes to the database
+                qlkh.SubmitChanges();
+
+                // Refresh the DataGridView
+                LoadPhieuNhap();
+                MessageBox.Show("Xóa phiếu nhập thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

@@ -120,5 +120,57 @@ namespace QL_KhoHang
                 }
             }
         }
+
+        private void btnInPhieuXuat_Click(object sender, EventArgs e)
+        {
+            ExcelExport excel = new ExcelExport();
+            PhieuXuat ph = qlkh.PhieuXuats.Where(t => t.PhieuXuatID == txtMaphieu.Text).FirstOrDefault();
+
+            var cts = from ct in qlkh.ChiTietPhieuXuats
+                      where ct.PhieuXuatID == ph.PhieuXuatID
+                      select ct;
+
+            string path = string.Empty;
+            excel.ExportPhieuNhap(ph, ref path, false);
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            // Ensure a PhieuXuat is selected
+            if (string.IsNullOrEmpty(txtMaphieu.Text))
+            {
+                MessageBox.Show("Vui lòng chọn phiếu xuất để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Get the selected PhieuXuatID
+            string phieuXuatID = txtMaphieu.Text;
+
+            // Confirm deletion
+            var result = MessageBox.Show("Bạn có chắc chắn muốn xóa phiếu xuất này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                // Delete ChiTietPhieuXuats associated with the selected PhieuXuat
+                var chiTietPhieuXuats = qlkh.ChiTietPhieuXuats.Where(ct => ct.PhieuXuatID == phieuXuatID).ToList();
+                foreach (var chiTiet in chiTietPhieuXuats)
+                {
+                    qlkh.ChiTietPhieuXuats.DeleteOnSubmit(chiTiet);
+                }
+
+                // Delete the selected PhieuXuat
+                var phieuXuat = qlkh.PhieuXuats.FirstOrDefault(p => p.PhieuXuatID == phieuXuatID);
+                if (phieuXuat != null)
+                {
+                    qlkh.PhieuXuats.DeleteOnSubmit(phieuXuat);
+                }
+
+                // Submit changes to the database
+                qlkh.SubmitChanges();
+
+                // Refresh the DataGridView
+                LoadPhieuXuat();
+                MessageBox.Show("Xóa phiếu xuất thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

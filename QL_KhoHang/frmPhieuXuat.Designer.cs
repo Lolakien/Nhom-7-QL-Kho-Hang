@@ -30,13 +30,11 @@ namespace QL_KhoHang
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnInPhieuXuat = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtGhichu = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.btnCapNhat = new System.Windows.Forms.Button();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dtpNgayXuat = new System.Windows.Forms.DateTimePicker();
@@ -48,9 +46,7 @@ namespace QL_KhoHang
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.txtMaphieu = new System.Windows.Forms.TextBox();
             this.dtG_phieuXuat = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txt_ct_GiaXuat = new System.Windows.Forms.TextBox();
@@ -81,44 +77,28 @@ namespace QL_KhoHang
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản lý xuất hàng";
             // 
-            // button1
+            // btnInPhieuXuat
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(228, 229);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(68, 36);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Xóa";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(354, 228);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 49);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "In phiếu xuất";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnInPhieuXuat.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnInPhieuXuat.FlatAppearance.BorderSize = 0;
+            this.btnInPhieuXuat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btnInPhieuXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInPhieuXuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInPhieuXuat.Location = new System.Drawing.Point(473, 228);
+            this.btnInPhieuXuat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInPhieuXuat.Name = "btnInPhieuXuat";
+            this.btnInPhieuXuat.Size = new System.Drawing.Size(105, 49);
+            this.btnInPhieuXuat.TabIndex = 15;
+            this.btnInPhieuXuat.Text = "In phiếu xuất";
+            this.btnInPhieuXuat.UseVisualStyleBackColor = false;
+            this.btnInPhieuXuat.Click += new System.EventHandler(this.btnInPhieuXuat_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btnInPhieuXuat);
             this.groupBox1.Controls.Add(this.txtGhichu);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.btnXoa);
-            this.groupBox1.Controls.Add(this.btnCapNhat);
             this.groupBox1.Controls.Add(this.txtTongTien);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.dtpNgayXuat);
@@ -172,21 +152,7 @@ namespace QL_KhoHang
             this.btnXoa.TabIndex = 12;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
-            // 
-            // btnCapNhat
-            // 
-            this.btnCapNhat.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnCapNhat.FlatAppearance.BorderSize = 0;
-            this.btnCapNhat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.btnCapNhat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapNhat.Location = new System.Drawing.Point(473, 228);
-            this.btnCapNhat.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(105, 49);
-            this.btnCapNhat.TabIndex = 11;
-            this.btnCapNhat.Text = "Cập nhật";
-            this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // txtTongTien
             // 
@@ -281,26 +247,8 @@ namespace QL_KhoHang
             this.dtG_phieuXuat.TabIndex = 0;
             this.dtG_phieuXuat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtG_phieuXuat_CellClick);
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(9, 229);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(82, 36);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Thêm";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.txt_ct_GiaXuat);
@@ -317,21 +265,6 @@ namespace QL_KhoHang
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết phiếu xuất";
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(120, 229);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(82, 36);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Cập nhật";
-            this.button3.UseVisualStyleBackColor = false;
             // 
             // label10
             // 
@@ -457,13 +390,11 @@ namespace QL_KhoHang
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnInPhieuXuat;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtGhichu;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dtpNgayXuat;
@@ -475,9 +406,7 @@ namespace QL_KhoHang
         private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.TextBox txtMaphieu;
         private System.Windows.Forms.DataGridView dtG_phieuXuat;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txt_ct_GiaXuat;
