@@ -1,4 +1,4 @@
-import { ReactComponent as AboutImg } from '@/images/about-ilustration.svg'
+import { ReactComponent as AboutImg } from '@/images/ware_ill2.svg'
 import classNames from 'classnames'
 import { useTranslation } from 'react-i18next'
 import layout from '@/styles/Layout.module.scss'

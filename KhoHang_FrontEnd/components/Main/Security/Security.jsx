@@ -1,4 +1,4 @@
-import { ReactComponent as SecImg } from '@/images/security-ilustration.svg'
+import { ReactComponent as SecImg } from '@/images/ware_ill3.svg'
 import classNames from 'classnames'
 import { useTranslation } from 'react-i18next'
 import layout from '@/styles/Layout.module.scss'
