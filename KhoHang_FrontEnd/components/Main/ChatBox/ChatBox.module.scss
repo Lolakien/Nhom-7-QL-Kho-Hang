@@ -6,7 +6,7 @@
 }
 
 .chatIcon {
-  background-color: #0070f3;
+  background-color: hsl(110, 60%, 60%);
   color: white;
   padding: 10px;
   border-radius: 50%;
@@ -15,7 +15,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s;
   &:hover {
-    background-color: #005bb5;
+    background-color: hsl(110, 60%, 60%);
   }
 }
 
@@ -32,7 +32,7 @@
 }
 
 .chatHeader {
-  background-color: #0070f3;
+  background-color: hsl(110, 60%, 60%);
   color: white;
   padding: 15px;
   display: flex;
@@ -66,7 +66,7 @@
   text-align: right;
   margin-bottom: 10px;
   padding: 10px;
-  background-color: #0070f3;
+  background-color: hsl(110, 60%, 60%);
   color: white;
   border-radius: 10px;
   display: inline-block;
@@ -106,7 +106,7 @@
 
 .chatFooter button {
   padding: 10px 15px;
-  background-color: #0070f3;
+  background-color: hsl(110, 60%, 60%);
   color: white;
   border: none;
   border-radius: 5px;
@@ -114,6 +114,6 @@
   font-size: 14px;
   transition: background-color 0.3s;
   &:hover {
-    background-color: #005bb5;
+    background-color: hsl(110, 60%, 60%);
   }
 }

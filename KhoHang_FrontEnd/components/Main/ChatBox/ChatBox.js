@@ -17,7 +17,7 @@ const ChatBox = () => {
     const userMessage = { sender: 'user', text: input };
     setMessages((prevMessages) => [...prevMessages, userMessage]);
 
-    // Call Google Gemini API
+    // Call backend API
     try {
       const response = await fetch('/api/gemini', {
         method: 'POST',
@@ -39,9 +39,11 @@ const ChatBox = () => {
 
   return (
     <div className={styles.chatContainer}>
-      <div className={styles.chatIcon} onClick={toggleChatBox}>
-        💬
-      </div>
+      {!isOpen && (
+        <div className={styles.chatIcon} onClick={toggleChatBox}>
+          💬
+        </div>
+      )}
       {isOpen && (
         <div className={styles.chatBox}>
           <div className={styles.chatHeader}>

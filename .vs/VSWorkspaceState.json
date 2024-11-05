@@ -1,11 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\KhoHang_Backend",
-    "\\KhoHang_FontEnd",
     "\\KhoHang_Winform",
     "\\KhoHang_Winform\\QL_KhoHang"
   ],
-  "SelectedNode": "\\KhoHang_Winform\\QL_KhoHang\\frmHome.cs",
+  "SelectedNode": "\\KhoHang_Winform\\QL_KhoHang\\QL_KhoHang.csproj",
   "PreviewInSolutionExplorer": false
 }
