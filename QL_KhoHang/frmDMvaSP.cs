@@ -51,6 +51,29 @@ namespace QL_KhoHang
             }
         }
 
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            var maDanhMuc = txtMaDanhMuc.Text;
+            var tenDanhMuc = txtTenDanhMuc.Text;
+
+            if (string.IsNullOrEmpty(maDanhMuc) || string.IsNullOrEmpty(tenDanhMuc))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
+                return;
+            }
+
+            // Sửa thông tin danh mục trong cơ sở dữ liệu
+            var danhMuc = qlkh.DanhMucs.FirstOrDefault(dm => dm.DanhMucID == maDanhMuc);
+            if (danhMuc != null)
+            {
+                danhMuc.TenDanhMuc = tenDanhMuc;
+                qlkh.SubmitChanges();
+            }
+
+            // Cập nhật lại DataGridView
+            LoadDanhMuc();
+        }
+
         private void btnLuu_Click(object sender, EventArgs e)
         {
             var maDanhMuc = txtMaDanhMuc.Text;
@@ -163,9 +186,6 @@ namespace QL_KhoHang
         {
             var danhMucList = qlkh.DanhMucs.ToList();
 
-            // Thêm tùy chọn "Tất cả"
-            // danhMucList.Insert(0, new DanhMuc { DanhMucID = "", TenDanhMuc = "Tất cả" });
-
             dgvDanhMuc.DataSource = danhMucList;
 
             // Load dữ liệu vào combobox
@@ -174,7 +194,7 @@ namespace QL_KhoHang
             cboDanhMuc.ValueMember = "DanhMucID";
 
 
-                        // Đặt tên cột bằng tiếng Việt
+            // Đặt tên cột bằng tiếng Việt
             dgvDanhMuc.Columns["DanhMucID"].HeaderText = "Mã danh mục";
             dgvDanhMuc.Columns["TenDanhMuc"].HeaderText = "Tên danh mục";
         }
@@ -214,7 +234,6 @@ namespace QL_KhoHang
             var selectedSort = cboSapXep.SelectedItem?.ToString();
             if (selectedSort == null)
             {
-                // Handle the case where no sort option is selected
                 return;
             }
 
@@ -246,9 +265,6 @@ namespace QL_KhoHang
         {
             var nhaCungCapList = qlkh.NhaCungCaps.ToList();
 
-            // Thêm tùy chọn "Tất cả"
-            // nhaCungCapList.Insert(0, new NhaCungCap { NhaCungCapID = "", TenNhaCungCap = "Tất cả" });
-
             cboNhaCungCap.DataSource = nhaCungCapList;
             cboNhaCungCap.DisplayMember = "TenNhaCungCap";
             cboNhaCungCap.ValueMember = "NhaCungCapID";
@@ -260,6 +276,164 @@ namespace QL_KhoHang
             cboSapXep.Items.Add("Giá bán");
             cboSapXep.Items.Add("Số lượng");
             cboSapXep.SelectedIndex = 0;
+        }
+
+        private void btnThemSP_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var maSanPham = txtMaSanPham.Text;
+                var tenSanPham = txtTenSanPham.Text;
+                if (!int.TryParse(txtSoLuongToiThieu.Text, out var soLuong))
+                {
+                    MessageBox.Show("Số lượng không hợp lệ.");
+                    return;
+                }
+                if (!decimal.TryParse(txtGiaBan.Text, out var giaBan))
+                {
+                    MessageBox.Show("Giá bán không hợp lệ.");
+                    return;
+                }
+
+                // Validate giaBan range
+                if (giaBan < 0 || giaBan > 9999999.999m)
+                {
+                    MessageBox.Show("Giá bán vượt quá phạm vi cho phép.");
+                    return;
+                }
+
+                var danhMucID = cboDanhMuc.SelectedValue.ToString();
+                var nhaCungCapID = cboNhaCungCap.SelectedValue.ToString();
+
+                if (string.IsNullOrEmpty(maSanPham) || string.IsNullOrEmpty(tenSanPham))
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
+                    return;
+                }
+
+                // Check if the product already exists
+                var existingSanPham = qlkh.SanPhams.FirstOrDefault(sp => sp.SanPhamID == maSanPham);
+                if (existingSanPham != null)
+                {
+                    MessageBox.Show("Mã sản phẩm đã tồn tại. Vui lòng chọn mã sản phẩm khác.");
+                    return;
+                }
+
+                // Thêm sản phẩm mới vào cơ sở dữ liệu
+                var sanPham = new SanPham
+                {
+                    SanPhamID = maSanPham,
+                    TenSanPham = tenSanPham,
+                    SoLuong = soLuong,
+                    GiaBan = giaBan,
+                    DanhMucID = danhMucID,
+                    NhaCungCapID = nhaCungCapID
+                };
+                qlkh.SanPhams.InsertOnSubmit(sanPham);
+                qlkh.SubmitChanges();
+
+                // Cập nhật lại DataGridView
+                LoadSanPham();
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show($"Lỗi: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Unexpected error: {ex.Message}");
+            }
+        }
+
+
+        private void btnSuaSanPham_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var maSanPham = txtMaSanPham.Text;
+                var tenSanPham = txtTenSanPham.Text;
+                if (!int.TryParse(txtSoLuongToiThieu.Text, out var soLuong))
+                {
+                    MessageBox.Show("Số lượng không hợp lệ.");
+                    return;
+                }
+                if (!decimal.TryParse(txtGiaBan.Text, out var giaBan))
+                {
+                    MessageBox.Show("Giá bán không hợp lệ.");
+                    return;
+                }
+
+                // Validate giaBan range
+                if (giaBan < 0 || giaBan > 9999999.999m)
+                {
+                    MessageBox.Show("Giá bán vượt quá phạm vi cho phép.");
+                    return;
+                }
+
+                var danhMucID = cboDanhMuc.SelectedValue.ToString();
+                var nhaCungCapID = cboNhaCungCap.SelectedValue.ToString();
+
+                if (string.IsNullOrEmpty(maSanPham) || string.IsNullOrEmpty(tenSanPham))
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
+                    return;
+                }
+
+                // Sửa thông tin sản phẩm trong cơ sở dữ liệu
+                var sanPham = qlkh.SanPhams.FirstOrDefault(sp => sp.SanPhamID == maSanPham);
+                if (sanPham != null)
+                {
+                    sanPham.TenSanPham = tenSanPham;
+                    sanPham.SoLuong = soLuong;
+                    sanPham.GiaBan = giaBan;
+                    sanPham.DanhMucID = danhMucID;
+                    sanPham.NhaCungCapID = nhaCungCapID;
+                    qlkh.SubmitChanges();
+                }
+
+                // Cập nhật lại DataGridView
+                LoadSanPham();
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show($"Lỗi: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Unexpected error: {ex.Message}");
+            }
+        }
+
+
+        private void btnXoaSanPham_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvSanPham.SelectedRows.Count > 0)
+                {
+                    var selectedRow = dgvSanPham.SelectedRows[0];
+                    var sanPhamID = selectedRow.Cells["SanPhamID"].Value.ToString();
+
+                    // Xóa sản phẩm khỏi cơ sở dữ liệu
+                    var sanPham = qlkh.SanPhams.FirstOrDefault(sp => sp.SanPhamID == sanPhamID);
+                    if (sanPham != null)
+                    {
+                        qlkh.SanPhams.DeleteOnSubmit(sanPham);
+                        qlkh.SubmitChanges();
+                    }
+
+                    // Cập nhật lại DataGridView
+                    LoadSanPham();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn sản phẩm để xóa.");
+                }
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show($"Giá trị tham số vượt quá phạm vi cho phép: {ex.Message}");
+            }
         }
     }
 }
