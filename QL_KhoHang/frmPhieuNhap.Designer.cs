@@ -33,6 +33,7 @@ namespace QL_KhoHang
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_them_ex = new System.Windows.Forms.Button();
             this.btnInPhieuNhap = new System.Windows.Forms.Button();
             this.txtGhichu = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -101,6 +102,7 @@ namespace QL_KhoHang
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_them_ex);
             this.groupBox1.Controls.Add(this.btnInPhieuNhap);
             this.groupBox1.Controls.Add(this.txtGhichu);
             this.groupBox1.Controls.Add(this.label12);
@@ -116,14 +118,31 @@ namespace QL_KhoHang
             this.groupBox1.Controls.Add(this.txtMaNV);
             this.groupBox1.Controls.Add(this.txtMaphieu);
             this.groupBox1.Controls.Add(this.dtG_phieuNhap);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(6, 84);
+            this.groupBox1.Location = new System.Drawing.Point(0, 49);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1326, 289);
+            this.groupBox1.Size = new System.Drawing.Size(1340, 367);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Phiếu nhập";
+            // 
+            // btn_them_ex
+            // 
+            this.btn_them_ex.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_them_ex.FlatAppearance.BorderSize = 0;
+            this.btn_them_ex.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btn_them_ex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_them_ex.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_them_ex.Location = new System.Drawing.Point(354, 277);
+            this.btn_them_ex.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_them_ex.Name = "btn_them_ex";
+            this.btn_them_ex.Size = new System.Drawing.Size(105, 49);
+            this.btn_them_ex.TabIndex = 18;
+            this.btn_them_ex.Text = "Thêm excel";
+            this.btn_them_ex.UseVisualStyleBackColor = false;
+            this.btn_them_ex.Click += new System.EventHandler(this.btn_them_ex_Click);
             // 
             // btnInPhieuNhap
             // 
@@ -132,7 +151,7 @@ namespace QL_KhoHang
             this.btnInPhieuNhap.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.btnInPhieuNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInPhieuNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInPhieuNhap.Location = new System.Drawing.Point(473, 228);
+            this.btnInPhieuNhap.Location = new System.Drawing.Point(473, 277);
             this.btnInPhieuNhap.Margin = new System.Windows.Forms.Padding(2);
             this.btnInPhieuNhap.Name = "btnInPhieuNhap";
             this.btnInPhieuNhap.Size = new System.Drawing.Size(105, 49);
@@ -167,7 +186,7 @@ namespace QL_KhoHang
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnXoa.Location = new System.Drawing.Point(593, 228);
+            this.btnXoa.Location = new System.Drawing.Point(593, 277);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(68, 49);
@@ -263,9 +282,10 @@ namespace QL_KhoHang
             // dtG_phieuNhap
             // 
             this.dtG_phieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtG_phieuNhap.Location = new System.Drawing.Point(700, 26);
+            this.dtG_phieuNhap.Dock = System.Windows.Forms.DockStyle.Right;
+            this.dtG_phieuNhap.Location = new System.Drawing.Point(276, 23);
             this.dtG_phieuNhap.Name = "dtG_phieuNhap";
-            this.dtG_phieuNhap.Size = new System.Drawing.Size(618, 251);
+            this.dtG_phieuNhap.Size = new System.Drawing.Size(1061, 341);
             this.dtG_phieuNhap.TabIndex = 0;
             this.dtG_phieuNhap.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtG_phieuNhap_CellClick);
             // 
@@ -280,10 +300,11 @@ namespace QL_KhoHang
             this.groupBox2.Controls.Add(this.txt_ct_Sanpham);
             this.groupBox2.Controls.Add(this.txt_ct_MaPhieu);
             this.groupBox2.Controls.Add(this.dtG_ct_phieunhap);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(6, 386);
+            this.groupBox2.Location = new System.Drawing.Point(0, 398);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1062, 456);
+            this.groupBox2.Size = new System.Drawing.Size(1340, 456);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết phiếu nhập";
@@ -419,5 +440,6 @@ namespace QL_KhoHang
         private System.Windows.Forms.TextBox txt_ct_SoLuong;
         private System.Windows.Forms.TextBox txtGhichu;
         private System.Windows.Forms.Button btnInPhieuNhap;
+        private System.Windows.Forms.Button btn_them_ex;
     }
 }

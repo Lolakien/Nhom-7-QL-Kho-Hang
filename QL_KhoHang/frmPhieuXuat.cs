@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -22,18 +23,12 @@ namespace QL_KhoHang
 
         public void LoadPhieuXuat()
         {
-            var phieuXuatList = qlkh.PhieuXuats.Select(p => new
-            {
-                PhieuXuatID = p.PhieuXuatID,
-                KhachHangID = p.KhachHangID,
-                NhanVienID = p.NhanVienID,
-                NgayXuat = p.NgayXuat,
-                GhiChu = p.GhiChu,
-                TongTien = p.TongTien
-            }).ToList();
+            var phieuXuatList = qlkh.PhieuXuats.ToList();
 
+            // Gán danh sách cho DataGridView
             dtG_phieuXuat.DataSource = phieuXuatList;
 
+            // Đặt tiêu đề cho các cột
             dtG_phieuXuat.Columns["PhieuXuatID"].HeaderText = "Phiếu Xuất";
             dtG_phieuXuat.Columns["KhachHangID"].HeaderText = "Khách Hàng";
             dtG_phieuXuat.Columns["NhanVienID"].HeaderText = "Nhân Viên";
@@ -169,7 +164,59 @@ namespace QL_KhoHang
 
                 // Refresh the DataGridView
                 LoadPhieuXuat();
+                LoadChiTietPhieuXuat(null);
                 MessageBox.Show("Xóa phiếu xuất thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btn_sua_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra xem người dùng đã chọn phiếu xuất để sửa chưa
+            if (string.IsNullOrEmpty(txtMaphieu.Text))
+            {
+                MessageBox.Show("Vui lòng chọn phiếu xuất để sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Lấy thông tin cần thiết từ các trường nhập liệu
+            string phieuXuatID = txtMaphieu.Text;
+            string ghiChu = txtGhichu.Text;
+            decimal tongTien = decimal.Parse(txtTongTien.Text); // Đảm bảo rằng đây là decimal
+            DateTime ngayXuat = dtpNgayXuat.Value;
+            string khachHangID = cbbKH.SelectedValue.ToString(); // Lấy giá trị từ ComboBox
+
+            // Tìm NhanVienID từ tên nhân viên
+            string tenNhanVien = txtMaNV.Text;
+            var nhanVien = qlkh.NhanViens.FirstOrDefault(n => n.HoTen == tenNhanVien);
+            string nhanVienID = nhanVien != null ? nhanVien.NhanVienID : null;
+
+            if (nhanVienID == null)
+            {
+                MessageBox.Show("Không tìm thấy nhân viên với tên đã nhập.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Tìm phiếu xuất cần sửa trong cơ sở dữ liệu
+            var phieuXuat = qlkh.PhieuXuats.FirstOrDefault(p => p.PhieuXuatID == phieuXuatID);
+            if (phieuXuat != null)
+            {
+                // Cập nhật thông tin
+                phieuXuat.NhanVienID = nhanVienID;
+                phieuXuat.GhiChu = ghiChu;
+                phieuXuat.TongTien = tongTien;
+                phieuXuat.NgayXuat = ngayXuat;
+                phieuXuat.KhachHangID = khachHangID; // Cập nhật khách hàng
+
+                // Ghi lại thay đổi vào cơ sở dữ liệu
+                qlkh.SubmitChanges();
+
+                // Thông báo thành công và làm mới dữ liệu
+                MessageBox.Show("Cập nhật phiếu xuất thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadPhieuXuat(); // Làm mới danh sách phiếu xuất
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy phiếu xuất.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

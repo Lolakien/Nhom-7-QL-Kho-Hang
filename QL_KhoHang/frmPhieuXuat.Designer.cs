@@ -32,6 +32,7 @@ namespace QL_KhoHang
             this.label1 = new System.Windows.Forms.Label();
             this.btnInPhieuXuat = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_sua = new System.Windows.Forms.Button();
             this.txtGhichu = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -95,6 +96,7 @@ namespace QL_KhoHang
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_sua);
             this.groupBox1.Controls.Add(this.btnInPhieuXuat);
             this.groupBox1.Controls.Add(this.txtGhichu);
             this.groupBox1.Controls.Add(this.label12);
@@ -110,14 +112,31 @@ namespace QL_KhoHang
             this.groupBox1.Controls.Add(this.txtMaNV);
             this.groupBox1.Controls.Add(this.txtMaphieu);
             this.groupBox1.Controls.Add(this.dtG_phieuXuat);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(6, 93);
+            this.groupBox1.Location = new System.Drawing.Point(0, 49);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1326, 289);
+            this.groupBox1.Size = new System.Drawing.Size(1455, 483);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Phiếu xuất";
+            // 
+            // btn_sua
+            // 
+            this.btn_sua.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btn_sua.FlatAppearance.BorderSize = 0;
+            this.btn_sua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.btn_sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_sua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sua.Location = new System.Drawing.Point(354, 228);
+            this.btn_sua.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_sua.Name = "btn_sua";
+            this.btn_sua.Size = new System.Drawing.Size(105, 49);
+            this.btn_sua.TabIndex = 16;
+            this.btn_sua.Text = "Sửa phiếu xuất";
+            this.btn_sua.UseVisualStyleBackColor = false;
+            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
             // txtGhichu
             // 
@@ -241,9 +260,10 @@ namespace QL_KhoHang
             // dtG_phieuXuat
             // 
             this.dtG_phieuXuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtG_phieuXuat.Location = new System.Drawing.Point(700, 26);
+            this.dtG_phieuXuat.Dock = System.Windows.Forms.DockStyle.Right;
+            this.dtG_phieuXuat.Location = new System.Drawing.Point(340, 23);
             this.dtG_phieuXuat.Name = "dtG_phieuXuat";
-            this.dtG_phieuXuat.Size = new System.Drawing.Size(618, 251);
+            this.dtG_phieuXuat.Size = new System.Drawing.Size(1112, 457);
             this.dtG_phieuXuat.TabIndex = 0;
             this.dtG_phieuXuat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtG_phieuXuat_CellClick);
             // 
@@ -258,10 +278,11 @@ namespace QL_KhoHang
             this.groupBox2.Controls.Add(this.txt_ct_Sanpham);
             this.groupBox2.Controls.Add(this.txt_ct_MaPhieu);
             this.groupBox2.Controls.Add(this.dtG_ct_phieuxuat);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(6, 395);
+            this.groupBox2.Location = new System.Drawing.Point(0, 398);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1062, 456);
+            this.groupBox2.Size = new System.Drawing.Size(1455, 456);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết phiếu xuất";
@@ -337,9 +358,10 @@ namespace QL_KhoHang
             // dtG_ct_phieuxuat
             // 
             this.dtG_ct_phieuxuat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtG_ct_phieuxuat.Location = new System.Drawing.Point(323, 43);
+            this.dtG_ct_phieuxuat.Dock = System.Windows.Forms.DockStyle.Right;
+            this.dtG_ct_phieuxuat.Location = new System.Drawing.Point(45, 23);
             this.dtG_ct_phieuxuat.Name = "dtG_ct_phieuxuat";
-            this.dtG_ct_phieuxuat.Size = new System.Drawing.Size(733, 407);
+            this.dtG_ct_phieuxuat.Size = new System.Drawing.Size(1407, 430);
             this.dtG_ct_phieuxuat.TabIndex = 5;
             this.dtG_ct_phieuxuat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtG_ct_phieuxuat_CellClick);
             // 
@@ -356,25 +378,27 @@ namespace QL_KhoHang
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1340, 49);
+            this.panel4.Size = new System.Drawing.Size(1455, 49);
             this.panel4.TabIndex = 8;
             // 
             // frmPhieuXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1340, 854);
+            this.ClientSize = new System.Drawing.Size(1455, 854);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panel4);
             this.Name = "frmPhieuXuat";
             this.Text = "frmPhieuXuat";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtG_phieuXuat)).EndInit();
@@ -418,5 +442,6 @@ namespace QL_KhoHang
         private System.Windows.Forms.DataGridView dtG_ct_phieuxuat;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btn_sua;
     }
 }

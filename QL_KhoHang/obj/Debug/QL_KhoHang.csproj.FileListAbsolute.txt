@@ -94,7 +94,6 @@ D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.Box.resources
 D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.BoxDetail.resources
 D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.frmDashboard.resources
 D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.frmHome.resources
-D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.frmInit.resources
 D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.frmLogin.resources
 D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.frmPhieuNhap.resources
 D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.frmStocks.resources
@@ -116,3 +115,10 @@ E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuSnackbar.dll
 E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.Form1.resources
 E:\QL_KhoHang\QL_KhoHang\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.dll
 E:\QL_KhoHang\QL_KhoHang\obj\Debug\QL_KhoHang.frmDMvaSP.resources
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.Form1.resources
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.frmDMvaSP.resources
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\obj\Debug\QL_KhoHang.MiniForm.InitFrm.resources
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\bin\Debug\EPPlus.dll
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\bin\Debug\EPPlus.Interfaces.dll
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\bin\Debug\EPPlus.System.Drawing.dll
+D:\Do AN\Nhom-7-QL-Kho-Hang\QL_KhoHang\bin\Debug\EPPlus.xml
