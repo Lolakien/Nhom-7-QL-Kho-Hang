@@ -204,7 +204,7 @@ namespace QL_KhoHang
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                openFileDialog.InitialDirectory = "D:\\Do AN\\Nhom-7-QL-Kho-Hang"; // Thay đổi nếu cần
+                openFileDialog.InitialDirectory = "D:\\Do AN\\Nhom-7-QL-Kho-Hang";
                 openFileDialog.Filter = "Excel Files|*.xls;*.xlsx";
                 openFileDialog.Title = "Chọn file Excel để nhập";
 
@@ -212,17 +212,17 @@ namespace QL_KhoHang
                 {
                     string filePath = openFileDialog.FileName;
 
-                    // Sử dụng Microsoft.Office.Interop.Excel để đọc file Excel
+                    // Tạo một phiên bản ứng dụng Excel
                     var excelApp = new Excel.Application();
                     var workbook = excelApp.Workbooks.Open(filePath);
-                    var worksheet = (Excel.Worksheet)workbook.Sheets[1]; // Lấy worksheet đầu tiên
+                    var worksheet = (Excel.Worksheet)workbook.Sheets[1];
 
                     // Đọc thông tin phiếu nhập
-                    string tenNhaCungCap = worksheet.Cells[10, 2].Value.ToString(); // Tên nhà cung cấp
-                    decimal tongTien = decimal.Parse(worksheet.Cells[16, 6].Value.ToString()); // Tổng tiền
-                    string nhanVienID = Authentication.ID; // Tên nhân viên
+                    string tenNhaCungCap = worksheet.Cells[10, 2].Value.ToString();
+                    decimal tongTien = decimal.Parse(worksheet.Cells[16, 6].Value.ToString().Replace(".", "").Replace(",", ".")); // Định dạng lại tiền
+                    string nhanVienID = Authentication.ID;
 
-                    // Tìm mã NCC từ tên nhà cung cấp
+                    // Tìm ID nhà cung cấp
                     string nhaCungCapID = qlkh.NhaCungCaps
                         .Where(ncc => ncc.TenNhaCungCap == tenNhaCungCap)
                         .Select(ncc => ncc.NhaCungCapID)
@@ -234,41 +234,42 @@ namespace QL_KhoHang
                         return;
                     }
 
-                    // Lấy mã phiếu nhập mới
+                    // Tạo một phiếu nhập mới
                     string maPN = GetNextPhieuNhapID();
-
-                    // Tạo đối tượng Phiếu Nhập
                     var phieuNhap = new PhieuNhap
                     {
                         PhieuNhapID = maPN,
                         NhaCungCapID = nhaCungCapID,
                         NhanVienID = nhanVienID,
-                        NgayNhap = DateTime.Now, // Hoặc lấy từ worksheet nếu có
-                        GhiChu = "", // Nếu có ghi chú thì thêm vào đây
+                        NgayNhap = DateTime.Now,
+                        GhiChu = "",
                         TongTien = tongTien
                     };
 
-                    // Thêm phiếu nhập vào cơ sở dữ liệu
+                    // Chèn phiếu nhập mới vào cơ sở dữ liệu
                     qlkh.PhieuNhaps.InsertOnSubmit(phieuNhap);
-                    qlkh.SubmitChanges(); // Lưu phiếu nhập
+                    qlkh.SubmitChanges();
 
-                    // Đọc thông tin chi tiết phiếu nhập
-                    for (int row = 14; row <= worksheet.UsedRange.Rows.Count; row++) // Bắt đầu từ hàng 14
+                    // Đọc chi tiết phiếu nhập
+                    decimal tongThanhTien = 0; // Khởi tạo biến tổng thành tiền
+                    for (int row = 14; row <= worksheet.UsedRange.Rows.Count; row++)
                     {
-                        // Lấy giá trị từ các ô
                         var sanPhamIDCell = worksheet.Cells[row, 2].Value;
                         var soLuongCell = worksheet.Cells[row, 4].Value;
                         var giaNhapCell = worksheet.Cells[row, 5].Value;
 
-                        // Nếu bất kỳ ô nào có giá trị null, thoát khỏi vòng lặp
                         if (sanPhamIDCell == null || soLuongCell == null || giaNhapCell == null)
                         {
-                            break; // Thoát vòng lặp
+                            break; // Thoát vòng lặp nếu có bất kỳ ô nào trống
                         }
 
-                        string sanPhamID = sanPhamIDCell.ToString(); // Mã sản phẩm
-                        int soLuong = int.Parse(soLuongCell.ToString()); // Số lượng
-                        decimal giaNhap = decimal.Parse(giaNhapCell.ToString()); // Đơn giá
+                        string sanPhamID = sanPhamIDCell.ToString();
+                        int soLuong = int.Parse(soLuongCell.ToString());
+                        decimal giaNhap = decimal.Parse(giaNhapCell.ToString());
+
+                        // Tính thành tiền cho sản phẩm
+                        decimal thanhTien = soLuong * giaNhap;
+                        tongThanhTien += thanhTien; // Cộng dồn thành tiền
 
                         var chiTiet = new ChiTietPhieuNhap
                         {
@@ -278,13 +279,15 @@ namespace QL_KhoHang
                             GiaNhap = giaNhap
                         };
 
-                        // Thêm chi tiết phiếu nhập vào cơ sở dữ liệu
+                        // Chèn chi tiết phiếu nhập vào cơ sở dữ liệu
                         qlkh.ChiTietPhieuNhaps.InsertOnSubmit(chiTiet);
                     }
 
-                    // Ghi lại thay đổi sau khi thêm tất cả
-                    qlkh.SubmitChanges();
-                    LoadPhieuNhap(); // Làm mới danh sách phiếu nhập
+                    // Cập nhật tổng tiền cho phiếu nhập
+                    phieuNhap.TongTien = tongThanhTien;
+                    qlkh.SubmitChanges(); // Lưu thay đổi
+
+                    LoadPhieuNhap(); // Làm mới danh sách phiếu nhập 
                     MessageBox.Show("Nhập phiếu nhập thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // Đóng workbook và ứng dụng Excel
