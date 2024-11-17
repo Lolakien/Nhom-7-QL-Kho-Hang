@@ -53,7 +53,7 @@ namespace QL_KhoHang
                 if (db.danhMucController.DanhMucIsNotEmpty(selectedDanhMuc))
                 {
                     btnInit.Visible = false;
-                    LoadTable(selectedDanhMuc);
+                    loadSingleTable(selectedDanhMuc);
                 }
                 else
                 {
@@ -105,7 +105,9 @@ namespace QL_KhoHang
 
             loadPhieuNhap();
             loadPanelDanhMuc();
+           
             txtTimKiemSetup();
+           
         }
 
         private void btnInit_Click(object sender, EventArgs e)
@@ -118,9 +120,8 @@ namespace QL_KhoHang
         {
          
          
-            tableLayoutPanel1.Controls.Clear();
-            tableLayoutPanel1.ColumnStyles.Clear();
-            tableLayoutPanel1.RowStyles.Clear();
+           
+    
             string selectedDanhMucID = selectedDanhMuc;
             for (int i = 0; i <= rows; i++)
             {
@@ -132,7 +133,7 @@ namespace QL_KhoHang
                     db.viTriKhoController.AddViTri(vt);
                 }
             }
-            LoadTable(selectedDanhMucID);
+            loadSingleTable(selectedDanhMucID);
             MessageBox.Show("Khởi tạo thành công");
         }
 
@@ -173,26 +174,57 @@ namespace QL_KhoHang
 
         void ClearTable()
         {
-            tableLayoutPanel1.Controls.Clear();
-            tableLayoutPanel1.ColumnStyles.Clear();
-            tableLayoutPanel1.RowStyles.Clear();
+            flowLayoutPanel1.Controls.Clear();
+
         }
-        private void LoadTable(string danhMucID)
+        void loadKhoHang()
+        {
+            
+            TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
+            tableLayoutPanel.AutoSize = true;
+            var danhMucList = db.danhMucController.GetAllDanhMuc();
+            foreach(var dm in danhMucList)
+            {
+                loadSingleTable(dm.DanhMucID);
+            }
+        }
+
+        void loadSingleTable(string danhMucID)
+        {
+            TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
+            tableLayoutPanel.AutoSize = true;
+            Label lblDanhMuc = new Label();
+            var DM = db.danhMucController.GetDanhMucByID(danhMucID);
+            lblDanhMuc.Text = DM.TenDanhMuc;
+            lblDanhMuc.AutoSize = false;
+            lblDanhMuc.Width = 50; 
+            lblDanhMuc.Height = 500;
+            lblDanhMuc.TextAlign = ContentAlignment.MiddleCenter; 
+            lblDanhMuc.Font = new Font("Arial", 12, FontStyle.Bold);
+            lblDanhMuc.BackColor = Color.Green;
+            lblDanhMuc.ForeColor = Color.White;
+
+            flowLayoutPanel1.Controls.Add(lblDanhMuc);
+            flowLayoutPanel1.Controls.Add(tableLayoutPanel);
+            LoadTable(danhMucID, tableLayoutPanel);
+
+        }
+        private void LoadTable(string danhMucID, TableLayoutPanel tableLayoutPanel1)
         {
             loadProgressPanel();
             btnReset.Visible = false;
             btnInit.Visible = false;
-            ClearTable();
+;
             tableLayoutPanel1.AutoSize = true;
-
+            
+     
+  
             var viTriList = db.viTriKhoController.GetListViTriByDanhMuc(danhMucID);
             if (viTriList.Count > 0)
             {
                 lbDanhMuc.Visible = true;
                 btnReset.Visible = true;
-                tableLayoutPanel1.Controls.Clear();
-                tableLayoutPanel1.ColumnStyles.Clear();
-                tableLayoutPanel1.RowStyles.Clear();
+
 
                 int rows = viTriList.Max(v => v.ViTriID[0]) - 'A' + 1;
 
@@ -334,7 +366,7 @@ namespace QL_KhoHang
                     var maDanhMuc = dgvSanPham.Rows[e.RowIndex].Cells["DanhMucID"].Value;
                     var tenDanhMuc = dgvSanPham.Rows[e.RowIndex].Cells["TenDanhMuc"].Value;
                     selectedDanhMuc = maDanhMuc.ToString();
-                    LoadTable(selectedDanhMuc);
+                    loadSingleTable(selectedDanhMuc);
                     var matchingProducts = db.sanPhamController.SearchSanPhamByDanhMucID("", selectedDanhMuc);
                     cboSP.DataSource = matchingProducts;
                     cboSP.DisplayMember = "TenSanPham";
@@ -513,7 +545,7 @@ namespace QL_KhoHang
                 }
 
                 // Gọi phương thức ThemPhieuXuat để lưu vào CSDL
-                bool isSuccess = db.phieuXuatController.ThemPhieuXuat(Authentication.ID, maKH, ngayXuat, maPX, chiTietPhieuXuats, txtGhiChu.Text);
+                bool isSuccess = db.phieuXuatController.ThemPhieuXuat(Authentication.getUserID(), maKH, ngayXuat, maPX, chiTietPhieuXuats, txtGhiChu.Text);
                 if (isSuccess)
                 {
                     selectedBox.ViTri.SoLuong -= Int16.Parse(txtXKSoLuong.Text);
@@ -529,6 +561,17 @@ namespace QL_KhoHang
                 }
             }
             else MessageBox.Show("Không tìm thấy khách hàng !");
+        }
+
+        private void pnTongSucChua_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            loadKhoHang();
+        }
+
+        private void bunifuGradientPanel1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

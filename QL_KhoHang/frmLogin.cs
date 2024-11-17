@@ -39,7 +39,7 @@ namespace QL_KhoHang
             String password = txtPassword.Text.Trim();
             if (Authentication.ValidateUser(ID, password))
             {
-                Authentication.ID = ID; 
+           
                 frmHome f = new frmHome();
                 f.Show();
                 this.Hide();
@@ -52,22 +52,7 @@ namespace QL_KhoHang
         private const string shitty = "nvm.bin";
 
      
-        void DungQuanTamHamNay()
-        {
-            int forgetable = 0;     
-            if (File.Exists(shitty))
-            {
-                using (BinaryReader reader = new BinaryReader(File.Open(shitty, FileMode.Open)))
-                {
-                    forgetable = reader.ReadInt32(); 
-                }
-            }
-            forgetable++;
-            using (BinaryWriter writer = new BinaryWriter(File.Open(shitty, FileMode.Create)))
-            {
-                writer.Write(forgetable); 
-            }
-        }
+        
 
 
 

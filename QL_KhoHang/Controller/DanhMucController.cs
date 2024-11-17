@@ -15,6 +15,12 @@ namespace QL_KhoHang.Controller
             return qlkh.DanhMucs.ToList();
         }
 
+        public DanhMuc GetDanhMucByID(string danhMucID)
+        {
+            var dm = qlkh.DanhMucs
+                            .FirstOrDefault(s => s.DanhMucID  == danhMucID);
+            return dm;
+        }
         public bool DanhMucIsNotEmpty(string danhMucID)
         {
             var viTriCount = (from vt in qlkh.ViTriKhos

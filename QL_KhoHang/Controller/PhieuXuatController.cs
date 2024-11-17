@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace QL_KhoHang.Controller
 {
-    class PhieuXuatController
+    public class PhieuXuatController
     {
-         QL_KhoHangDataContext qlkh = new QL_KhoHangDataContext();
+        QL_KhoHangDataContext qlkh = new QL_KhoHangDataContext();
 
         public List<PhieuXuat> GetAllPhieuXuat()
         {
@@ -35,11 +35,11 @@ namespace QL_KhoHang.Controller
 
         public string GenerateMaPhieuXuat(string maKH, string NgayThangNam)
         {
-  
-         
-            string baseMaPX = "PX" + NgayThangNam + maKH; 
 
-       
+
+            string baseMaPX = "PX" + NgayThangNam + maKH;
+
+
             var similarPhieuXuats = qlkh.PhieuXuats
                 .Where(px => px.PhieuXuatID.StartsWith(baseMaPX))
                 .Select(px => px.PhieuXuatID)
@@ -58,50 +58,102 @@ namespace QL_KhoHang.Controller
             }
 
             // Tạo mã phiếu xuất với số thứ tự được format thành 2 chữ số (ví dụ: "01", "02")
-          string maPhieuXuat = String.Format("{0}{1:D2}", baseMaPX, nextNumber);
+            string maPhieuXuat = String.Format("{0}{1:D2}", baseMaPX, nextNumber);
 
 
             return maPhieuXuat;
         }
         public bool ThemPhieuXuat(string maNV, string maKH, DateTime ngayXuat, string maPX, List<dynamic> chiTietPhieuXuats, String ghiChu)
         {
-          
-                // Tạo đối tượng PhieuXuat mới
-                PhieuXuat phieuXuat = new PhieuXuat
+
+            // Tạo đối tượng PhieuXuat mới
+            PhieuXuat phieuXuat = new PhieuXuat
+            {
+                PhieuXuatID = maPX,
+                KhachHangID = maKH,
+                NhanVienID = maNV, // Thay "NV01" bằng ID nhân viên hiện tại nếu có
+                NgayXuat = ngayXuat,
+                GhiChu = ghiChu,        // Ghi chú nếu có
+
+            };
+
+            // Thêm phiếu xuất vào cơ sở dữ liệu
+            qlkh.PhieuXuats.InsertOnSubmit(phieuXuat);
+
+            // Thêm chi tiết phiếu xuất
+            foreach (var chiTiet in chiTietPhieuXuats)
+            {
+                ChiTietPhieuXuat ctPhieuXuat = new ChiTietPhieuXuat
                 {
                     PhieuXuatID = maPX,
-                    KhachHangID = maKH,
-                    NhanVienID = maNV, // Thay "NV01" bằng ID nhân viên hiện tại nếu có
-                    NgayXuat = ngayXuat,
-                    GhiChu = ghiChu,        // Ghi chú nếu có
-       
+                    SanPhamID = chiTiet.MaSanPham,
+                    SoLuong = chiTiet.SoLuong,
+                    GiaXuat = chiTiet.GiaXuat
                 };
 
-                // Thêm phiếu xuất vào cơ sở dữ liệu
-                qlkh.PhieuXuats.InsertOnSubmit(phieuXuat);
+                qlkh.ChiTietPhieuXuats.InsertOnSubmit(ctPhieuXuat);
+            }
 
-                // Thêm chi tiết phiếu xuất
-                foreach (var chiTiet in chiTietPhieuXuats)
+            // Lưu thay đổi vào cơ sở dữ liệu
+            qlkh.SubmitChanges();
+            return true;
+
+
+        }
+        public List<dynamic> GetThongKeSanPhamXuat()
+        {
+            // Lấy tháng hiện tại
+            DateTime now = DateTime.Now;
+            int currentMonth = now.Month;
+            int currentYear = now.Year;
+
+            // Danh sách để chứa kết quả
+            var thongKeList = new List<dynamic>();
+
+            // Lấy danh sách sản phẩm
+            var sanPhams = qlkh.SanPhams.ToList();
+
+            // Duyệt qua từng sản phẩm
+            foreach (var sp in sanPhams)
+            {
+                // Tạo một đối tượng thống kê
+                var thongKe = new
                 {
-                    ChiTietPhieuXuat ctPhieuXuat = new ChiTietPhieuXuat
-                    {
-                        PhieuXuatID = maPX,
-                        SanPhamID = chiTiet.MaSanPham,
-                        SoLuong = chiTiet.SoLuong,
-                        GiaXuat = chiTiet.GiaXuat
-                    };
+                    SanPhamID = sp.SanPhamID,
+                    TenSanPham = sp.TenSanPham,
+                    SoLuongThang1 = GetTongSoLuong(sp.SanPhamID, currentMonth, currentYear),
+                    SoLuongThang2 = GetTongSoLuong(sp.SanPhamID, (currentMonth - 1 + 12) % 12, currentMonth == 1 ? currentYear - 1 : currentYear),
+                    SoLuongThang3 = GetTongSoLuong(sp.SanPhamID, (currentMonth - 2 + 12) % 12, currentMonth <= 2 ? currentYear - 1 : currentYear),
+                    SoLuongThang4 = GetTongSoLuong(sp.SanPhamID, (currentMonth - 3 + 12) % 12, currentMonth <= 3 ? currentYear - 1 : currentYear),
+                    SoLuongThang5 = GetTongSoLuong(sp.SanPhamID, (currentMonth - 4 + 12) % 12, currentMonth <= 4 ? currentYear - 1 : currentYear),
+                    SoLuongThang6 = GetTongSoLuong(sp.SanPhamID, (currentMonth - 5 + 12) % 12, currentMonth <= 5 ? currentYear - 1 : currentYear),
+                    SoLuongThang7 = GetTongSoLuong(sp.SanPhamID, (currentMonth - 6 + 12) % 12, currentMonth <= 6 ? currentYear - 1 : currentYear),
+                    SoLuongThang8 = GetTongSoLuong(sp.SanPhamID, (currentMonth - 7 + 12) % 12, currentMonth <= 7 ? currentYear - 1 : currentYear),
+                    SoLuongThang9 = GetTongSoLuong(sp.SanPhamID, (currentMonth - 8 + 12) % 12, currentMonth <= 8 ? currentYear - 1 : currentYear),
+                    SoLuongThang10 = GetTongSoLuong(sp.SanPhamID, (currentMonth - 9 + 12) % 12, currentMonth <= 9 ? currentYear - 1 : currentYear),
+                    SoLuongThang11 = GetTongSoLuong(sp.SanPhamID, (currentMonth - 10 + 12) % 12, currentMonth <= 10 ? currentYear - 1 : currentYear),
+                    SoLuongThang12 = GetTongSoLuong(sp.SanPhamID, (currentMonth - 11 + 12) % 12, currentMonth <= 11 ? currentYear - 1 : currentYear)
+                };
 
-                    qlkh.ChiTietPhieuXuats.InsertOnSubmit(ctPhieuXuat);
-                }
-              
-                // Lưu thay đổi vào cơ sở dữ liệu
-                qlkh.SubmitChanges();
-                return true;
-            
-     
+                thongKeList.Add(thongKe);
+            }
+
+            return thongKeList;
         }
 
+        // Hàm phụ để tính tổng số lượng sản phẩm xuất ra trong một tháng và năm nhất định
+        private int GetTongSoLuong(string sanPhamID, int month, int year)
+        {
+            var tongSoLuong = qlkh.ChiTietPhieuXuats
+                .Where(ctx => ctx.SanPhamID == sanPhamID &&
+                            ctx.PhieuXuat.NgayXuat.Month == month &&
+                            ctx.PhieuXuat.NgayXuat.Year == year)
+                .Sum(ctx => (int?)ctx.SoLuong) ?? 0;
+
+            return tongSoLuong;
+        }
+
+
+
     }
-        
-    
 }

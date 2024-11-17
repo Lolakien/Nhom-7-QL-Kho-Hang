@@ -10,8 +10,16 @@ namespace QL_KhoHang
     public static class Authentication
     {
        
-        public static string ID ="NULL";
-       
+        public static string UserID = String.Empty;
+        public static string RoleID = String.Empty;
+
+        public static string getUserID()
+        {
+            return UserID;
+        }
+        public static string getRoleID() { 
+            return RoleID;
+        }
         public static bool ValidateUser(string ID, string password)
         {
             QL_KhoHangDataContext QLKho = new QL_KhoHangDataContext();
@@ -19,7 +27,9 @@ namespace QL_KhoHang
                         where nv.NhanVienID == ID && nv.MatKhau == password
                         select nv).FirstOrDefault();
 
-            
+            UserID = user.NhanVienID;
+            RoleID=user.VaiTroID;
+
             return user != null;
         }
     }

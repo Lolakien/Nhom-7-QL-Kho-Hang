@@ -1,8 +1,14 @@
-﻿using System;
+﻿using QL_KhoHang.MachineLearning;
+using System;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
+using Microsoft.ML;
+using Microsoft.ML.Data;
+using System.Collections.Generic;
+using QL_KhoHang.MiniForm;
 
 namespace QL_KhoHang
 {
@@ -20,9 +26,9 @@ namespace QL_KhoHang
             txtMaphieu.ReadOnly = true;
             txtMaNV.ReadOnly = true;
             txtTongTien.ReadOnly = true;
-            txt_ct_MaPhieu.ReadOnly = true;
+         
         }
-
+        List<SanPham> ListLowStockProducts = new List<SanPham>();
         private void CheckLowStockProducts()
         {
             var lowStockProducts = qlkh.SanPhams
@@ -33,19 +39,81 @@ namespace QL_KhoHang
                     sp.TenSanPham,
                     sp.SoLuong,
                     sp.SanPhamToiThieu // Lấy thêm thông tin số lượng tối thiểu
-        }).ToList();
-
+                }).ToList();
             if (lowStockProducts.Any())
             {
-                string message = "Cảnh báo: Bạn cần nhập thêm các sản phẩm sau:\n";
+                dgvSapHet.Columns.Add("SanPhamID", "Mã sản phẩm");
+                dgvSapHet.Columns.Add("TenSanPham", "Tên sản phẩm");
+                dgvSapHet.Columns.Add("SoLuong", "Số lượng hiện tại");
+                dgvSapHet.Columns[0].Width = 50;
+                dgvSapHet.Columns[1].Width = 160;
+                dgvSapHet.HeaderBackColor = Color.Red;
                 foreach (var product in lowStockProducts)
                 {
-                    message += $" - {product.TenSanPham} (ID: {product.SanPhamID}, Số lượng hiện tại: {product.SoLuong}, Số lượng tối thiểu: {product.SanPhamToiThieu})\n";
+                    dgvSapHet.Rows.Add(
+                        product.SanPhamID,
+                        product.TenSanPham,
+                        product.SoLuong
+                    );
                 }
-                MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+        private void LoadDataAndTrainModel()
+        {
+            // Lấy dữ liệu từ PhieuXuat và ChiTietPhieuXuat
+            var phieuXuatData = qlkh.PhieuXuats
+     .Join(qlkh.ChiTietPhieuXuats,
+           px => px.PhieuXuatID,
+           ctx => ctx.PhieuXuatID,
+           (px, ctx) => new
+           {
+               px.NgayXuat,
+               ctx.SanPhamID,
+               SoLuong = (float)ctx.SoLuong // Chuyển đổi từ int sang float
+           })
+     .GroupBy(x => new { x.NgayXuat.Year, x.NgayXuat.Month, x.SanPhamID })
+     .Select(g => new PhieuXuatData
+     {
+         Nam = g.Key.Year,
+         Thang = g.Key.Month,
+         SanPhamID = g.Key.SanPhamID,
+         SoLuong = g.Sum(x => x.SoLuong)
+     })
+     .ToList();
 
+            // Kiểm tra xem dữ liệu có tồn tại không
+            if (phieuXuatData.Any())
+            {
+                // Khởi tạo và huấn luyện mô hình dự đoán
+                var predictor = new DemandPredictor();
+                predictor.TrainModel(phieuXuatData);
+
+                dgvDuDoan.Columns.Add("SanPhamID", "Mã sản phẩm");
+                dgvDuDoan.Columns.Add("TenSanPham", "Tên sản phẩm");
+                dgvDuDoan.Columns.Add("SoLuongDuDoan", "Số lượng dự đoán");
+
+                // Lặp qua các sản phẩm trong dgvSapHet và thực hiện dự đoán
+                foreach (DataGridViewRow row in dgvSapHet.Rows)
+                {
+                    if (row.Cells["SanPhamID"].Value != null)
+                    {
+                        string sanPhamID = row.Cells["SanPhamID"].Value.ToString();
+                        string tenSanPham = row.Cells["TenSanPham"].Value.ToString();
+
+                        // Thực hiện dự đoán
+                        float soLuongDuDoan = predictor.Predict(DateTime.Now.Year, DateTime.Now.Month + 1, sanPhamID);
+
+                        dgvDuDoan.Rows.Add(sanPhamID, tenSanPham, soLuongDuDoan);
+                    }
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu để huấn luyện mô hình.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+ 
         public void LoadPhieuNhap()
         {
             var phieuNhapList = qlkh.PhieuNhaps.Select(p => new
@@ -59,42 +127,12 @@ namespace QL_KhoHang
             }).ToList();
 
             dtG_phieuNhap.DataSource = phieuNhapList;
-
             dtG_phieuNhap.Columns["PhieuNhapID"].HeaderText = "Phiếu Nhập";
             dtG_phieuNhap.Columns["NhaCungCapID"].HeaderText = "Nhà Cung Cấp";
             dtG_phieuNhap.Columns["NhanVienID"].HeaderText = "Nhân Viên";
             dtG_phieuNhap.Columns["NgayNhap"].HeaderText = "Ngày Nhập";
             dtG_phieuNhap.Columns["GhiChu"].HeaderText = "Ghi Chú";
             dtG_phieuNhap.Columns["TongTien"].HeaderText = "Tổng Tiền";
-        }
-
-        private void dtG_phieuNhap_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                var selectedRow = dtG_phieuNhap.Rows[e.RowIndex];
-                var phieuNhapID = selectedRow.Cells["PhieuNhapID"].Value.ToString();
-                var nhaCungCapID = selectedRow.Cells["NhaCungCapID"].Value.ToString();
-                var nhanVienID = selectedRow.Cells["NhanVienID"].Value.ToString();
-                var ngayNhap = Convert.ToDateTime(selectedRow.Cells["NgayNhap"].Value);
-                var ghiChu = selectedRow.Cells["GhiChu"].Value.ToString();
-                var tongTien = Convert.ToDecimal(selectedRow.Cells["TongTien"].Value);
-
-                txtMaphieu.Text = phieuNhapID;
-                txtMaNV.Text = nhanVienID;
-                txtGhichu.Text = ghiChu;
-                txtTongTien.Text = tongTien.ToString();
-                dtpNgayNhap.Value = ngayNhap;
-
-                var nhanVien = qlkh.NhanViens.FirstOrDefault(nv => nv.NhanVienID == nhanVienID);
-                if (nhanVien != null)
-                {
-                    txtMaNV.Text = nhanVien.HoTen;
-                }
-                cbbNCC.SelectedValue = nhaCungCapID;
-
-                LoadChiTietPhieuNhap(phieuNhapID);
-            }
         }
 
         private void LoadChiTietPhieuNhap(string phieuNhapID)
@@ -127,24 +165,7 @@ namespace QL_KhoHang
 
         private void dtG_ct_phieunhap_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                var selectedRow = dtG_ct_phieunhap.Rows[e.RowIndex];
-                var sanPhamID = selectedRow.Cells["SanPhamID"].Value.ToString();
-                var soLuong = Convert.ToInt32(selectedRow.Cells["SoLuong"].Value);
-                var giaNhap = Convert.ToDecimal(selectedRow.Cells["GiaNhap"].Value);
 
-                txt_ct_MaPhieu.Text = txtMaphieu.Text;
-                txt_ct_Sanpham.Text = sanPhamID;
-                txt_ct_SoLuong.Text = soLuong.ToString();
-                txt_ct_GiaNhap.Text = giaNhap.ToString();
-
-                var sanPham = qlkh.SanPhams.FirstOrDefault(sp => sp.SanPhamID == sanPhamID);
-                if (sanPham != null)
-                {
-                    txt_ct_Sanpham.Text = sanPham.TenSanPham;
-                }
-            }
         }
 
         private void btnInPhieuNhap_Click(object sender, EventArgs e)
@@ -220,7 +241,7 @@ namespace QL_KhoHang
                     // Đọc thông tin phiếu nhập
                     string tenNhaCungCap = worksheet.Cells[10, 2].Value.ToString();
                     decimal tongTien = decimal.Parse(worksheet.Cells[16, 6].Value.ToString().Replace(".", "").Replace(",", ".")); // Định dạng lại tiền
-                    string nhanVienID = Authentication.ID;
+                    string nhanVienID = Authentication.getUserID();
 
                     // Tìm ID nhà cung cấp
                     string nhaCungCapID = qlkh.NhaCungCaps
@@ -318,6 +339,51 @@ namespace QL_KhoHang
             // Tạo mã phiếu nhập tiếp theo
             maxId++; // Tăng lên 1
             return "PN" + maxId.ToString("D2"); // Định dạng với 2 chữ số
+        }
+
+        private void frmPhieuNhap_Load(object sender, EventArgs e)
+        {
+      
+        }
+
+        private void dtG_phieuNhap_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var selectedRow = dtG_phieuNhap.Rows[e.RowIndex];
+                var phieuNhapID = selectedRow.Cells["PhieuNhapID"].Value.ToString();
+                var nhaCungCapID = selectedRow.Cells["NhaCungCapID"].Value.ToString();
+                var nhanVienID = selectedRow.Cells["NhanVienID"].Value.ToString();
+                var ngayNhap = Convert.ToDateTime(selectedRow.Cells["NgayNhap"].Value);
+                var ghiChu = selectedRow.Cells["GhiChu"].Value.ToString();
+                var tongTien = Convert.ToDecimal(selectedRow.Cells["TongTien"].Value);
+
+                txtMaphieu.Text = phieuNhapID;
+                txtMaNV.Text = nhanVienID;
+                txtGhichu.Text = ghiChu;
+                txtTongTien.Text = tongTien.ToString();
+                dtpNgayNhap.Value = ngayNhap;
+
+                var nhanVien = qlkh.NhanViens.FirstOrDefault(nv => nv.NhanVienID == nhanVienID);
+                if (nhanVien != null)
+                {
+                    txtMaNV.Text = nhanVien.HoTen;
+                }
+                cbbNCC.SelectedValue = nhaCungCapID;
+
+                LoadChiTietPhieuNhap(phieuNhapID);
+            }
+        }
+
+        private void btnDuDoan_Click(object sender, EventArgs e)
+        {
+            LoadDataAndTrainModel();
+        }
+
+        private void btnNCCSetting_Click(object sender, EventArgs e)
+        {
+            NCCForm f = new NCCForm();
+            f.ShowDialog();
         }
     }
 }

@@ -34,7 +34,7 @@
             this.btnSanPham = new System.Windows.Forms.Button();
             this.btnPhieuXuat = new System.Windows.Forms.Button();
             this.btnPhieuNhap = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnStock = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -64,7 +64,7 @@
             this.bunifuGradientPanel1.Controls.Add(this.btnSanPham);
             this.bunifuGradientPanel1.Controls.Add(this.btnPhieuXuat);
             this.bunifuGradientPanel1.Controls.Add(this.btnPhieuNhap);
-            this.bunifuGradientPanel1.Controls.Add(this.button2);
+            this.bunifuGradientPanel1.Controls.Add(this.btnStock);
             this.bunifuGradientPanel1.Controls.Add(this.btnDashboard);
             this.bunifuGradientPanel1.Controls.Add(this.panel2);
             this.bunifuGradientPanel1.Controls.Add(this.panel1);
@@ -93,6 +93,7 @@
             this.btnSanPham.Size = new System.Drawing.Size(115, 57);
             this.btnSanPham.TabIndex = 12;
             this.btnSanPham.UseVisualStyleBackColor = false;
+            this.btnSanPham.Visible = false;
             this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click);
             // 
             // btnPhieuXuat
@@ -108,6 +109,7 @@
             this.btnPhieuXuat.Size = new System.Drawing.Size(115, 57);
             this.btnPhieuXuat.TabIndex = 11;
             this.btnPhieuXuat.UseVisualStyleBackColor = false;
+            this.btnPhieuXuat.Visible = false;
             this.btnPhieuXuat.Click += new System.EventHandler(this.btnPhieuXuat_Click);
             // 
             // btnPhieuNhap
@@ -124,22 +126,24 @@
             this.btnPhieuNhap.Size = new System.Drawing.Size(115, 57);
             this.btnPhieuNhap.TabIndex = 10;
             this.btnPhieuNhap.UseVisualStyleBackColor = false;
+            this.btnPhieuNhap.Visible = false;
             this.btnPhieuNhap.Click += new System.EventHandler(this.btnPhieuNhap_Click);
             // 
-            // button2
+            // btnStock
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(0, 276);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 57);
-            this.button2.TabIndex = 9;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnStock.BackColor = System.Drawing.Color.Transparent;
+            this.btnStock.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStock.FlatAppearance.BorderSize = 0;
+            this.btnStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStock.Image = ((System.Drawing.Image)(resources.GetObject("btnStock.Image")));
+            this.btnStock.Location = new System.Drawing.Point(0, 276);
+            this.btnStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnStock.Name = "btnStock";
+            this.btnStock.Size = new System.Drawing.Size(115, 57);
+            this.btnStock.TabIndex = 9;
+            this.btnStock.UseVisualStyleBackColor = false;
+            this.btnStock.Visible = false;
+            this.btnStock.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnDashboard
             // 
@@ -154,6 +158,7 @@
             this.btnDashboard.Size = new System.Drawing.Size(115, 57);
             this.btnDashboard.TabIndex = 8;
             this.btnDashboard.UseVisualStyleBackColor = false;
+            this.btnDashboard.Visible = false;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // panel2
@@ -230,7 +235,7 @@
 
         private Bunifu.UI.WinForms.BunifuGradientPanel bunifuGradientPanel1;
         private System.Windows.Forms.Button btnPhieuNhap;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnStock;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;

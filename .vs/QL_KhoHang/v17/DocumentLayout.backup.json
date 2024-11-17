@@ -1,0 +1,711 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Nhom-7-QL-Kho-Hang\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\frmstocks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\frmstocks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\frmstocks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\frmstocks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\frmhome.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\frmphieuxuat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\frmphieuxuat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|e:\\nhom-7-ql-kho-hang\\ql_khohang\\controller\\phieuxuatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\controller\\phieuxuatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\controller\\khachhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\controller\\khachhangcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\controller\\ncccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\controller\\ncccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|e:\\nhom-7-ql-kho-hang\\ql_khohang\\controller\\vitrikhocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\controller\\vitrikhocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|e:\\nhom-7-ql-kho-hang\\ql_khohang\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|e:\\nhom-7-ql-kho-hang\\ql_khohang\\controller\\nhanviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\controller\\nhanviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\controller\\phieunhapcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\controller\\phieunhapcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\frmdmvasp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\frmdmvasp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\frmphieunhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\frmphieunhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\excelexport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\excelexport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\authentication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\authentication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\chitietpn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\chitietpn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|e:\\nhom-7-ql-kho-hang\\ql_khohang\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\dbconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\dbconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|e:\\nhom-7-ql-kho-hang\\ql_khohang\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\filecommon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\filecommon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|e:\\nhom-7-ql-kho-hang\\ql_khohang\\controller\\thongkecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\controller\\thongkecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\controller\\sanphamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\controller\\sanphamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\controller\\danhmuccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\controller\\danhmuccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\controller\\lichsuxuatkhocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\controller\\lichsuxuatkhocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|e:\\nhom-7-ql-kho-hang\\ql_khohang\\frmphieunhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\frmphieunhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\miniform\\khform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\miniform\\khform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\miniform\\khform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\miniform\\khform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\miniform\\khform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\miniform\\khform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\miniform\\nccform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\miniform\\nccform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\frmphieuxuat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\frmphieuxuat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\miniform\\nccform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\miniform\\nccform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|QL_KhoHang||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\machinelearning\\phieuxuatdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\machinelearning\\phieuxuatdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\machinelearning\\demandpredictor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\machinelearning\\demandpredictor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\machinelearning\\demandprediction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\machinelearning\\demandprediction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\frmphieunhap.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\frmphieunhap.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|E:\\Nhom-7-QL-Kho-Hang\\ql_khohang\\chitietpx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{25A03721-D8AE-4240-AD7D-A35C42106356}|QL_KhoHang\\QL_KhoHang.csproj|solutionrelative:ql_khohang\\chitietpx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmHome.cs [Design]",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmHome.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\frmHome.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmHome.cs [Design]",
+              "RelativeToolTip": "QL_KhoHang\\frmHome.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T15:15:12.028Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmLogin.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmLogin.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\frmLogin.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmLogin.cs",
+              "RelativeToolTip": "QL_KhoHang\\frmLogin.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAawDYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T21:21:33.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmHome.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmHome.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\frmHome.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmHome.cs",
+              "RelativeToolTip": "QL_KhoHang\\frmHome.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAawCEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T21:21:05.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmStocks.cs [Design]",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmStocks.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\frmStocks.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmStocks.cs [Design]*",
+              "RelativeToolTip": "QL_KhoHang\\frmStocks.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T10:10:30.666Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmStocks.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmStocks.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\frmStocks.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmStocks.cs*",
+              "RelativeToolTip": "QL_KhoHang\\frmStocks.cs*",
+              "ViewState": "AgIAAFsAAAAAAAAAAAArwG0AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T10:10:54.177Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmLogin.cs [Design]",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmLogin.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\frmLogin.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmLogin.cs [Design]",
+              "RelativeToolTip": "QL_KhoHang\\frmLogin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T10:01:58.045Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmDashboard.cs [Design]",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmDashboard.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\frmDashboard.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmDashboard.cs [Design]",
+              "RelativeToolTip": "QL_KhoHang\\frmDashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T11:22:51.42Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmPhieuXuat.cs [Design]",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmPhieuXuat.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\frmPhieuXuat.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmPhieuXuat.cs [Design]",
+              "RelativeToolTip": "QL_KhoHang\\frmPhieuXuat.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T09:59:42.761Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PhieuXuatController.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Controller\\PhieuXuatController.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\Controller\\PhieuXuatController.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Controller\\PhieuXuatController.cs",
+              "RelativeToolTip": "QL_KhoHang\\Controller\\PhieuXuatController.cs",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAAAJsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T19:57:23.445Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "KhachHangController.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Controller\\KhachHangController.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\Controller\\KhachHangController.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Controller\\KhachHangController.cs",
+              "RelativeToolTip": "QL_KhoHang\\Controller\\KhachHangController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAABYAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T11:37:00.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "NCCController.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Controller\\NCCController.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\Controller\\NCCController.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Controller\\NCCController.cs",
+              "RelativeToolTip": "QL_KhoHang\\Controller\\NCCController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T10:46:55.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ViTriKhoController.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Controller\\ViTriKhoController.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\Controller\\ViTriKhoController.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Controller\\ViTriKhoController.cs",
+              "RelativeToolTip": "QL_KhoHang\\Controller\\ViTriKhoController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAIwBcAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T22:19:06.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "frmDashboard.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmDashboard.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\frmDashboard.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmDashboard.cs",
+              "RelativeToolTip": "QL_KhoHang\\frmDashboard.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAuwFwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T20:13:13.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "PhieuNhapController.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Controller\\PhieuNhapController.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\Controller\\PhieuNhapController.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Controller\\PhieuNhapController.cs",
+              "RelativeToolTip": "QL_KhoHang\\Controller\\PhieuNhapController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T10:47:25.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "NhanVienController.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Controller\\NhanVienController.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\Controller\\NhanVienController.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Controller\\NhanVienController.cs",
+              "RelativeToolTip": "QL_KhoHang\\Controller\\NhanVienController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T22:51:24.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "frmDMvaSP.cs [Design]",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmDMvaSP.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\frmDMvaSP.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmDMvaSP.cs [Design]",
+              "RelativeToolTip": "QL_KhoHang\\frmDMvaSP.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T10:02:00.405Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "frmPhieuNhap.cs [Design]",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmPhieuNhap.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\frmPhieuNhap.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmPhieuNhap.cs [Design]",
+              "RelativeToolTip": "QL_KhoHang\\frmPhieuNhap.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T10:01:57.06Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ExcelExport.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\ExcelExport.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\ExcelExport.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\ExcelExport.cs",
+              "RelativeToolTip": "QL_KhoHang\\ExcelExport.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T21:14:10.8Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Authentication.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Authentication.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\Authentication.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Authentication.cs",
+              "RelativeToolTip": "QL_KhoHang\\Authentication.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T15:19:36.251Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ChiTietPN.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\ChiTietPN.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\ChiTietPN.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\ChiTietPN.cs",
+              "RelativeToolTip": "QL_KhoHang\\ChiTietPN.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T15:19:55.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Constants.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Constants.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\Constants.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Constants.cs",
+              "RelativeToolTip": "QL_KhoHang\\Constants.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T22:50:52.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "DBConnect.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\DBConnect.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\DBConnect.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\DBConnect.cs",
+              "RelativeToolTip": "QL_KhoHang\\DBConnect.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T21:13:56.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Form1.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\Form1.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Form1.cs [Design]",
+              "RelativeToolTip": "QL_KhoHang\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T22:49:46.803Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "FileCommon.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\FileCommon.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\FileCommon.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\FileCommon.cs",
+              "RelativeToolTip": "QL_KhoHang\\FileCommon.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T21:14:12.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ThongKeController.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Controller\\ThongKeController.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\Controller\\ThongKeController.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Controller\\ThongKeController.cs",
+              "RelativeToolTip": "QL_KhoHang\\Controller\\ThongKeController.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAIwGMAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T21:13:27.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "SanPhamController.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Controller\\SanPhamController.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\Controller\\SanPhamController.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Controller\\SanPhamController.cs",
+              "RelativeToolTip": "QL_KhoHang\\Controller\\SanPhamController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T11:46:25.55Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "DanhMucController.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Controller\\DanhMucController.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\Controller\\DanhMucController.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Controller\\DanhMucController.cs",
+              "RelativeToolTip": "QL_KhoHang\\Controller\\DanhMucController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T10:26:09.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "LichSuXuatKhoController.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Controller\\LichSuXuatKhoController.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\Controller\\LichSuXuatKhoController.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Controller\\LichSuXuatKhoController.cs",
+              "RelativeToolTip": "QL_KhoHang\\Controller\\LichSuXuatKhoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T10:47:07.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "frmPhieuNhap.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmPhieuNhap.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\frmPhieuNhap.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmPhieuNhap.cs",
+              "RelativeToolTip": "QL_KhoHang\\frmPhieuNhap.cs",
+              "ViewState": "AgIAAHQBAAAAAAAAAAAnwIEBAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T10:02:58.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "KHForm.cs [Design]",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\MiniForm\\KHForm.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\MiniForm\\KHForm.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\MiniForm\\KHForm.cs [Design]",
+              "RelativeToolTip": "QL_KhoHang\\MiniForm\\KHForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T14:18:53.302Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "KHForm.Designer.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\MiniForm\\KHForm.Designer.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\MiniForm\\KHForm.Designer.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\MiniForm\\KHForm.Designer.cs",
+              "RelativeToolTip": "QL_KhoHang\\MiniForm\\KHForm.Designer.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAvwE0AAAByAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T15:13:37.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "KHForm.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\MiniForm\\KHForm.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\MiniForm\\KHForm.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\MiniForm\\KHForm.cs",
+              "RelativeToolTip": "QL_KhoHang\\MiniForm\\KHForm.cs",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAvwJYAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T14:55:43.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "NCCForm.cs [Design]",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\MiniForm\\NCCForm.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\MiniForm\\NCCForm.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\MiniForm\\NCCForm.cs [Design]",
+              "RelativeToolTip": "QL_KhoHang\\MiniForm\\NCCForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T10:31:06.577Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "frmPhieuXuat.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmPhieuXuat.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\frmPhieuXuat.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmPhieuXuat.cs",
+              "RelativeToolTip": "QL_KhoHang\\frmPhieuXuat.cs",
+              "ViewState": "AgIAAKsAAAAAAAAAAAA2wLsAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T14:50:17.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "NCCForm.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\MiniForm\\NCCForm.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\MiniForm\\NCCForm.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\MiniForm\\NCCForm.cs",
+              "RelativeToolTip": "QL_KhoHang\\MiniForm\\NCCForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T11:18:42.534Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "QL_KhoHang",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\QL_KhoHang.csproj",
+              "RelativeDocumentMoniker": "QL_KhoHang\\QL_KhoHang.csproj",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\QL_KhoHang.csproj",
+              "RelativeToolTip": "QL_KhoHang\\QL_KhoHang.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-11-15T16:35:22.716Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "PhieuXuatData.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\MachineLearning\\PhieuXuatData.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\MachineLearning\\PhieuXuatData.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\MachineLearning\\PhieuXuatData.cs",
+              "RelativeToolTip": "QL_KhoHang\\MachineLearning\\PhieuXuatData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T13:28:18.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "DemandPredictor.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\MachineLearning\\DemandPredictor.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\MachineLearning\\DemandPredictor.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\MachineLearning\\DemandPredictor.cs",
+              "RelativeToolTip": "QL_KhoHang\\MachineLearning\\DemandPredictor.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAnwB0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T21:08:20.372Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "DemandPrediction.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\MachineLearning\\DemandPrediction.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\MachineLearning\\DemandPrediction.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\MachineLearning\\DemandPrediction.cs",
+              "RelativeToolTip": "QL_KhoHang\\MachineLearning\\DemandPrediction.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T13:26:22.934Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "frmPhieuNhap.Designer.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmPhieuNhap.Designer.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\frmPhieuNhap.Designer.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\frmPhieuNhap.Designer.cs",
+              "RelativeToolTip": "QL_KhoHang\\frmPhieuNhap.Designer.cs",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAcwBMDAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T10:43:16.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Settings.settings",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Properties\\Settings.settings",
+              "RelativeDocumentMoniker": "QL_KhoHang\\Properties\\Settings.settings",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\Properties\\Settings.settings",
+              "RelativeToolTip": "QL_KhoHang\\Properties\\Settings.settings",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002767|",
+              "WhenOpened": "2024-11-15T16:34:24.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "ChiTietPX.cs",
+              "DocumentMoniker": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\ChiTietPX.cs",
+              "RelativeDocumentMoniker": "QL_KhoHang\\ChiTietPX.cs",
+              "ToolTip": "E:\\Nhom-7-QL-Kho-Hang\\QL_KhoHang\\ChiTietPX.cs",
+              "RelativeToolTip": "QL_KhoHang\\ChiTietPX.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T16:34:48.929Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

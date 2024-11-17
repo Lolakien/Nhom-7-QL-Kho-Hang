@@ -9,6 +9,23 @@ namespace QL_KhoHang.Controller
     class ViTriKhoController
     {
         QL_KhoHangDataContext qlkh = new QL_KhoHangDataContext();
+        public List<dynamic> GetDanhSachViTri()
+        {
+            var danhSachViTri = qlkh.ViTriKhos
+                .Select(vt => new
+                {
+                    MaViTri = vt.ViTriID ?? null,
+                    MaDanhMuc = vt.SanPham.DanhMucID ?? null, // Lấy mã danh mục từ sản phẩm liên kết
+                    MaSanPham = vt.SanPhamID ?? null,
+                    TenSanPham = vt.SanPham.TenSanPham ?? null,
+                    SoLuong = vt.SoLuong ,
+                    SoLuongToiDa = vt.SoLuongToiDa 
+                })
+           .OrderByDescending(vt => vt.SoLuong)
+                .ToList<dynamic>(); // Chuyển danh sách thành List<dynamic> để hiển thị trên DataGridView
+
+            return danhSachViTri;
+        }
         public void AddViTri(ViTriKho viTriKho)
         {
             qlkh.ViTriKhos.InsertOnSubmit(viTriKho);

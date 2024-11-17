@@ -22,6 +22,32 @@ namespace QL_KhoHang
 
         }
 
+        void Display()
+        {
+            if (Authentication.getRoleID() == "QUANLY")
+            {
+                btnDashboard.Visible = true;
+                btnSanPham.Visible = true;
+                btnStock.Visible = true;
+                frmDashboard f = new frmDashboard();
+                openChildForm(f);
+            }
+            if (Authentication.getRoleID() == "NHAPKHO")
+            {
+                btnPhieuNhap.Visible = true;
+                frmPhieuNhap f = new frmPhieuNhap();
+              
+            }
+            if (Authentication.getRoleID() == "XUATKHO")
+            {
+             
+                btnStock.Visible = true;
+                btnPhieuNhap.Visible = true;
+                frmPhieuXuat f = new frmPhieuXuat();
+                openChildForm(f);
+            }
+          
+        }
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             
@@ -32,9 +58,9 @@ namespace QL_KhoHang
 
         private void frmHome_Load(object sender, EventArgs e)
         {
-            lblID.Text = Authentication.ID;
-
-            openChildForm(new frmStocks());
+            lblID.Text = Authentication.getUserID();
+            Display();
+           
         }
 
         private void button2_Click(object sender, EventArgs e)

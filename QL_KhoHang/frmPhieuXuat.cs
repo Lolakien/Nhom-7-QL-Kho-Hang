@@ -2,7 +2,7 @@
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-
+using QL_KhoHang.MiniForm;
 namespace QL_KhoHang
 {
     public partial class frmPhieuXuat : Form
@@ -218,6 +218,12 @@ namespace QL_KhoHang
             {
                 MessageBox.Show("Không tìm thấy phiếu xuất.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnKHSetting_Click(object sender, EventArgs e)
+        {
+            KHForm f = new KHForm();
+            f.ShowDialog();
         }
     }
 }
