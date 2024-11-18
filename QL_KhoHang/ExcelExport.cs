@@ -58,38 +58,42 @@ namespace QL_KhoHang
         public void ExportPhieuNhap(PhieuNhap pn, ref string fileName, bool isPrintPreview)
         {
             Dictionary<string, string> replacer = new Dictionary<string, string>();
-            string ngay = "Ngày " + pn.NgayNhap. Day + " Tháng " + pn.NgayNhap.Month + " Năm " + pn.NgayNhap.Year;
+            string ngay = "Ngày " + pn.NgayNhap.Day + " Tháng " + pn.NgayNhap.Month + " Năm " + pn.NgayNhap.Year;
             replacer.Add("%NgayThangNam", ngay);
+
             QL_KhoHangDataContext qlhh = new QL_KhoHangDataContext();
-            NhaCungCap ncc = qlhh.NhaCungCaps.Where(t => t.NhaCungCapID ==
-            pn.NhaCungCapID).FirstOrDefault();
+            NhaCungCap ncc = qlhh.NhaCungCaps.FirstOrDefault(t => t.NhaCungCapID == pn.NhaCungCapID);
             replacer.Add("%MaPN", pn.PhieuNhapID);
             replacer.Add("%NCC", ncc.TenNhaCungCap);
+
             string diachi = ncc.DiaChi + " " + ncc.ThanhPho;
             replacer.Add("%DiaChi", diachi);
             replacer.Add("%DienThoai", ncc.DienThoai);
             replacer.Add("%TongTien", String.Format("{0:0,0.00} ", pn.TongTien));
-            NhanVien nv = qlhh. NhanViens.Where(t => t.NhanVienID == pn.NhanVienID).FirstOrDefault();
+
+            NhanVien nv = qlhh.NhanViens.FirstOrDefault(t => t.NhanVienID == pn.NhanVienID);
             replacer.Add("%TenNV", nv.HoTen);
+
             MemoryStream stream = null;
-            byte[] arrByte = new byte[0];
-            arrByte = File.ReadAllBytes("phieunhaphang.xlsx").ToArray();
-            //Get stream
-            if (arrByte.Count() > 0)
+            byte[] arrByte = File.ReadAllBytes("phieunhaphang.xlsx").ToArray();
+
+            // Get stream
+            if (arrByte.Length > 0)
             {
                 stream = new MemoryStream(arrByte);
             }
+
             ExcelEngine engine = new ExcelEngine();
             IWorkbook workBook = engine.Excel.Workbooks.Open(stream);
             IWorksheet workSheet = workBook.Worksheets[0];
             ITemplateMarkersProcessor markProcessor = workSheet.CreateTemplateMarkersProcessor();
-            //Replace value
+
+            // Replace value
             if (replacer != null && replacer.Count > 0)
             {
-                //Find and replace values
                 foreach (KeyValuePair<string, string> repl in replacer)
                 {
-                    Replace (workSheet, repl.Key, repl.Value);
+                    Replace(workSheet, repl.Key, repl.Value);
                 }
             }
 
@@ -105,39 +109,56 @@ namespace QL_KhoHang
                 stt++;
             }
 
-            // Kiểm tra dữ liệu
-            if (cthdSTT.Count > 0)
+            // Tìm dòng có chuỗi [TMP]
+            Syncfusion.XlsIO.IRange tmpRange = workSheet.FindFirst("[TMP]", ExcelFindType.Text);
+            if (tmpRange != null)
             {
-                string viewName = "Phieunhaphang";
-                markProcessor.AddVariable(viewName, cthdSTT);
-                markProcessor.ApplyMarkers(UnknownVariableAction.ReplaceBlank);
-            }
-            else
-            {
-                MessageBox.Show("Không có chi tiết phiếu nhập để xuất.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                int rowIndex = tmpRange.Row;
+
+                // Thêm dòng trống tương ứng với số lượng chi tiết phiếu nhập
+                if (cthdSTT.Count > 0)
+                {
+                    for (int i = 0; i < cthdSTT.Count; i++)
+                    {
+                        workSheet.InsertRow(rowIndex); // Chèn dòng mới
+                    }
+
+                    // Thêm biến vào marker
+                    string viewName = "Phieunhaphang";
+                    markProcessor.AddVariable(viewName, cthdSTT);
+                    markProcessor.ApplyMarkers(UnknownVariableAction.ReplaceBlank);
+                }
+                else
+                {
+                    MessageBox.Show("Không có chi tiết phiếu nhập để xuất.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
 
-            //Delete temporary row
+            string file = Path.GetTempFileName() + Constants.FILE_EXT_XLS;
+            fileName = file;
+            // Delete temporary row
             Syncfusion.XlsIO.IRange range = workSheet.FindFirst("[TMP]", ExcelFindType.Text);
             if (range != null)
             {
                 workSheet.DeleteRow(range.Row);
             }
-            string file = Path.GetTempFileName() + Constants.FILE_EXT_XLS;
-            fileName = file;
-            //Output file
+
+            // Output file
             if (!FileCommon.IsFileOpenOrReadOnly(file))
             {
-            workBook.SaveAs (file);
+                workBook.SaveAs(file);
             }
-            //Close
+
+            // Close
             workBook.Close();
             engine.Dispose();
-            if (!string.IsNullOrEmpty(fileName) && MessageBox.Show("Bạn có muốn mở file không?", "Thông tin", MessageBoxButtons. YesNo, MessageBoxIcon. Information, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+
+            if (!string.IsNullOrEmpty(fileName) && MessageBox.Show("Bạn có muốn mở file không?", "Thông tin", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 System.Diagnostics.Process.Start(fileName);
             }
         }
+
         public void ExportPhieuXuat(PhieuXuat px, ref string fileName, bool isPrintPreview)
         {
             Dictionary<string, string> replacer = new Dictionary<string, string>();
@@ -145,17 +166,16 @@ namespace QL_KhoHang
             replacer.Add("%NgayThangNam", ngay);
 
             QL_KhoHangDataContext qlhh = new QL_KhoHangDataContext();
-            KhachHang kh = qlhh.KhachHangs.Where(t => t.KhachHangID == px.KhachHangID).FirstOrDefault();
+            KhachHang kh = qlhh.KhachHangs.FirstOrDefault(t => t.KhachHangID == px.KhachHangID);
             replacer.Add("%MaPX", px.PhieuXuatID);
             replacer.Add("%KH", kh.TenKH);
 
             string diachi = kh.DiaChi + " " + kh.ThanhPho;
             replacer.Add("%DiaChi", diachi);
             replacer.Add("%DienThoai", kh.SDT);
-
             replacer.Add("%TongTien", String.Format("{0:0,0.00}", px.TongTien));
 
-            NhanVien nv = qlhh.NhanViens.Where(t => t.NhanVienID == px.NhanVienID).FirstOrDefault();
+            NhanVien nv = qlhh.NhanViens.FirstOrDefault(t => t.NhanVienID == px.NhanVienID);
             replacer.Add("%TenNV", nv.HoTen);
 
             MemoryStream stream = null;
@@ -193,27 +213,39 @@ namespace QL_KhoHang
                 stt++;
             }
 
-            // Check data
-            if (ctpxSTT.Count > 0)
+            // Tìm dòng có chuỗi [TMP]
+            Syncfusion.XlsIO.IRange tmpRange = workSheet.FindFirst("[TMP]", ExcelFindType.Text);
+            if (tmpRange != null)
             {
-                string viewName = "Phieuxuathang";
-                markProcessor.AddVariable(viewName, ctpxSTT);
-                markProcessor.ApplyMarkers(UnknownVariableAction.ReplaceBlank);
-            }
-            else
-            {
-                MessageBox.Show("Không có chi tiết phiếu xuất để xuất.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                int rowIndex = tmpRange.Row;
+
+                // Thêm dòng trống tương ứng với số lượng chi tiết phiếu xuất
+                if (ctpxSTT.Count > 0)
+                {
+                    for (int i = 0; i < ctpxSTT.Count; i++)
+                    {
+                        workSheet.InsertRow(rowIndex); // Chèn dòng mới
+                    }
+
+                    // Thêm biến vào marker
+                    string viewName = "Phieuxuathang";
+                    markProcessor.AddVariable(viewName, ctpxSTT);
+                    markProcessor.ApplyMarkers(UnknownVariableAction.ReplaceBlank);
+                }
+                else
+                {
+                    MessageBox.Show("Không có chi tiết phiếu xuất để xuất.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
 
+            string file = Path.GetTempFileName() + Constants.FILE_EXT_XLS;
+            fileName = file;
             // Delete temporary row
             Syncfusion.XlsIO.IRange range = workSheet.FindFirst("[TMP]", ExcelFindType.Text);
             if (range != null)
             {
                 workSheet.DeleteRow(range.Row);
             }
-
-            string file = Path.GetTempFileName() + Constants.FILE_EXT_XLS;
-            fileName = file;
 
             // Output file
             if (!FileCommon.IsFileOpenOrReadOnly(file))
@@ -225,11 +257,13 @@ namespace QL_KhoHang
             workBook.Close();
             engine.Dispose();
 
-            if (!string.IsNullOrEmpty(fileName) && MessageBox.Show("Bạn có muốn mở file không?", "Thông tin", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+            if (!string.IsNullOrEmpty(fileName) && MessageBox.Show("Bạn có muốn mở file không?", "Thông tin", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {
                 System.Diagnostics.Process.Start(fileName);
             }
         }
+
+
     }
 }
 

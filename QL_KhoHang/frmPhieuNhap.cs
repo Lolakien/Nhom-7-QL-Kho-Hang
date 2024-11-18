@@ -165,7 +165,23 @@ namespace QL_KhoHang
 
         private void dtG_ct_phieunhap_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0)
+            {
+                var selectedRow = dtG_ct_phieunhap.Rows[e.RowIndex];
+                var sanPhamID = selectedRow.Cells["SanPhamID"].Value.ToString();
+                var soLuong = Convert.ToInt32(selectedRow.Cells["SoLuong"].Value);
+                var giaNhap = Convert.ToDecimal(selectedRow.Cells["GiaNhap"].Value);
 
+                txt_ct_Sanpham.Text = sanPhamID;
+                txt_ct_SoLuong.Text = soLuong.ToString();
+                txt_ct_GiaNhap.Text = giaNhap.ToString();
+
+                var sanPham = qlkh.SanPhams.FirstOrDefault(sp => sp.SanPhamID == sanPhamID);
+                if (sanPham != null)
+                {
+                    txt_ct_Sanpham.Text = sanPham.TenSanPham;
+                }
+            }
         }
 
         private void btnInPhieuNhap_Click(object sender, EventArgs e)
