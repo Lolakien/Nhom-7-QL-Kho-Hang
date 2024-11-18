@@ -7,7 +7,6 @@ using Newtonsoft.Json;
 using System.Windows.Forms;
 using BunifuAnimatorNS;
 using System.Threading.Tasks;
-using QL_KhoHang.Controller;
 
 namespace QL_KhoHang.MiniForm
 {

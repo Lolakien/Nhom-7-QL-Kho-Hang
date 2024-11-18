@@ -6,8 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Microsoft.ML.Data;
-
 namespace QL_KhoHang.MachineLearning
 {
     // Lớp đầu vào cho dự đoán

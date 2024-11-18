@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Configuration;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 using System.Xml;
 using System.Data.Sql;
 namespace QL_KhoHang
