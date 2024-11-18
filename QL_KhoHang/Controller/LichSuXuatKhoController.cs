@@ -9,12 +9,13 @@ namespace QL_KhoHang.Controller
     class LichSuXuatKhoController
     {
         QL_KhoHangDataContext qlkh = new QL_KhoHangDataContext();
-        public bool ThemLichSuXuatKho(string danhMucID, List<dynamic> LichSuViTri)
+        public bool ThemLichSuXuatKho(string MaPX, List<dynamic> LichSuViTri)
         {
             foreach (var vt in LichSuViTri)
             {
                 LichSuXuatKho lsxk = new LichSuXuatKho
                 {
+                    PhieuXuatID = MaPX,
                     DanhMucID = vt.DanhMucID,
                     SanPhamID = vt.SanPhamID,
                     SoLuong = vt.SoLuong,

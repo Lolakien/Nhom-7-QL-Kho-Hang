@@ -289,14 +289,14 @@ namespace QL_KhoHang
                     MessageBox.Show("Số lượng không hợp lệ.");
                     return;
                 }
-                if (!decimal.TryParse(txtGiaBan.Text, out var giaBan))
+                if (!float.TryParse(txtGiaBan.Text, out var giaBan))
                 {
                     MessageBox.Show("Giá bán không hợp lệ.");
                     return;
                 }
 
                 // Validate giaBan range
-                if (giaBan < 0 || giaBan > 9999999.999m)
+                if (giaBan < 0 || giaBan > 9999999)
                 {
                     MessageBox.Show("Giá bán vượt quá phạm vi cho phép.");
                     return;
@@ -357,14 +357,14 @@ namespace QL_KhoHang
                     MessageBox.Show("Số lượng không hợp lệ.");
                     return;
                 }
-                if (!decimal.TryParse(txtGiaBan.Text, out var giaBan))
+                if (!Double.TryParse(txtGiaBan.Text, out var giaBan))
                 {
                     MessageBox.Show("Giá bán không hợp lệ.");
                     return;
                 }
 
                 // Validate giaBan range
-                if (giaBan < 0 || giaBan > 9999999.999m)
+                if (giaBan < 0 || giaBan > 9999999)
                 {
                     MessageBox.Show("Giá bán vượt quá phạm vi cho phép.");
                     return;

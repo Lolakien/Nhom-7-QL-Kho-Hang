@@ -26,9 +26,14 @@ namespace QL_KhoHang
         {
             if (Authentication.getRoleID() == "QUANLY")
             {
-                btnDashboard.Visible = true;
+                btnPhieuXuat.Visible = true;
+                btnPhieuNhap.Visible = true;
+               
                 btnSanPham.Visible = true;
                 btnStock.Visible = true;
+   
+                btnDashboard.Visible = true;
+         
                 frmDashboard f = new frmDashboard();
                 openChildForm(f);
             }
@@ -42,7 +47,7 @@ namespace QL_KhoHang
             {
              
                 btnStock.Visible = true;
-                btnPhieuNhap.Visible = true;
+                btnPhieuXuat.Visible = true;
                 frmPhieuXuat f = new frmPhieuXuat();
                 openChildForm(f);
             }

@@ -47,7 +47,7 @@ namespace QL_KhoHang
                 var nhanVienID = selectedRow.Cells["NhanVienID"].Value.ToString();
                 var ngayXuat = Convert.ToDateTime(selectedRow.Cells["NgayXuat"].Value);
                 var ghiChu = selectedRow.Cells["GhiChu"].Value.ToString();
-                var tongTien = Convert.ToDecimal(selectedRow.Cells["TongTien"].Value);
+                var tongTien = Convert.ToDouble(selectedRow.Cells["TongTien"].Value);
 
                 txtMaphieu.Text = phieuXuatID;
                 txtMaNV.Text = nhanVienID;
@@ -101,7 +101,7 @@ namespace QL_KhoHang
                 var selectedRow = dtG_ct_phieuxuat.Rows[e.RowIndex];
                 var sanPhamID = selectedRow.Cells["SanPhamID"].Value.ToString();
                 var soLuong = Convert.ToInt32(selectedRow.Cells["SoLuong"].Value);
-                var giaXuat = Convert.ToDecimal(selectedRow.Cells["GiaXuat"].Value);
+                var giaXuat = Convert.ToDouble(selectedRow.Cells["GiaXuat"].Value);
 
                 txt_ct_MaPhieu.Text = txtMaphieu.Text;
                 txt_ct_Sanpham.Text = sanPhamID;
@@ -181,7 +181,7 @@ namespace QL_KhoHang
             // Lấy thông tin cần thiết từ các trường nhập liệu
             string phieuXuatID = txtMaphieu.Text;
             string ghiChu = txtGhichu.Text;
-            decimal tongTien = decimal.Parse(txtTongTien.Text); // Đảm bảo rằng đây là decimal
+            Double tongTien = Double.Parse(txtTongTien.Text); 
             DateTime ngayXuat = dtpNgayXuat.Value;
             string khachHangID = cbbKH.SelectedValue.ToString(); // Lấy giá trị từ ComboBox
 

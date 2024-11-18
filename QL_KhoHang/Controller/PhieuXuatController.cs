@@ -88,7 +88,7 @@ namespace QL_KhoHang.Controller
                     PhieuXuatID = maPX,
                     SanPhamID = chiTiet.MaSanPham,
                     SoLuong = chiTiet.SoLuong,
-                    GiaXuat = chiTiet.GiaXuat
+                    GiaXuat = (double?)chiTiet.GiaXuat
                 };
 
                 qlkh.ChiTietPhieuXuats.InsertOnSubmit(ctPhieuXuat);

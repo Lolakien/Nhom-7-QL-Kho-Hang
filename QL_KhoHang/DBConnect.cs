@@ -21,6 +21,7 @@ namespace QL_KhoHang
 
         internal PhieuXuatController phieuXuatController = new PhieuXuatController();
        
+       internal LichSuXuatKhoController lichSuXuatKhoController = new LichSuXuatKhoController();
 
 
        

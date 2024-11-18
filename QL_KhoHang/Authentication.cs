@@ -26,11 +26,11 @@ namespace QL_KhoHang
             var user = (from nv in QLKho.NhanViens
                         where nv.NhanVienID == ID && nv.MatKhau == password
                         select nv).FirstOrDefault();
-
+            if(user==null) return false;
             UserID = user.NhanVienID;
             RoleID=user.VaiTroID;
 
-            return user != null;
+            return true;
         }
     }
 }

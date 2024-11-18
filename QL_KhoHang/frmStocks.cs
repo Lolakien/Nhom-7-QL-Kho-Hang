@@ -18,14 +18,6 @@ namespace QL_KhoHang
         DBConnect db = new DBConnect();
         List<Box> listBox = new List<Box>();
 
-        void loadCboSanPham()
-        {
-            string selectedDanhMucID = selectedDanhMuc;
-            var sanPhamList = db.sanPhamController.GetSanPhamByDanhMuc(selectedDanhMucID);
-            cboSP.DataSource = sanPhamList;
-            cboSP.ValueMember = "SanPhamID";
-            cboSP.DisplayMember = "TenSanPham";  
-        }
 
         void loadPanelDanhMuc()
         {
@@ -47,20 +39,7 @@ namespace QL_KhoHang
             s.BackColor = Color.Gainsboro;
             selectedDanhMuc = s.dm.DanhMucID;
             lbDanhMuc.Text = s.dm.TenDanhMuc;
-            loadCboSanPham();
-            if (selectedDanhMuc != null)
-            {
-                if (db.danhMucController.DanhMucIsNotEmpty(selectedDanhMuc))
-                {
-                    btnInit.Visible = false;
-                    loadSingleTable(selectedDanhMuc);
-                }
-                else
-                {
-                    btnInit.Visible = true;
-                
-                }
-            }
+            loadSingleTable(selectedDanhMuc);
         }
         void loadPhieuNhap()
         {
@@ -121,7 +100,7 @@ namespace QL_KhoHang
          
          
            
-    
+            flowLayoutPanel1.Controls.Clear();
             string selectedDanhMucID = selectedDanhMuc;
             for (int i = 0; i <= rows; i++)
             {
@@ -142,7 +121,7 @@ namespace QL_KhoHang
      
         void Box_Click(object sender, EventArgs e)
         {
-        
+            
             Box box = sender as Box;
             //Hien thi tren thong tin vi tri
             selectedBox = box;
@@ -151,16 +130,21 @@ namespace QL_KhoHang
             txtSoLuongMax.Text = box.ViTri.SoLuongToiDa.ToString();
             box.ViTri = selectedViTriKho;
             lblBoxID.Text = box.ViTri.ViTriID;
-         
-           if(box.ViTri.SanPhamID !=null) cboSP.SelectedValue = box.ViTri.SanPhamID;
-            if (cboSP.SelectedValue != null)
+
+            if (box.ViTri.SanPhamID != null)
             {
-                
-               int chuaXepViTri = db.sanPhamController.GetTotalQuantityNotInBoxBySanPhamID(cboSP.SelectedValue.ToString());
-               lblChuaXep.Text = chuaXepViTri.ToString();
+                txtTenSP.Text = selectedBox.tenSP;
+                txtMaSP.Text = selectedBox.ViTri.SanPhamID;
             }
+            else
+            {
+                txtTenSP.Text = "";
+                txtMaSP.Text = "";
+            }
+              
+            
             //Hien thi tren phieu xuat kho
-            lbXKTenSP.Text = cboSP.Text;
+            lbXKTenSP.Text = txtTenSP.Text;
             txtXKSoLuong.Text = box.ViTri.SoLuong.ToString();
             lbXKViTri.Text = box.ViTri.ViTriID;
 
@@ -340,18 +324,7 @@ namespace QL_KhoHang
         }
  
 
-        private void cboSP_TextChanged(object sender, EventArgs e)
-        {
-            string searchText = cboSP.Text;
-            var matchingProducts = db.sanPhamController.SearchSanPhamByDanhMucID(searchText, selectedDanhMuc);
-            cboSP.DataSource = matchingProducts;
-            cboSP.DisplayMember = "TenSanPham";
-            cboSP.ValueMember = "SanPhamID";
-            cboSP.Text = searchText;
-            cboSP.SelectionStart = searchText.Length;
-            cboSP.SelectionLength = 0;
-            cboSP.DroppedDown = true;
-        }
+ 
 
         private void listboxPhieuNhap_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -363,16 +336,16 @@ namespace QL_KhoHang
                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
                 {
                     var maSanPham = dgvSanPham.Rows[e.RowIndex].Cells["MaSanPham"].Value;
+                var tenSanPham = dgvSanPham.Rows[e.RowIndex].Cells["TenSanPham"].Value;
                     var maDanhMuc = dgvSanPham.Rows[e.RowIndex].Cells["DanhMucID"].Value;
                     var tenDanhMuc = dgvSanPham.Rows[e.RowIndex].Cells["TenDanhMuc"].Value;
-                    selectedDanhMuc = maDanhMuc.ToString();
-                    loadSingleTable(selectedDanhMuc);
-                    var matchingProducts = db.sanPhamController.SearchSanPhamByDanhMucID("", selectedDanhMuc);
-                    cboSP.DataSource = matchingProducts;
-                    cboSP.DisplayMember = "TenSanPham";
-                    cboSP.ValueMember = "SanPhamID";
-                    cboSP.SelectedValue = maSanPham;
-                    lbDanhMuc.Text = tenDanhMuc.ToString();
+                if(selectedBox.ViTri.DanhMucID!=null)
+                {
+
+                    txtTenSP.Text = tenSanPham.ToString();
+                    txtMaSP.Text = maSanPham.ToString();
+                }
+              
                 }
         }
       
@@ -381,7 +354,7 @@ namespace QL_KhoHang
         {
             string viTriID = selectedViTriKho.ViTriID;
             int soLuong = int.Parse(txtSoLuong.Text);
-            int chuaXepViTri = db.sanPhamController.GetTotalQuantityNotInBoxBySanPhamID(cboSP.SelectedValue.ToString());
+            int chuaXepViTri = db.sanPhamController.GetTotalQuantityNotInBoxBySanPhamID(txtMaSP.Text);
             int soLuongToiDa = int.Parse(txtSoLuongMax.Text);
            
             if (soLuong > soLuongToiDa || soLuong > chuaXepViTri) MessageBox.Show("Số lượng không hợp lệ ");
@@ -390,14 +363,14 @@ namespace QL_KhoHang
                 ViTriKho vt = new ViTriKho();
 
 
-                vt.SanPhamID = cboSP.SelectedValue.ToString();
+                vt.SanPhamID = txtMaSP.Text;
                 vt.SoLuong = soLuong;
 
                 vt.SoLuongToiDa = soLuongToiDa;
                 if (db.viTriKhoController.UpdateViTriKho(viTriID, vt))
                 {
                     MessageBox.Show("Cập nhật thành công");
-                    int daXepViTri = db.sanPhamController.GetTotalQuantityNotInBoxBySanPhamID(cboSP.SelectedValue.ToString());
+                    int daXepViTri = db.sanPhamController.GetTotalQuantityNotInBoxBySanPhamID(txtMaSP.Text);
                     lblChuaXep.Text = daXepViTri.ToString();
                     selectedBox.ViTri = vt;
                     selectedBox.setBox();
@@ -445,35 +418,44 @@ namespace QL_KhoHang
         private void btnThemXK_Click(object sender, EventArgs e)
         {
             ViTriKho vt = selectedBox.ViTri;
-            string masp = vt.SanPhamID;
-            int sl = vt.SoLuong;
-            bool isExisting = false;
-            SanPham sp = db.sanPhamController.GetSanPhamByID(masp);
-            if (vt.SoLuong - Int32.Parse(txtXKSoLuong.Text) < 0) MessageBox.Show("Số lượng xuất > số lượng hiện có, nhập lại !");
-            else
+           if(vt.SanPhamID!=null)
             {
-                vt.SoLuong -= Int32.Parse(txtXKSoLuong.Text);
-                //Neu da ton tai SP thi + them so luong va tong tien
-                foreach (DataGridViewRow row in dgvChiTietPhieuXuat.Rows)
+                string masp = vt.SanPhamID;
+                int sl = vt.SoLuong;
+                bool isExisting = false;
+                SanPham sp = db.sanPhamController.GetSanPhamByID(masp);
+                if (vt.SoLuong - Int32.Parse(txtXKSoLuong.Text) < 0) MessageBox.Show("Số lượng xuất > số lượng hiện có, nhập lại !");
+                else
                 {
-                    if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == masp)
+                    vt.SoLuong -= Int32.Parse(txtXKSoLuong.Text);
+                    //Neu da ton tai SP thi + them so luong va tong tien
+                    foreach (DataGridViewRow row in dgvChiTietPhieuXuat.Rows)
                     {
-                        int currentQuantity = Convert.ToInt32(row.Cells["CTSoLuong"].Value);
-                        decimal tongTien = Convert.ToDecimal(row.Cells["CTTongTien"].Value);
-                        row.Cells[2].Value = currentQuantity + sl;
-                        row.Cells["CTTongTien"].Value = tongTien + (sl * sp.GiaBan);
-                        isExisting = true;
-                        break;
+                        if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == masp)
+                        {
+                            int currentQuantity = Convert.ToInt32(row.Cells["CTSoLuong"].Value);
+                            double tongTien = Convert.ToDouble(row.Cells["CTTongTien"].Value);
+                            row.Cells[2].Value = currentQuantity + sl;
+                            row.Cells["CTTongTien"].Value = tongTien + (sl * sp.GiaBan);
+                            isExisting = true;
+                            break;
+                        }
+                    }
+                    //Them vao lich su vi tri xuat
+                    dgvViTri.Rows.Add(masp, sl, vt.ViTriID, selectedDanhMuc);
+                    if (!isExisting)
+                    {
+
+                        dgvChiTietPhieuXuat.Rows.Add(masp, lbXKTenSP.Text, sl, sp.GiaBan, (sl * sp.GiaBan));
+
                     }
                 }
-                //Them vao lich su vi tri xuat
-                dgvViTri.Rows.Add(masp, sl, vt.ViTriID, selectedDanhMuc);
-                if (!isExisting)
-                {
 
-                    dgvChiTietPhieuXuat.Rows.Add(masp, lbXKTenSP.Text, sl, sp.GiaBan, (sl * sp.GiaBan));
+            }
 
-                }
+           else
+            {
+                MessageBox.Show(" Lỗi Vị trí trống");
             }
         }
 
@@ -496,7 +478,8 @@ namespace QL_KhoHang
             if (e.KeyCode == Keys.Enter)
             {
                 KhachHang kh = db.khachHangController.GetKhachHangByID(txtMaKH.Text.Trim());
-                txtTenKH.Text = kh.TenKH;
+                if (kh != null) txtTenKH.Text = kh.TenKH;
+                else MessageBox.Show("Không tìm thấy khách hàng");
                 PhieuXuatChange();
             }
         }
@@ -533,9 +516,9 @@ namespace QL_KhoHang
                 {
                     if (row.Cells["VTMaSanPhamID"].Value != null)
                     {
-
                         ViTris.Add(new
                         {
+                            SanPhamID = row.Cells["VTMaSanPhamID"].Value.ToString(),  // Thêm thuộc tính SanPhamID
                             MaSanPham = row.Cells["VTMaSanPhamID"].Value.ToString(),
                             SoLuong = Convert.ToInt32(row.Cells["VTSoLuong"].Value),
                             ViTriID = row.Cells["VTViTri"].Value,
@@ -543,11 +526,12 @@ namespace QL_KhoHang
                         });
                     }
                 }
-
+               
                 // Gọi phương thức ThemPhieuXuat để lưu vào CSDL
                 bool isSuccess = db.phieuXuatController.ThemPhieuXuat(Authentication.getUserID(), maKH, ngayXuat, maPX, chiTietPhieuXuats, txtGhiChu.Text);
                 if (isSuccess)
                 {
+                    bool result = db.lichSuXuatKhoController.ThemLichSuXuatKho(txtMaPX.Text, ViTris);
                     selectedBox.ViTri.SoLuong -= Int16.Parse(txtXKSoLuong.Text);
                     selectedBox.setBackColor();
                     MessageBox.Show("Lưu phiếu xuất thành công!");
@@ -570,6 +554,11 @@ namespace QL_KhoHang
         }
 
         private void bunifuGradientPanel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboSP_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

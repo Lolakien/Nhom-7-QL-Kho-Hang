@@ -15,7 +15,7 @@ namespace QL_KhoHang
     public partial class frmPhieuNhap : Form
     {
         QL_KhoHangDataContext qlkh = new QL_KhoHangDataContext();
-
+        DemandPredictor predictor = new DemandPredictor();
         public frmPhieuNhap()
         {
             InitializeComponent();
@@ -40,6 +40,7 @@ namespace QL_KhoHang
                     sp.SoLuong,
                     sp.SanPhamToiThieu // Lấy thêm thông tin số lượng tối thiểu
                 }).ToList();
+
             if (lowStockProducts.Any())
             {
                 dgvSapHet.Columns.Add("SanPhamID", "Mã sản phẩm");
@@ -48,6 +49,7 @@ namespace QL_KhoHang
                 dgvSapHet.Columns[0].Width = 50;
                 dgvSapHet.Columns[1].Width = 160;
                 dgvSapHet.HeaderBackColor = Color.Red;
+
                 foreach (var product in lowStockProducts)
                 {
                     dgvSapHet.Rows.Add(
@@ -58,62 +60,9 @@ namespace QL_KhoHang
                 }
             }
         }
-        private void LoadDataAndTrainModel()
-        {
-            // Lấy dữ liệu từ PhieuXuat và ChiTietPhieuXuat
-            var phieuXuatData = qlkh.PhieuXuats
-     .Join(qlkh.ChiTietPhieuXuats,
-           px => px.PhieuXuatID,
-           ctx => ctx.PhieuXuatID,
-           (px, ctx) => new
-           {
-               px.NgayXuat,
-               ctx.SanPhamID,
-               SoLuong = (float)ctx.SoLuong // Chuyển đổi từ int sang float
-           })
-     .GroupBy(x => new { x.NgayXuat.Year, x.NgayXuat.Month, x.SanPhamID })
-     .Select(g => new PhieuXuatData
-     {
-         Nam = g.Key.Year,
-         Thang = g.Key.Month,
-         SanPhamID = g.Key.SanPhamID,
-         SoLuong = g.Sum(x => x.SoLuong)
-     })
-     .ToList();
 
-            // Kiểm tra xem dữ liệu có tồn tại không
-            if (phieuXuatData.Any())
-            {
-                // Khởi tạo và huấn luyện mô hình dự đoán
-                var predictor = new DemandPredictor();
-                predictor.TrainModel(phieuXuatData);
+        
 
-                dgvDuDoan.Columns.Add("SanPhamID", "Mã sản phẩm");
-                dgvDuDoan.Columns.Add("TenSanPham", "Tên sản phẩm");
-                dgvDuDoan.Columns.Add("SoLuongDuDoan", "Số lượng dự đoán");
-
-                // Lặp qua các sản phẩm trong dgvSapHet và thực hiện dự đoán
-                foreach (DataGridViewRow row in dgvSapHet.Rows)
-                {
-                    if (row.Cells["SanPhamID"].Value != null)
-                    {
-                        string sanPhamID = row.Cells["SanPhamID"].Value.ToString();
-                        string tenSanPham = row.Cells["TenSanPham"].Value.ToString();
-
-                        // Thực hiện dự đoán
-                        float soLuongDuDoan = predictor.Predict(DateTime.Now.Year, DateTime.Now.Month + 1, sanPhamID);
-
-                        dgvDuDoan.Rows.Add(sanPhamID, tenSanPham, soLuongDuDoan);
-                    }
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("Không có dữ liệu để huấn luyện mô hình.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
- 
         public void LoadPhieuNhap()
         {
             var phieuNhapList = qlkh.PhieuNhaps.Select(p => new
@@ -170,7 +119,7 @@ namespace QL_KhoHang
                 var selectedRow = dtG_ct_phieunhap.Rows[e.RowIndex];
                 var sanPhamID = selectedRow.Cells["SanPhamID"].Value.ToString();
                 var soLuong = Convert.ToInt32(selectedRow.Cells["SoLuong"].Value);
-                var giaNhap = Convert.ToDecimal(selectedRow.Cells["GiaNhap"].Value);
+                var giaNhap = Convert.ToDouble(selectedRow.Cells["GiaNhap"].Value);
 
                 txt_ct_Sanpham.Text = sanPhamID;
                 txt_ct_SoLuong.Text = soLuong.ToString();
@@ -256,7 +205,7 @@ namespace QL_KhoHang
 
                     // Đọc thông tin phiếu nhập
                     string tenNhaCungCap = worksheet.Cells[10, 2].Value.ToString();
-                    decimal tongTien = decimal.Parse(worksheet.Cells[16, 6].Value.ToString().Replace(".", "").Replace(",", ".")); // Định dạng lại tiền
+                    double tongTien = double.Parse(worksheet.Cells[16, 6].Value.ToString().Replace(".", "").Replace(",", ".")); // Định dạng lại tiền
                     string nhanVienID = Authentication.getUserID();
 
                     // Tìm ID nhà cung cấp
@@ -288,7 +237,7 @@ namespace QL_KhoHang
                     qlkh.SubmitChanges();
 
                     // Đọc chi tiết phiếu nhập
-                    decimal tongThanhTien = 0; // Khởi tạo biến tổng thành tiền
+                    double tongThanhTien = 0; // Khởi tạo biến tổng thành tiền
                     for (int row = 14; row <= worksheet.UsedRange.Rows.Count; row++)
                     {
                         var sanPhamIDCell = worksheet.Cells[row, 2].Value;
@@ -302,10 +251,10 @@ namespace QL_KhoHang
 
                         string sanPhamID = sanPhamIDCell.ToString();
                         int soLuong = int.Parse(soLuongCell.ToString());
-                        decimal giaNhap = decimal.Parse(giaNhapCell.ToString());
+                        double giaNhap = double.Parse(giaNhapCell.ToString());
 
                         // Tính thành tiền cho sản phẩm
-                        decimal thanhTien = soLuong * giaNhap;
+                        double thanhTien = soLuong * giaNhap;
                         tongThanhTien += thanhTien; // Cộng dồn thành tiền
 
                         var chiTiet = new ChiTietPhieuNhap
@@ -372,7 +321,7 @@ namespace QL_KhoHang
                 var nhanVienID = selectedRow.Cells["NhanVienID"].Value.ToString();
                 var ngayNhap = Convert.ToDateTime(selectedRow.Cells["NgayNhap"].Value);
                 var ghiChu = selectedRow.Cells["GhiChu"].Value.ToString();
-                var tongTien = Convert.ToDecimal(selectedRow.Cells["TongTien"].Value);
+                var tongTien = Convert.ToDouble(selectedRow.Cells["TongTien"].Value);
 
                 txtMaphieu.Text = phieuNhapID;
                 txtMaNV.Text = nhanVienID;
@@ -391,15 +340,13 @@ namespace QL_KhoHang
             }
         }
 
-        private void btnDuDoan_Click(object sender, EventArgs e)
-        {
-            LoadDataAndTrainModel();
-        }
-
+    
+      
         private void btnNCCSetting_Click(object sender, EventArgs e)
         {
             NCCForm f = new NCCForm();
             f.ShowDialog();
         }
+
     }
 }
